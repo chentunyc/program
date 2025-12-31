@@ -1338,3 +1338,1187 @@ java.time.format.DateTimeParseException: Text '' could not be parsed at index 0
 2025-12-31 10:30:43.492 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
 2025-12-31 10:31:24.450 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-12-31 10:31:24.460 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:32:55.223 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 49564 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:32:55.225 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:32:55.226 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:32:55.595 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 10140 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:32:55.597 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:32:55.598 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:32:56.182 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:32:56.184 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:32:56.210 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:32:56.360 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:32:56.361 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:32:56.386 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:32:56.983 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:32:57.052 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1781 ms
+2025-12-31 10:32:57.072 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:32:57.129 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1485 ms
+2025-12-31 10:32:57.408 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:32:57.431 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:32:57.456 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:32:57.479 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:32:57.666 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:32:57.694 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:32:58.444 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@38af386e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@33827b88, org.springframework.security.web.context.SecurityContextHolderFilter@476a970c, org.springframework.security.web.header.HeaderWriterFilter@78e50fca, org.springframework.web.filter.CorsFilter@6e46891d, org.springframework.security.web.authentication.logout.LogoutFilter@546c30c2, com.training.common.config.JwtAuthenticationFilter@6c6379c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34626d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15ee8861, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7526bb18, org.springframework.security.web.session.SessionManagementFilter@40d370fa, org.springframework.security.web.access.ExceptionTranslationFilter@e4bb10b, org.springframework.security.web.access.intercept.AuthorizationFilter@18f27a81]
+2025-12-31 10:32:58.465 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@531bec12, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24563809, org.springframework.security.web.context.SecurityContextHolderFilter@9a37591, org.springframework.security.web.header.HeaderWriterFilter@21ed4a51, org.springframework.web.filter.CorsFilter@4e7eba9f, org.springframework.security.web.authentication.logout.LogoutFilter@333efb51, com.training.common.config.JwtAuthenticationFilter@6e794f53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4468c0ea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41cf4272, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41d84abb, org.springframework.security.web.session.SessionManagementFilter@7741507c, org.springframework.security.web.access.ExceptionTranslationFilter@488279d3, org.springframework.security.web.access.intercept.AuthorizationFilter@271a140c]
+2025-12-31 10:32:58.608 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 10:32:58.636 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6ca320ab
+2025-12-31 10:32:58.828 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:32:58.836 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.753 seconds (process running for 4.509)
+2025-12-31 10:32:58.851 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:32:58.855 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:32:58.870 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:32:58.876 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 4.263 seconds (process running for 5.784)
+2025-12-31 10:32:58.892 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:32:58.896 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:33:02.375 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 49272 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:33:02.376 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:33:02.377 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:33:03.068 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:33:03.070 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:33:03.091 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:33:03.651 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:33:03.663 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 10:33:03.664 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 10:33:03.712 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 10:33:03.713 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1301 ms
+2025-12-31 10:33:04.009 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:33:04.029 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:33:04.261 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:33:04.926 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@126ff1a1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@546c30c2, org.springframework.security.web.context.SecurityContextHolderFilter@2ae7c1d, org.springframework.security.web.header.HeaderWriterFilter@b5390, org.springframework.web.filter.CorsFilter@40bf0e15, org.springframework.security.web.authentication.logout.LogoutFilter@4fc256ec, com.training.common.config.JwtAuthenticationFilter@42cc420b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5af4328e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5535e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ba08a09, org.springframework.security.web.session.SessionManagementFilter@78e50fca, org.springframework.security.web.access.ExceptionTranslationFilter@6c46dc02, org.springframework.security.web.access.intercept.AuthorizationFilter@6074d638]
+2025-12-31 10:33:05.044 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 10:33:05.246 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:33:05.254 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.277 seconds (process running for 3.831)
+2025-12-31 10:33:12.388 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 10:33:12.389 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 10:33:12.390 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 10:33:12.925 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:33:14.662 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:33:14.662 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:33:14.663 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:33:14.663 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:33:14.740 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:33:14.741 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:34:36.475 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:34:36.475 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:34:36.476 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:34:36.476 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:34:36.807 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:34:36.809 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:35:17.690 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:17.706 [http-nio-8080-exec-3] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:35:21.278 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:21.279 [http-nio-8080-exec-9] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:35:50.091 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:50.091 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:50.092 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:35:50.092 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:35:50.106 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:50.106 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:35:51.310 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:51.311 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:35:51.840 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:51.840 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:51.842 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:35:51.842 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:35:52.163 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:35:52.164 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:37:06.307 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:37:06.307 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:37:06.308 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:37:06.308 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:37:06.622 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:37:06.623 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:37:07.203 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:37:07.204 [http-nio-8080-exec-1] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:45:24.015 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:24.016 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:45:24.260 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:24.260 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:45:24.367 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:24.367 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:24.368 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:45:24.368 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:45:29.137 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:29.138 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:45:29.444 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:29.445 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:45:29.452 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:45:29.453 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:48:34.201 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:34.201 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:34.202 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:48:34.202 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:48:34.463 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:34.464 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:48:34.523 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:34.524 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:48:35.417 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:35.417 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:35.417 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:48:35.417 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:48:35.427 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:48:35.428 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:04.558 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:04.558 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:49:04.635 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:04.635 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:04.635 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:49:04.635 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:04.802 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:04.802 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:09.222 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:09.223 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:09.528 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:09.528 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:49:09.536 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:09.536 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:10.113 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:10.114 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:49:24.350 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:24.352 [http-nio-8080-exec-8] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:49:25.096 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:25.097 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:49:25.399 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:25.399 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:49:25.407 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:49:25.407 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:51:15.341 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:51:15.347 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 11:11:08.388 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 28904 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 11:11:08.389 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 11:11:08.390 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 11:11:09.069 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 11:11:09.072 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 11:11:09.102 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-12-31 11:11:09.670 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 11:11:09.680 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 11:11:09.680 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 11:11:09.728 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 11:11:09.728 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1310 ms
+2025-12-31 11:11:10.059 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 11:11:10.077 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 11:11:10.284 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 11:11:11.047 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c7744c1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@320e179f, org.springframework.security.web.context.SecurityContextHolderFilter@2d34866a, org.springframework.security.web.header.HeaderWriterFilter@40d370fa, org.springframework.web.filter.CorsFilter@75dd0f94, org.springframework.security.web.authentication.logout.LogoutFilter@33827b88, com.training.common.config.JwtAuthenticationFilter@6dcf7b6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27d5eb00, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b540131, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24731caf, org.springframework.security.web.session.SessionManagementFilter@29b4444a, org.springframework.security.web.access.ExceptionTranslationFilter@5cfe28e1, org.springframework.security.web.access.intercept.AuthorizationFilter@67292fc7]
+2025-12-31 11:11:11.169 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5d018107
+2025-12-31 11:11:11.373 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 11:11:11.379 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.395 seconds (process running for 4.008)
+2025-12-31 11:11:20.744 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 11:11:20.744 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 11:11:20.745 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 11:11:21.211 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:24.178 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:24.192 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 11:11:25.396 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:25.396 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:25.398 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 11:11:25.398 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:11:25.412 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:25.412 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:11:27.131 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:27.364 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:27.364 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:11:27.365 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:11:27.366 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:13:02.993 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:02.993 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:02.994 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:13:02.994 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 11:13:03.012 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:03.013 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:13:04.379 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:04.381 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 11:13:04.812 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:04.812 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:04.813 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:13:04.813 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 11:13:05.127 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:05.127 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:13:05.463 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:05.463 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:05.464 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:13:05.465 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:13:08.342 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:08.342 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:13:08.342 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:13:08.343 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:17.267 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:17.268 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:17.649 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:17.650 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:18.504 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:18.505 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:18.764 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:18.765 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:19.779 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:19.779 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:20.450 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:20.451 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:20.716 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:20.717 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:21.405 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:21.406 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:22.190 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:22.191 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:22.450 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:22.451 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:22.875 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:22.876 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:23.599 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:23.600 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:23.843 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:23.845 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:23.954 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:23.954 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:21:24.547 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:21:24.548 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:23.804 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 11:48:23.839 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 11:48:26.895 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 9220 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 11:48:26.897 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 11:48:26.898 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 11:48:27.723 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 11:48:27.726 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 11:48:27.760 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2025-12-31 11:48:28.417 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 11:48:28.428 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 11:48:28.428 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 11:48:28.482 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 11:48:28.482 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1548 ms
+2025-12-31 11:48:28.827 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 11:48:28.847 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 11:48:29.062 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 11:48:29.858 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8f589d7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65da1cbe, org.springframework.security.web.context.SecurityContextHolderFilter@687f62a5, org.springframework.security.web.header.HeaderWriterFilter@4cd51e4e, org.springframework.web.filter.CorsFilter@1850f2da, org.springframework.security.web.authentication.logout.LogoutFilter@31b289da, com.training.common.config.JwtAuthenticationFilter@67fac095, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7646c9f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b54a0a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a914a00, org.springframework.security.web.session.SessionManagementFilter@5a99543b, org.springframework.security.web.access.ExceptionTranslationFilter@2a8e30e3, org.springframework.security.web.access.intercept.AuthorizationFilter@73b3ce31]
+2025-12-31 11:48:29.984 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 11:48:30.185 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 11:48:30.191 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.755 seconds (process running for 4.621)
+2025-12-31 11:48:39.050 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 11:48:39.051 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 11:48:39.052 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 11:48:39.590 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:41.376 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:41.390 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 11:48:41.904 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:41.904 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:41.905 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:48:41.906 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:43.188 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:43.189 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:44.173 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:44.175 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:44.435 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:44.437 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:44.842 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:44.843 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:45.502 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:45.503 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:48:45.782 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:48:45.784 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:49:06.518 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:06.519 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:49:10.681 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:10.945 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:10.948 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 11:49:10.955 [http-nio-8080-exec-7] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/resource/4, Message=Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:103)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.incrementViewCount(Unknown Source)
+	at com.training.module.resource.service.impl.ResourceServiceImpl.incrementViewCount(ResourceServiceImpl.java:291)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.service.impl.ResourceServiceImpl$$SpringCGLIB$$0.incrementViewCount(<generated>)
+	at com.training.module.resource.controller.ResourceController.getResourceById(ResourceController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.controller.ResourceController$$SpringCGLIB$$0.getResourceById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 11:49:17.134 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 11:49:17.140 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 11:49:19.404 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 42316 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 11:49:19.406 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 11:49:19.406 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 11:49:19.996 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 11:49:19.998 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 11:49:20.019 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 11:49:20.575 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 11:49:20.584 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 11:49:20.585 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 11:49:20.634 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 11:49:20.634 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1196 ms
+2025-12-31 11:49:20.904 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 11:49:20.923 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 11:49:21.127 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 11:49:21.840 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4e933cf1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@729a9c3d, org.springframework.security.web.context.SecurityContextHolderFilter@115a7e51, org.springframework.security.web.header.HeaderWriterFilter@4301fa39, org.springframework.web.filter.CorsFilter@67d5ac2f, org.springframework.security.web.authentication.logout.LogoutFilter@578198d9, com.training.common.config.JwtAuthenticationFilter@1410d645, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f1163f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e4348c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@574327ed, org.springframework.security.web.session.SessionManagementFilter@3f71ae7f, org.springframework.security.web.access.ExceptionTranslationFilter@285c63cf, org.springframework.security.web.access.intercept.AuthorizationFilter@34d11c92]
+2025-12-31 11:49:21.946 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 11:49:22.126 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 11:49:22.133 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.157 seconds (process running for 3.781)
+2025-12-31 11:49:48.415 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 11:49:48.415 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 11:49:48.416 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 11:49:48.873 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:48.873 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:48.886 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:49:48.897 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:49:49.278 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:49.278 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:49.279 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:49:49.279 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 11:49:49.617 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:49.618 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 11:49:50.077 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:50.077 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:50.078 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:49:50.078 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:49:53.521 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:53.522 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=1
+2025-12-31 11:49:53.530 [http-nio-8080-exec-1] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/resource/1, Message=Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:103)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.incrementViewCount(Unknown Source)
+	at com.training.module.resource.service.impl.ResourceServiceImpl.incrementViewCount(ResourceServiceImpl.java:291)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.service.impl.ResourceServiceImpl$$SpringCGLIB$$0.incrementViewCount(<generated>)
+	at com.training.module.resource.controller.ResourceController.getResourceById(ResourceController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.controller.ResourceController$$SpringCGLIB$$0.getResourceById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 11:49:55.985 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:55.985 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:55.985 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:49:55.986 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:49:57.095 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:57.097 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=2
+2025-12-31 11:49:57.103 [http-nio-8080-exec-9] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/resource/2, Message=Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:103)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.incrementViewCount(Unknown Source)
+	at com.training.module.resource.service.impl.ResourceServiceImpl.incrementViewCount(ResourceServiceImpl.java:291)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.service.impl.ResourceServiceImpl$$SpringCGLIB$$0.incrementViewCount(<generated>)
+	at com.training.module.resource.controller.ResourceController.getResourceById(ResourceController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.controller.ResourceController$$SpringCGLIB$$0.getResourceById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 11:49:58.644 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:58.644 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 11:49:58.644 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 11:49:58.645 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 11:50:48.731 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 11:50:48.736 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 14:03:10.492 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 49480 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 14:03:10.493 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 14:03:10.494 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 14:03:11.311 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 14:03:11.313 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 14:03:11.339 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-12-31 14:03:11.931 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 14:03:11.941 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 14:03:11.942 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 14:03:11.992 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 14:03:11.992 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1464 ms
+2025-12-31 14:03:12.317 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 14:03:12.337 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 14:03:12.550 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 14:03:13.298 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a914a00, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d67348a, org.springframework.security.web.context.SecurityContextHolderFilter@7646c9f5, org.springframework.security.web.header.HeaderWriterFilter@25172993, org.springframework.web.filter.CorsFilter@1850f2da, org.springframework.security.web.authentication.logout.LogoutFilter@4e933cf1, com.training.common.config.JwtAuthenticationFilter@67fac095, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@682d9f21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e64ae1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39f8adc0, org.springframework.security.web.session.SessionManagementFilter@4a18e0f1, org.springframework.security.web.access.ExceptionTranslationFilter@4cd51e4e, org.springframework.security.web.access.intercept.AuthorizationFilter@3a17acd4]
+2025-12-31 14:03:13.409 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 14:03:13.595 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 14:03:13.602 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.62 seconds (process running for 4.413)
+2025-12-31 14:03:24.284 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 14:03:24.284 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 14:03:24.285 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 14:03:24.830 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:27.130 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:27.130 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:27.132 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:03:27.144 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:03:29.443 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:29.444 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:03:29.456 [http-nio-8080-exec-6] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/resource/4, Message=Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:103)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.incrementViewCount(Unknown Source)
+	at com.training.module.resource.service.impl.ResourceServiceImpl.incrementViewCount(ResourceServiceImpl.java:291)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.service.impl.ResourceServiceImpl$$SpringCGLIB$$0.incrementViewCount(<generated>)
+	at com.training.module.resource.controller.ResourceController.getResourceById(ResourceController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.controller.ResourceController$$SpringCGLIB$$0.getResourceById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 14:03:46.905 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:46.905 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:46.906 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:03:46.906 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:03:50.114 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:03:50.115 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:03:50.119 [http-nio-8080-exec-7] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/resource/4, Message=Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.resource.mapper.ResourceMapper.incrementViewCount attempted to return null from a method with a primitive return type (int).
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:103)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:156)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:93)
+	at jdk.proxy2/jdk.proxy2.$Proxy107.incrementViewCount(Unknown Source)
+	at com.training.module.resource.service.impl.ResourceServiceImpl.incrementViewCount(ResourceServiceImpl.java:291)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.service.impl.ResourceServiceImpl$$SpringCGLIB$$0.incrementViewCount(<generated>)
+	at com.training.module.resource.controller.ResourceController.getResourceById(ResourceController.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:713)
+	at com.training.module.resource.controller.ResourceController$$SpringCGLIB$$0.getResourceById(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 14:07:39.239 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 14:07:39.244 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 14:07:42.765 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 26768 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 14:07:42.766 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 14:07:42.767 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 14:07:43.685 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 14:07:43.687 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 14:07:43.715 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2025-12-31 14:07:44.353 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 14:07:44.361 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 14:07:44.362 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 14:07:44.407 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 14:07:44.408 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1596 ms
+2025-12-31 14:07:44.664 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 14:07:44.682 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 14:07:44.886 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 14:07:45.682 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4deca78, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f65e0c0, org.springframework.security.web.context.SecurityContextHolderFilter@3faa55, org.springframework.security.web.header.HeaderWriterFilter@1c7744c1, org.springframework.web.filter.CorsFilter@18b40fe6, org.springframework.security.web.authentication.logout.LogoutFilter@3921e96f, com.training.common.config.JwtAuthenticationFilter@141bb6b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a8e30e3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31c56721, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@566cc6af, org.springframework.security.web.session.SessionManagementFilter@38d4488c, org.springframework.security.web.access.ExceptionTranslationFilter@4c1b4e07, org.springframework.security.web.access.intercept.AuthorizationFilter@47f39279]
+2025-12-31 14:07:45.793 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 14:07:46.000 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 14:07:46.007 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.708 seconds (process running for 4.264)
+2025-12-31 14:07:50.846 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 14:07:50.847 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 14:07:50.848 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 14:07:51.245 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:07:53.555 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:07:53.555 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:07:53.556 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:07:53.570 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:07:55.166 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:07:55.168 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:07:55.275 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:07:55.276 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:09.232 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:09.233 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 记录下载: id=4
+2025-12-31 14:08:12.961 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:12.962 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:13.271 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:13.272 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:14.218 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:14.219 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=3
+2025-12-31 14:08:14.559 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:14.560 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:18.625 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:18.626 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 记录下载: id=3
+2025-12-31 14:08:21.788 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:21.789 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:22.101 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:22.102 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:22.454 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:22.455 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:23.994 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:23.995 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=3
+2025-12-31 14:08:24.333 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:24.333 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:27.060 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:27.061 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:27.368 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:27.369 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:28.440 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:28.441 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:29.688 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:29.688 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=2
+2025-12-31 14:08:29.947 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:29.948 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:42.447 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:42.448 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:42.754 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:42.755 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:43.352 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:43.353 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:44.429 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:44.430 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:08:44.766 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:44.767 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:46.086 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:46.086 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:46.087 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:46.087 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:52.101 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:52.102 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:08:52.448 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:52.449 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:08:53.585 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:53.585 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:53.586 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:08:53.586 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:08:55.482 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:55.483 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=1
+2025-12-31 14:08:55.825 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:08:55.826 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:13:09.210 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 14:13:09.214 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 14:13:11.304 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 16060 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 14:13:11.305 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 14:13:11.306 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 14:13:11.870 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 14:13:11.872 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 14:13:11.892 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 14:13:12.355 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 14:13:12.362 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 14:13:12.362 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 14:13:12.405 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 14:13:12.405 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1070 ms
+2025-12-31 14:13:12.653 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 14:13:12.671 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 14:13:12.844 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 14:13:13.493 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a17acd4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8f589d7, org.springframework.security.web.context.SecurityContextHolderFilter@4a18e0f1, org.springframework.security.web.header.HeaderWriterFilter@31c56721, org.springframework.web.filter.CorsFilter@5f5c187d, org.springframework.security.web.authentication.logout.LogoutFilter@34d11c92, com.training.common.config.JwtAuthenticationFilter@47c96f2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7857cb1d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7646c9f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65da1cbe, org.springframework.security.web.session.SessionManagementFilter@3ef396c9, org.springframework.security.web.access.ExceptionTranslationFilter@1ab502f6, org.springframework.security.web.access.intercept.AuthorizationFilter@3d01ea33]
+2025-12-31 14:13:13.601 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 14:13:13.777 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 14:13:13.784 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 2.801 seconds (process running for 3.316)
+2025-12-31 14:13:18.481 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 14:13:18.482 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 14:13:18.486 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-12-31 14:13:18.926 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:18.968 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:19.301 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:19.312 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=1
+2025-12-31 14:13:19.521 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:19.530 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:13:20.786 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:20.788 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 14:13:22.037 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:22.037 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:22.038 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:13:22.038 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:13:24.494 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:24.494 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:13:24.533 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:24.534 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:13:40.036 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:40.037 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 记录下载: id=4
+2025-12-31 14:13:45.189 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:45.190 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:13:45.490 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:45.491 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:13:46.860 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:46.861 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=3
+2025-12-31 14:13:47.122 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:47.122 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=AUDIO, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:13:57.053 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:57.053 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:57.054 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:13:57.054 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:13:58.126 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:58.127 [http-nio-8080-exec-6] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=2
+2025-12-31 14:13:58.460 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:13:58.461 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=VIDEO, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:14:02.414 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:02.414 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:02.415 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:14:02.415 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:14:03.656 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:03.657 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=1
+2025-12-31 14:14:03.920 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:03.921 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=SIMULATION, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:14:09.954 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:09.954 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:09.955 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:14:09.955 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:14:14.339 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:14.339 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:14:14.369 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:14:14.370 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:17:05.688 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:17:05.890 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:17:05.890 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:17:05.891 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:17:05.891 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:17:10.485 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:17:10.486 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:17:10.523 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:17:10.524 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:19:33.779 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:19:34.024 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:19:34.025 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:19:34.112 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:19:34.113 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:19:36.530 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:19:36.531 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:19:36.565 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:19:36.565 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:23:05.594 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:23:05.690 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:23:05.691 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:23:05.861 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:23:05.863 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:23:22.190 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:23:22.190 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:23:22.190 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:23:22.190 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:23:48.908 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 14:23:48.914 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

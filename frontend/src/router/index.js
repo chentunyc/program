@@ -89,6 +89,16 @@ const routes = [
         }
       },
       {
+        path: 'resource/:id',
+        name: 'ResourceDetail',
+        component: () => import('@/views/resource/detail.vue'),
+        meta: {
+          title: '资源详情',
+          requireAuth: true,
+          hidden: true
+        }
+      },
+      {
         path: 'training',
         name: 'Training',
         component: () => import('@/views/training/index.vue'),
