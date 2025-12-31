@@ -1,0 +1,212 @@
+# 应用配置
+spring:
+  application:
+    name: virtual-training-platform
+  profiles:
+    active: dev
+
+  # 数据源配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/virtual_training_platform?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      # 连接池配置
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      # 开启StatFilter
+      web-stat-filter:
+        enabled: true
+      # 开启StatViewServlet
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: admin
+      # 过滤配置
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+
+  # Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+      timeout: 10000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  # Jackson配置
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+# MyBatis Plus配置
+mybatis-plus:
+  # Mapper XML文件位置
+  mapper-locations: classpath*:/mapper/**/*.xml
+  # 实体类包路径
+  type-aliases-package: com.training.module.*.entity
+  # 全局配置
+  global-config:
+    # 数据库配置
+    db-config:
+      # 主键类型(自增)
+      id-type: auto
+      # 逻辑删除字段
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      # 字段策略
+      insert-strategy: not_null
+      update-strategy: not_null
+      select-strategy: not_null
+    # 关闭Banner
+    banner: false
+  # 配置
+  configuration:
+    # 驼峰转下划线
+    map-underscore-to-camel-case: true
+    # 缓存配置
+    cache-enabled: false
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  # Tomcat配置
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 200
+    accept-count: 100
+
+# Knife4j配置
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+  openapi:
+    title: 虚拟仿真实训教学管理平台API文档
+    description: 虚拟仿真实训教学管理及资源共享云平台接口文档
+    version: 1.0.0
+    contact:
+      name: Development Team
+      email: dev@example.com
+    group:
+      default:
+        group-name: 默认分组
+        api-rule: package
+        api-rule-resources:
+          - com.training.module
+
+# 日志配置
+logging:
+  level:
+    root: info
+    com.training: debug
+    com.training.module.*.mapper: debug
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
+  file:
+    name: logs/training-platform.log
+    max-size: 10MB
+    max-history: 30
+
+# 自定义配置
+training:
+  # JWT配置
+  jwt:
+    # 密钥(生产环境需要修改为复杂密钥)
+    secret: VirtualTrainingPlatformSecretKey2024ForJWTTokenGeneration
+    # Token有效期(单位:秒) 默认7天
+    expiration: 604800
+    # Token请求头名称
+    header: Authorization
+    # Token前缀
+    prefix: 'Bearer '
+  # 文件上传配置
+  upload:
+    # 上传路径
+    path: /uploads
+    # 允许的文件类型
+    allowed-extensions:
+      - jpg
+      - jpeg
+      - png
+      - gif
+      - pdf
+      - doc
+      - docx
+      - xls
+      - xlsx
+      - ppt
+      - pptx
+      - mp4
+      - mp3
+      - zip
+      - rar
+  # 跨域配置
+  cors:
+    # 允许跨域的域名
+    allowed-origins:
+      - http://localhost:5173
+      - http://localhost:3000
+      - http://127.0.0.1:5173
+      - http://127.0.0.1:3000
+    # 允许的请求方法
+    allowed-methods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+    # 允许的请求头
+    allowed-headers:
+      - '*'
+    # 是否允许携带凭证
+    allow-credentials: true
+    # 预检请求缓存时间
+    max-age: 3600
