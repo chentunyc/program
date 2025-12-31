@@ -3499,3 +3499,175 @@ Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unr
 2025-12-30 22:28:40.478 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
 2025-12-30 22:31:38.206 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-12-30 22:31:38.211 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-30 22:33:45.085 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 29884 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-30 22:33:45.086 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-30 22:33:45.087 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-30 22:33:45.632 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-30 22:33:45.633 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-30 22:33:45.650 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2025-12-30 22:33:46.111 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-30 22:33:46.119 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-30 22:33:46.119 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-30 22:33:46.162 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-30 22:33:46.163 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1046 ms
+2025-12-30 22:33:46.415 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-30 22:33:46.432 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-30 22:33:46.605 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-30 22:33:47.109 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@389bc2d3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@442310fd, org.springframework.security.web.context.SecurityContextHolderFilter@593f7d2e, org.springframework.security.web.header.HeaderWriterFilter@5617168c, org.springframework.web.filter.CorsFilter@69f9b561, org.springframework.security.web.authentication.logout.LogoutFilter@37665305, com.training.common.config.JwtAuthenticationFilter@52b30054, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59282dc6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@603b9d4b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@23263ba, org.springframework.security.web.session.SessionManagementFilter@1d3546f9, org.springframework.security.web.access.ExceptionTranslationFilter@a80a896, org.springframework.security.web.access.intercept.AuthorizationFilter@33c9f1ac]
+2025-12-30 22:33:47.207 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c80e49b
+2025-12-30 22:33:47.395 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-30 22:33:47.402 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 2.616 seconds (process running for 3.066)
+2025-12-30 22:33:49.310 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-30 22:33:49.310 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-30 22:33:49.311 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-30 22:33:49.429 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-30 22:33:50.335 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 22:35:01.033 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-30 22:35:01.037 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-30 23:11:40.677 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 9580 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-30 23:11:40.678 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-30 23:11:40.679 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-30 23:11:41.402 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-30 23:11:41.405 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-30 23:11:41.431 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-12-30 23:11:42.063 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-30 23:11:42.074 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-30 23:11:42.075 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-30 23:11:42.129 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-30 23:11:42.129 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1416 ms
+2025-12-30 23:11:42.491 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-30 23:11:42.511 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-30 23:11:42.743 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-30 23:11:43.500 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ff8e36d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@116b0b32, org.springframework.security.web.context.SecurityContextHolderFilter@581e8969, org.springframework.security.web.header.HeaderWriterFilter@10830d50, org.springframework.web.filter.CorsFilter@a2df0d5, org.springframework.security.web.authentication.logout.LogoutFilter@1a947424, com.training.common.config.JwtAuthenticationFilter@699d96bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@687fd6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@266a47fd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f22fd5d, org.springframework.security.web.session.SessionManagementFilter@62e99458, org.springframework.security.web.access.ExceptionTranslationFilter@64e89bb2, org.springframework.security.web.access.intercept.AuthorizationFilter@64af5454]
+2025-12-30 23:11:43.624 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6e1d8f9e
+2025-12-30 23:11:43.839 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-30 23:11:43.845 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.63 seconds (process running for 4.285)
+2025-12-30 23:11:48.322 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-30 23:11:48.322 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-30 23:11:48.323 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-30 23:11:48.460 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-30 23:11:49.471 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:11:52.235 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:11:58.084 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:11:58.093 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:12:05.032 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:05.256 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:05.257 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=10
+2025-12-30 23:12:05.299 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:05.300 [http-nio-8080-exec-7] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:12:11.250 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:11.251 [http-nio-8080-exec-8] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:12:23.356 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:23.357 [http-nio-8080-exec-9] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=2
+2025-12-30 23:12:23.620 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:23.621 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:12:57.410 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:12:57.411 [http-nio-8080-exec-1] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:14:19.773 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-30 23:14:19.778 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-30 23:18:40.559 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 4628 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-30 23:18:40.561 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-30 23:18:40.561 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-30 23:18:41.204 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-30 23:18:41.206 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-30 23:18:41.225 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-12-30 23:18:41.790 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-30 23:18:41.802 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-30 23:18:41.803 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-30 23:18:41.876 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-30 23:18:41.876 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1280 ms
+2025-12-30 23:18:42.183 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-30 23:18:42.207 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-30 23:18:42.660 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-30 23:18:43.615 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6ad198c9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@481bae3f, org.springframework.security.web.context.SecurityContextHolderFilter@602aeb87, org.springframework.security.web.header.HeaderWriterFilter@796642ae, org.springframework.web.filter.CorsFilter@18989e0, org.springframework.security.web.authentication.logout.LogoutFilter@10b3ea72, com.training.common.config.JwtAuthenticationFilter@2905b568, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b58d678, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@535a6697, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a54aa7a, org.springframework.security.web.session.SessionManagementFilter@5eef8a16, org.springframework.security.web.access.ExceptionTranslationFilter@19fc0ef7, org.springframework.security.web.access.intercept.AuthorizationFilter@3f33bb6f]
+2025-12-30 23:18:43.901 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62fe6067
+2025-12-30 23:18:44.668 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-30 23:18:44.682 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 4.539 seconds (process running for 5.115)
+2025-12-30 23:18:49.470 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-30 23:18:49.470 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-30 23:18:49.471 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-30 23:18:49.982 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:18:58.953 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:18:58.970 [http-nio-8080-exec-3] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:04.883 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:04.884 [http-nio-8080-exec-1] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:07.871 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:07.873 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=系统公告, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:08.745 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:08.746 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=教学新闻, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:10.275 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:10.276 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=系统公告, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:10.746 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:10.747 [http-nio-8080-exec-7] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:14.623 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:14.624 [http-nio-8080-exec-8] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=xitong, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:17.623 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:17.623 [http-nio-8080-exec-9] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=系统, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:19:23.752 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:19:23.753 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:21:33.659 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:21:33.828 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:21:33.830 [http-nio-8080-exec-3] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:23:53.735 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:23:53.874 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:23:53.875 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:23:58.326 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:23:58.327 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:23:59.836 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:23:59.837 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=1
+2025-12-30 23:23:59.866 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:23:59.867 [http-nio-8080-exec-7] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:24:02.130 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:02.131 [http-nio-8080-exec-8] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:24:03.018 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:03.019 [http-nio-8080-exec-9] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=7
+2025-12-30 23:24:03.045 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:03.046 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:24:07.809 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:07.810 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:24:08.539 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:08.539 [http-nio-8080-exec-3] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=1
+2025-12-30 23:24:08.557 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:24:08.558 [http-nio-8080-exec-1] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:25:50.301 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:25:50.404 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:25:50.405 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=1
+2025-12-30 23:25:50.458 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:25:50.459 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:26:04.057 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-30 23:26:04.064 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-30 23:26:07.367 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 36236 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-30 23:26:07.368 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-30 23:26:07.369 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-30 23:26:07.960 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-30 23:26:07.961 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-30 23:26:07.980 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-12-30 23:26:08.526 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-30 23:26:08.537 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-30 23:26:08.537 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-30 23:26:08.590 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-30 23:26:08.591 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1186 ms
+2025-12-30 23:26:08.861 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-30 23:26:08.881 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-30 23:26:09.081 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-30 23:26:09.740 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e7fa4b0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c7f804c, org.springframework.security.web.context.SecurityContextHolderFilter@ff8e36d, org.springframework.security.web.header.HeaderWriterFilter@641bc9a8, org.springframework.web.filter.CorsFilter@4e6cbdf1, org.springframework.security.web.authentication.logout.LogoutFilter@183a508b, com.training.common.config.JwtAuthenticationFilter@3e28dc96, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f22fd5d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26d445e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e89f5bc, org.springframework.security.web.session.SessionManagementFilter@64af5454, org.springframework.security.web.access.ExceptionTranslationFilter@7b58d678, org.springframework.security.web.access.intercept.AuthorizationFilter@51da7b08]
+2025-12-30 23:26:09.869 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@61bcd567
+2025-12-30 23:26:10.138 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-30 23:26:10.147 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.178 seconds (process running for 3.754)
+2025-12-30 23:26:12.151 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-30 23:26:12.151 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-30 23:26:12.152 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-30 23:26:12.272 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-30 23:26:13.175 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:26:23.980 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:26:23.987 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:26:58.546 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:26:58.548 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 获取新闻详情: id=7
+2025-12-30 23:26:58.574 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:26:58.576 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=null, category=null, status=1, isTop=null, isRecommend=1, current=1, size=5)
+2025-12-30 23:28:06.560 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:28:06.561 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:35:17.158 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-30 23:35:17.159 [http-nio-8080-exec-7] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-30 23:35:26.878 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-30 23:35:26.886 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
