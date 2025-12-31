@@ -2522,3 +2522,116 @@ org.apache.ibatis.binding.BindingException: Mapper method 'com.training.module.r
 2025-12-31 14:23:22.190 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
 2025-12-31 14:23:48.908 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-12-31 14:23:48.914 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 14:44:16.048 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 34320 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 14:44:16.049 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 14:44:16.050 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 14:44:16.720 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 14:44:16.722 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 14:44:16.748 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 14:44:17.292 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 14:44:17.302 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 14:44:17.302 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 14:44:17.353 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 14:44:17.353 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1276 ms
+2025-12-31 14:44:17.689 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 14:44:17.707 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 14:44:17.915 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 14:44:18.680 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@32f14274, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7af56b26, org.springframework.security.web.context.SecurityContextHolderFilter@49338f3, org.springframework.security.web.header.HeaderWriterFilter@3130ca39, org.springframework.web.filter.CorsFilter@58182b96, org.springframework.security.web.authentication.logout.LogoutFilter@726d8fa0, com.training.common.config.JwtAuthenticationFilter@2dc21583, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4abdd5e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66d61298, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c86c486, org.springframework.security.web.session.SessionManagementFilter@66abc325, org.springframework.security.web.access.ExceptionTranslationFilter@4219a4cc, org.springframework.security.web.access.intercept.AuthorizationFilter@50930bff]
+2025-12-31 14:44:18.793 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 14:44:18.977 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 14:44:18.984 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.41 seconds (process running for 3.946)
+2025-12-31 14:44:28.005 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 14:44:28.005 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 14:44:28.006 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 14:44:28.463 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:31.271 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:31.271 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:31.272 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:44:31.285 [http-nio-8080-exec-2] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:44:35.763 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:35.764 [http-nio-8080-exec-4] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:44:35.815 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:35.815 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:35.816 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:44:37.447 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:37.491 [http-nio-8080-exec-8] INFO  c.t.module.user.controller.UserFavoriteController - 添加收藏: FavoriteDTO(resourceType=RESOURCE, resourceId=4)
+2025-12-31 14:44:37.509 [http-nio-8080-exec-8] INFO  c.t.m.user.service.impl.UserFavoriteServiceImpl - 用户 1 收藏了资源 RESOURCE - 4
+2025-12-31 14:44:41.807 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:41.807 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:41.807 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:41.807 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:41.808 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:44:41.808 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 14:44:41.809 [http-nio-8080-exec-1] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:44:41.827 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:41.827 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:44:46.263 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:46.264 [http-nio-8080-exec-2] INFO  c.t.module.user.controller.UserFavoriteController - 取消收藏: RESOURCE - 4
+2025-12-31 14:44:46.292 [http-nio-8080-exec-2] INFO  c.t.m.user.service.impl.UserFavoriteServiceImpl - 用户 1 取消收藏资源 RESOURCE - 4
+2025-12-31 14:44:46.612 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:46.612 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:46.613 [http-nio-8080-exec-4] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:44:49.290 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:49.290 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:49.291 [http-nio-8080-exec-9] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:44:49.291 [http-nio-8080-exec-8] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:44:51.977 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:51.978 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:44:52.312 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:52.312 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:52.313 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:44:54.042 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:54.042 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:54.043 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 14:44:54.043 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:44:54.349 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:54.349 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:54.350 [http-nio-8080-exec-2] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:44:54.362 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:54.363 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:44:56.327 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:56.328 [http-nio-8080-exec-9] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=RESOURCE)
+2025-12-31 14:44:56.589 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:56.590 [http-nio-8080-exec-8] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:44:57.242 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:57.243 [http-nio-8080-exec-10] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:44:57.556 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:57.557 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:44:58.956 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:58.956 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 获取资源详情: id=4
+2025-12-31 14:44:59.213 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:44:59.214 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=DOCUMENT, category=null, keyword=null, status=1, pageNum=1, pageSize=5, sortField=null, sortOrder=null)
+2025-12-31 14:44:59.295 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:00.210 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:00.211 [http-nio-8080-exec-2] INFO  c.t.module.user.controller.UserFavoriteController - 添加收藏: FavoriteDTO(resourceType=RESOURCE, resourceId=4)
+2025-12-31 14:45:00.216 [http-nio-8080-exec-2] INFO  c.t.m.user.service.impl.UserFavoriteServiceImpl - 用户 1 收藏了资源 RESOURCE - 4
+2025-12-31 14:45:02.829 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:02.830 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:45:03.141 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:03.141 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:03.141 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:03.142 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 14:45:03.142 [http-nio-8080-exec-8] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:45:03.150 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:03.151 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:45:04.016 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:04.016 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:04.017 [http-nio-8080-exec-5] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:45:04.017 [http-nio-8080-exec-7] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:45:07.067 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.067 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.067 [http-nio-8080-exec-3] INFO  c.t.module.resource.controller.ResourceController - 获取资源统计信息
+2025-12-31 14:45:07.068 [http-nio-8080-exec-1] INFO  c.t.module.resource.controller.ResourceController - 分页查询资源列表: ResourceQueryDTO(resourceType=, category=null, keyword=, status=1, pageNum=1, pageSize=12, sortField=null, sortOrder=null)
+2025-12-31 14:45:07.654 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.654 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.654 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.654 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.654 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 14:45:07.654 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:45:07.654 [http-nio-8080-exec-9] INFO  c.t.module.user.controller.UserFavoriteController - 查询收藏列表: FavoriteQueryDTO(pageNum=1, pageSize=12, resourceType=)
+2025-12-31 14:45:07.910 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:07.911 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 14:45:08.299 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 14:45:08.301 [http-nio-8080-exec-10] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 14:45:17.000 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 14:45:17.005 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
