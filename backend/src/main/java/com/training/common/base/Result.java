@@ -51,6 +51,13 @@ public class Result<T> implements Serializable {
     }
 
     /**
+     * 成功响应(仅消息,无数据) - 用于不需要返回数据的操作
+     */
+    public static Result<Void> successMsg(String message) {
+        return new Result<>(200, message, null, System.currentTimeMillis());
+    }
+
+    /**
      * 成功响应(带数据)
      */
     public static <T> Result<T> success(T data) {

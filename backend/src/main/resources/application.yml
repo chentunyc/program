@@ -210,3 +210,10 @@ training:
     allow-credentials: true
     # 预检请求缓存时间
     max-age: 3600
+
+# 文件上传配置(用于头像等)
+file:
+  upload:
+    # 使用绝对路径，Windows下建议配置到项目外的固定目录
+    path: E:/homework/2025last/work/test/uploads
+    avatar-path: /avatars

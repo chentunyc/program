@@ -84,6 +84,11 @@ public class SecurityConfig {
                                 "/swagger-resources/**",
                                 "/webjars/**"
                         ).permitAll()
+                        // 静态资源允许匿名访问
+                        .requestMatchers(
+                                "/avatars/**",
+                                "/uploads/**"
+                        ).permitAll()
                         // Druid监控允许匿名访问(生产环境应该配置认证)
                         .requestMatchers("/druid/**").permitAll()
                         // 其他所有请求需要认证

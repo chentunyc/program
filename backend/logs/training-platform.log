@@ -76,3 +76,1265 @@
 2025-12-31 09:23:49.328 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
 2025-12-31 09:24:17.527 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-12-31 09:24:17.532 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 09:49:07.955 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 7096 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 09:49:07.957 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 09:49:07.958 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 09:49:09.143 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 09:49:09.146 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 09:49:09.181 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2025-12-31 09:49:09.455 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 13412 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 09:49:09.456 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 09:49:09.457 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 09:49:10.242 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 09:49:10.259 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 09:49:10.259 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 09:49:10.332 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 09:49:10.333 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2329 ms
+2025-12-31 09:49:10.445 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 09:49:10.448 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 09:49:10.475 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-12-31 09:49:10.827 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 09:49:10.852 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 09:49:11.148 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 09:49:11.185 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 09:49:11.194 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 09:49:11.195 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 09:49:11.252 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 09:49:11.253 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1752 ms
+2025-12-31 09:49:11.618 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 09:49:11.646 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 09:49:11.936 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 09:49:12.093 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@757c685d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@476a970c, org.springframework.security.web.context.SecurityContextHolderFilter@578d5d02, org.springframework.security.web.header.HeaderWriterFilter@3e73f5e7, org.springframework.web.filter.CorsFilter@46c662f2, org.springframework.security.web.authentication.logout.LogoutFilter@2ae7c1d, com.training.common.config.JwtAuthenticationFilter@7ec13984, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27682fa9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fb70301, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ce57bbb, org.springframework.security.web.session.SessionManagementFilter@2560a7be, org.springframework.security.web.access.ExceptionTranslationFilter@4c8a9266, org.springframework.security.web.access.intercept.AuthorizationFilter@7ac90dab]
+2025-12-31 09:49:12.264 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c80e49b
+2025-12-31 09:49:12.544 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 09:49:12.553 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 5.083 seconds (process running for 5.954)
+2025-12-31 09:49:12.717 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 09:49:12.725 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 09:49:12.750 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5265a8dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5af4328e, org.springframework.security.web.context.SecurityContextHolderFilter@6e7fa4b0, org.springframework.security.web.header.HeaderWriterFilter@2a60981c, org.springframework.web.filter.CorsFilter@194b9783, org.springframework.security.web.authentication.logout.LogoutFilter@783f5f71, com.training.common.config.JwtAuthenticationFilter@38022758, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e89f5bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@259aec72, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5535e9, org.springframework.security.web.session.SessionManagementFilter@51da7b08, org.springframework.security.web.access.ExceptionTranslationFilter@6a54aa7a, org.springframework.security.web.access.intercept.AuthorizationFilter@2555a986]
+2025-12-31 09:49:12.904 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c80e49b
+2025-12-31 09:49:13.187 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 09:49:13.197 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 4.228 seconds (process running for 4.952)
+2025-12-31 09:49:34.383 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 09:49:34.383 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 09:49:34.389 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2025-12-31 09:49:35.413 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:49:35.614 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:50:40.693 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 09:50:40.708 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 09:50:43.596 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 39800 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 09:50:43.597 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 09:50:43.598 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 09:50:44.418 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 09:50:44.420 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 09:50:44.446 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 09:50:45.239 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 09:50:45.252 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 09:50:45.253 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 09:50:45.319 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 09:50:45.320 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1673 ms
+2025-12-31 09:50:45.712 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 09:50:45.733 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 09:50:46.024 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 09:50:46.907 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37f71e8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63b0b3dd, org.springframework.security.web.context.SecurityContextHolderFilter@3f1fb139, org.springframework.security.web.header.HeaderWriterFilter@44587c44, org.springframework.web.filter.CorsFilter@15186ce0, org.springframework.security.web.authentication.logout.LogoutFilter@16c9e378, com.training.common.config.JwtAuthenticationFilter@184de357, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36349e29, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@183a508b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@397dfbe8, org.springframework.security.web.session.SessionManagementFilter@6a54aa7a, org.springframework.security.web.access.ExceptionTranslationFilter@14eb96e9, org.springframework.security.web.access.intercept.AuthorizationFilter@5606d537]
+2025-12-31 09:50:47.061 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c80e49b
+2025-12-31 09:50:47.301 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 09:50:47.309 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 4.208 seconds (process running for 4.912)
+2025-12-31 09:51:09.905 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 09:51:09.907 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 09:51:09.909 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-31 09:51:11.278 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:51:11.475 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:51:58.807 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:51:58.889 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:52:04.118 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 09:52:04.119 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:00:58.856 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:00:58.857 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:01:45.686 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:01:46.305 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:01:46.306 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:01:46.307 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:01:46.315 [http-nio-8080-exec-4] ERROR c.training.common.exception.GlobalExceptionHandler - 系统异常: URI=/api/v1/user/extended-profile, Message=No static resource v1/user/extended-profile.
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource v1/user/extended-profile.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 10:01:46.323 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:01:46.324 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:04:32.025 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:04:32.033 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:08:23.029 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 43336 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:08:23.031 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:08:23.033 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:08:23.890 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:08:23.892 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:08:23.919 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:08:24.597 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:08:24.610 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 10:08:24.610 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 10:08:24.674 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 10:08:24.674 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1597 ms
+2025-12-31 10:08:25.031 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:08:25.056 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:08:25.295 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:08:26.043 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@538a90a5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74d53d63, org.springframework.security.web.context.SecurityContextHolderFilter@5cfe28e1, org.springframework.security.web.header.HeaderWriterFilter@66fff42f, org.springframework.web.filter.CorsFilter@27261190, org.springframework.security.web.authentication.logout.LogoutFilter@1382a7d8, com.training.common.config.JwtAuthenticationFilter@3b5da0b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@40d370fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5868ea91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18f27a81, org.springframework.security.web.session.SessionManagementFilter@71eaef6a, org.springframework.security.web.access.ExceptionTranslationFilter@783f5f71, org.springframework.security.web.access.intercept.AuthorizationFilter@3b839f68]
+2025-12-31 10:08:26.184 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 10:08:26.408 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:08:26.416 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.853 seconds (process running for 4.529)
+2025-12-31 10:08:32.737 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 10:08:32.737 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 10:08:32.739 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 10:08:33.318 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:34.994 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:35.504 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:35.505 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:08:35.523 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:35.524 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:08:35.614 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:35.615 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:08:37.270 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:37.302 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:08:38.889 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:38.889 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:38.890 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:08:38.890 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:08:38.909 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:08:38.910 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:10.315 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:10.374 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 用户修改密码
+2025-12-31 10:09:11.072 [http-nio-8080-exec-10] INFO  c.t.module.user.service.impl.UserServiceImpl - 用户密码修改成功, userId: 1
+2025-12-31 10:09:11.404 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:11.404 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:09:15.254 [http-nio-8080-exec-2] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-31 10:09:15.464 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:17.323 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:17.324 [http-nio-8080-exec-3] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:09:17.843 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:17.843 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:17.843 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:17.843 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:09:17.859 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:17.861 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:19.477 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:19.477 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:19.479 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:09:19.479 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:19.809 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:19.810 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:40.972 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:40.973 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 用户修改密码
+2025-12-31 10:09:41.192 [http-nio-8080-exec-1] INFO  c.t.module.user.service.impl.UserServiceImpl - 用户密码修改成功, userId: 1
+2025-12-31 10:09:41.236 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:41.237 [http-nio-8080-exec-2] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:09:41.868 [http-nio-8080-exec-4] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-31 10:09:42.280 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:43.497 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:43.500 [http-nio-8080-exec-5] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:09:44.244 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:44.244 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:44.245 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:09:44.245 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:09:44.260 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:09:44.261 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:10:34.837 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:10:34.838 [http-nio-8080-exec-9] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:10:44.751 [http-nio-8080-exec-10] INFO  c.training.module.auth.controller.AuthController - 用户登录: student
+2025-12-31 10:10:45.080 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:10:47.105 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:10:47.107 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:10:47.508 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:10:47.508 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:10:47.510 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:10:47.510 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:10:47.522 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:10:47.523 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:13:10.843 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:10.844 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:13:32.793 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:33.105 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:33.105 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:33.107 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:13:33.107 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:13:33.130 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:33.132 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:13:36.829 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:36.850 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:13:36.856 [http-nio-8080-exec-1] ERROR c.t.module.user.service.impl.UserServiceImpl - 头像上传失败
+java.io.IOException: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\a90be88a4cb64f37a9ef26b7b2bc629f.jpg (系统找不到指定的路径。)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile.transferTo(StandardMultipartHttpServletRequest.java:254)
+	at com.training.module.user.service.impl.UserServiceImpl.updateAvatar(UserServiceImpl.java:336)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateAvatar(<generated>)
+	at com.training.module.user.controller.UserController.uploadAvatar(UserController.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\a90be88a4cb64f37a9ef26b7b2bc629f.jpg (系统找不到指定的路径。)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:404)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:117)
+	... 123 common frames omitted
+2025-12-31 10:13:36.863 [http-nio-8080-exec-1] ERROR c.training.common.exception.GlobalExceptionHandler - 业务异常: URI=/api/v1/user/avatar, Message=头像上传失败: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\a90be88a4cb64f37a9ef26b7b2bc629f.jpg (系统找不到指定的路径。)
+2025-12-31 10:13:51.473 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:13:51.477 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:13:51.479 [http-nio-8080-exec-2] ERROR c.t.module.user.service.impl.UserServiceImpl - 头像上传失败
+java.io.IOException: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\9b1631c6a413426d91b3526fb579d50d.jpg (系统找不到指定的路径。)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile.transferTo(StandardMultipartHttpServletRequest.java:254)
+	at com.training.module.user.service.impl.UserServiceImpl.updateAvatar(UserServiceImpl.java:336)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateAvatar(<generated>)
+	at com.training.module.user.controller.UserController.uploadAvatar(UserController.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\9b1631c6a413426d91b3526fb579d50d.jpg (系统找不到指定的路径。)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:404)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:117)
+	... 123 common frames omitted
+2025-12-31 10:13:51.488 [http-nio-8080-exec-2] ERROR c.training.common.exception.GlobalExceptionHandler - 业务异常: URI=/api/v1/user/avatar, Message=头像上传失败: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\9b1631c6a413426d91b3526fb579d50d.jpg (系统找不到指定的路径。)
+2025-12-31 10:14:27.130 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:14:27.136 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:14:27.138 [http-nio-8080-exec-4] ERROR c.t.module.user.service.impl.UserServiceImpl - 头像上传失败
+java.io.IOException: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\cb8d733e698346e0b570381b28bdf3af.jpg (系统找不到指定的路径。)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:119)
+	at org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile.transferTo(StandardMultipartHttpServletRequest.java:254)
+	at com.training.module.user.service.impl.UserServiceImpl.updateAvatar(UserServiceImpl.java:336)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateAvatar(<generated>)
+	at com.training.module.user.controller.UserController.uploadAvatar(UserController.java:108)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\cb8d733e698346e0b570381b28bdf3af.jpg (系统找不到指定的路径。)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at org.apache.tomcat.util.http.fileupload.disk.DiskFileItem.write(DiskFileItem.java:404)
+	at org.apache.catalina.core.ApplicationPart.write(ApplicationPart.java:117)
+	... 123 common frames omitted
+2025-12-31 10:14:27.140 [http-nio-8080-exec-4] ERROR c.training.common.exception.GlobalExceptionHandler - 业务异常: URI=/api/v1/user/avatar, Message=头像上传失败: java.io.FileNotFoundException: C:\Users\pzq80\AppData\Local\Temp\tomcat.8080.12718981166080581518\work\Tomcat\localhost\api\.\uploads\avatars\cb8d733e698346e0b570381b28bdf3af.jpg (系统找不到指定的路径。)
+2025-12-31 10:16:13.458 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:16:13.466 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:16:18.229 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 44088 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:16:18.231 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:16:18.232 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:16:19.003 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:16:19.005 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:16:19.036 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:16:19.636 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:16:19.645 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 10:16:19.645 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 10:16:19.703 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 10:16:19.704 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1439 ms
+2025-12-31 10:16:20.035 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:16:20.058 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:16:20.270 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:16:21.094 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44948ac6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4fc256ec, org.springframework.security.web.context.SecurityContextHolderFilter@63b0b3dd, org.springframework.security.web.header.HeaderWriterFilter@126f2eb8, org.springframework.web.filter.CorsFilter@40cf6254, org.springframework.security.web.authentication.logout.LogoutFilter@62aee901, com.training.common.config.JwtAuthenticationFilter@71b0289b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@783f5f71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3791af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bc3d70e, org.springframework.security.web.session.SessionManagementFilter@b5390, org.springframework.security.web.access.ExceptionTranslationFilter@27682fa9, org.springframework.security.web.access.intercept.AuthorizationFilter@2b540131]
+2025-12-31 10:16:21.224 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 10:16:21.460 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:16:21.468 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.648 seconds (process running for 4.316)
+2025-12-31 10:16:29.363 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 10:16:29.364 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 10:16:29.367 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-12-31 10:16:30.262 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:30.348 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:31.175 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:31.175 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:31.178 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:16:31.178 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:16:31.322 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:31.324 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:16:37.940 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:37.940 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:37.941 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:16:37.941 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:16:37.961 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:37.962 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:16:41.904 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:41.937 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:16:42.093 [http-nio-8080-exec-9] INFO  c.t.module.user.service.impl.UserServiceImpl - 用户头像更新成功, userId: 3, avatar: /avatars/603b524c4fbd4bd9b00ccd757d607211.jpg
+2025-12-31 10:16:49.503 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:52.838 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:16:52.839 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:16:59.146 [http-nio-8080-exec-3] INFO  c.training.module.auth.controller.AuthController - 用户登录: student
+2025-12-31 10:16:59.882 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:01.573 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:01.584 [http-nio-8080-exec-2] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:17:02.597 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:02.597 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:02.598 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:17:02.598 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:17:02.612 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:02.613 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:17:04.987 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:04.987 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:04.989 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:17:04.989 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:17:05.289 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:05.291 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:17:17.386 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:17:17.391 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:17:17.400 [http-nio-8080-exec-1] INFO  c.t.module.user.service.impl.UserServiceImpl - 用户头像更新成功, userId: 3, avatar: /avatars/ae83fb087df541039ddb4a03e5ae307b.jpg
+2025-12-31 10:18:45.069 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:45.072 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:18:45.072 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:45.074 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:18:45.382 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:45.384 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:18:45.532 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:45.535 [http-nio-8080-exec-7] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:18:46.372 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:46.372 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:46.374 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:18:46.374 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:18:46.396 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:18:46.397 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:19:19.453 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:19:19.453 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:19:40.664 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:19:40.664 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:19:40.665 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:19:40.665 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:19:40.685 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:19:40.686 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:21:24.316 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:21:24.317 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:21:24.331 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:21:24.331 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:21:24.332 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:21:24.332 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:22:02.546 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:22:02.547 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:22:02.551 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:22:02.552 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:22:02.625 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:22:02.626 [http-nio-8080-exec-4] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:22:46.286 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:22:46.287 [http-nio-8080-exec-2] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:22:47.435 [http-nio-8080-exec-7] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-31 10:22:47.846 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:49.477 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:49.478 [http-nio-8080-exec-6] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:22:49.840 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:49.840 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:49.841 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:22:49.841 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:22:50.099 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:50.101 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:22:52.510 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:22:52.511 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:22:58.067 [http-nio-8080-exec-4] INFO  c.training.module.auth.controller.AuthController - 用户登录: student
+2025-12-31 10:22:58.691 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:01.210 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:01.210 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:23:01.523 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:01.523 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:01.523 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:23:01.523 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:23:14.976 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:14.985 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 更新当前用户扩展信息: UpdateUserExtendedProfileDTO(department=信息学院, major=计算机科学与技术, className=, grade=, birthDate=, idCard=, address=, introduction=)
+2025-12-31 10:23:14.995 [http-nio-8080-exec-9] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/user/extended-profile, Message=Text '' could not be parsed at index 0
+java.time.format.DateTimeParseException: Text '' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:420)
+	at com.training.module.user.service.impl.UserServiceImpl.updateCurrentUserExtendedProfile(UserServiceImpl.java:268)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateCurrentUserExtendedProfile(<generated>)
+	at com.training.module.user.controller.UserController.updateCurrentUserExtendedProfile(UserController.java:97)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 10:23:18.200 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:18.203 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 更新当前用户扩展信息: UpdateUserExtendedProfileDTO(department=信息学院, major=计算机科学与技术, className=, grade=, birthDate=, idCard=, address=, introduction=)
+2025-12-31 10:23:18.210 [http-nio-8080-exec-10] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/user/extended-profile, Message=Text '' could not be parsed at index 0
+java.time.format.DateTimeParseException: Text '' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:420)
+	at com.training.module.user.service.impl.UserServiceImpl.updateCurrentUserExtendedProfile(UserServiceImpl.java:268)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateCurrentUserExtendedProfile(<generated>)
+	at com.training.module.user.controller.UserController.updateCurrentUserExtendedProfile(UserController.java:97)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 10:23:49.946 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:23:49.948 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 更新当前用户扩展信息: UpdateUserExtendedProfileDTO(department=信息学院, major=计算机科学与技术, className=, grade=, birthDate=, idCard=, address=, introduction=)
+2025-12-31 10:23:49.951 [http-nio-8080-exec-1] ERROR c.training.common.exception.GlobalExceptionHandler - 运行时异常: URI=/api/v1/user/extended-profile, Message=Text '' could not be parsed at index 0
+java.time.format.DateTimeParseException: Text '' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:420)
+	at com.training.module.user.service.impl.UserServiceImpl.updateCurrentUserExtendedProfile(UserServiceImpl.java:268)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:352)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:765)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:717)
+	at com.training.module.user.service.impl.UserServiceImpl$$SpringCGLIB$$0.updateCurrentUserExtendedProfile(<generated>)
+	at com.training.module.user.controller.UserController.updateCurrentUserExtendedProfile(UserController.java:97)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:262)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.training.common.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:74)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-12-31 10:25:21.140 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:25:21.144 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 10:25:26.700 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 47760 (E:\homework\2025last\work\test\backend\target\classes started by pzq80 in E:\homework\2025last\work\test\backend)
+2025-12-31 10:25:26.702 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 10:25:26.702 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 10:25:27.401 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 10:25:27.403 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 10:25:27.424 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-12-31 10:25:28.026 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 10:25:28.039 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 10:25:28.039 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 10:25:28.103 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 10:25:28.103 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1360 ms
+2025-12-31 10:25:28.450 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 10:25:28.473 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 10:25:28.697 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 10:25:29.413 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3bc3d70e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78bce1c4, org.springframework.security.web.context.SecurityContextHolderFilter@783f5f71, org.springframework.security.web.header.HeaderWriterFilter@1f1574c, org.springframework.web.filter.CorsFilter@46c662f2, org.springframework.security.web.authentication.logout.LogoutFilter@29b4444a, com.training.common.config.JwtAuthenticationFilter@7ec13984, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66fff42f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@308be1a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@189e96af, org.springframework.security.web.session.SessionManagementFilter@37f71e8, org.springframework.security.web.access.ExceptionTranslationFilter@126f2eb8, org.springframework.security.web.access.intercept.AuthorizationFilter@4c91f5bf]
+2025-12-31 10:25:29.551 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@36676c1a
+2025-12-31 10:25:29.759 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 10:25:29.767 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.461 seconds (process running for 4.028)
+2025-12-31 10:25:34.692 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 10:25:34.692 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 10:25:34.693 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 10:25:35.164 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:25:35.240 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 更新当前用户扩展信息: UpdateUserExtendedProfileDTO(department=信息学院, major=计算机科学与技术, className=, grade=, birthDate=, idCard=, address=, introduction=)
+2025-12-31 10:25:35.354 [http-nio-8080-exec-1] INFO  c.t.module.user.service.impl.UserServiceImpl - 创建用户扩展信息, userId: 3
+2025-12-31 10:28:49.710 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:28:49.711 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:30:06.900 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:07.287 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:07.287 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:07.288 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:30:07.288 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:07.317 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:07.318 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:21.510 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:21.532 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 用户上传头像
+2025-12-31 10:30:21.669 [http-nio-8080-exec-9] INFO  c.t.module.user.service.impl.UserServiceImpl - 用户头像更新成功, userId: 3, avatar: /avatars/b6297e0f6fa74016abe0fdf8aed78ca3.jpg
+2025-12-31 10:30:27.449 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 student 认证成功
+2025-12-31 10:30:27.451 [http-nio-8080-exec-1] INFO  c.training.module.auth.controller.AuthController - 用户登出
+2025-12-31 10:30:29.042 [http-nio-8080-exec-2] INFO  c.training.module.auth.controller.AuthController - 用户登录: admin
+2025-12-31 10:30:29.259 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:32.253 [http-nio-8080-exec-5] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:32.253 [http-nio-8080-exec-10] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:32.253 [http-nio-8080-exec-5] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:32.253 [http-nio-8080-exec-10] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:30:32.581 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:32.586 [http-nio-8080-exec-6] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:41.744 [http-nio-8080-exec-7] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:41.744 [http-nio-8080-exec-8] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:41.744 [http-nio-8080-exec-7] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:41.744 [http-nio-8080-exec-8] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:30:42.071 [http-nio-8080-exec-9] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:42.072 [http-nio-8080-exec-9] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:42.458 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:42.475 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 10:30:43.476 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:43.476 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:43.478 [http-nio-8080-exec-1] INFO  c.training.module.user.controller.UserController - 获取当前用户扩展信息
+2025-12-31 10:30:43.478 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:30:43.491 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 10:30:43.492 [http-nio-8080-exec-3] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 10:31:24.450 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 10:31:24.460 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

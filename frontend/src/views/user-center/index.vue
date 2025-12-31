@@ -38,16 +38,12 @@
 
           <!-- 账号设置 -->
           <div v-show="activeMenu === 'account'" class="content-section">
-            <div class="placeholder-content">
-              <el-empty description="功能开发中" />
-            </div>
+            <AccountSettings />
           </div>
 
           <!-- 安全设置 -->
           <div v-show="activeMenu === 'security'" class="content-section">
-            <div class="placeholder-content">
-              <el-empty description="功能开发中" />
-            </div>
+            <SecuritySettings />
           </div>
         </el-main>
       </el-container>
@@ -59,6 +55,8 @@
 import { ref } from 'vue'
 import { User, Setting, Lock } from '@element-plus/icons-vue'
 import ProfileInfo from './components/ProfileInfo.vue'
+import AccountSettings from './components/AccountSettings.vue'
+import SecuritySettings from './components/SecuritySettings.vue'
 
 // 当前激活的菜单
 const activeMenu = ref('profile')

@@ -53,7 +53,7 @@
           <!-- 用户信息 -->
           <el-dropdown @command="handleCommand">
             <div class="user-info">
-              <el-avatar :size="32" :src="userInfo?.avatar" class="user-avatar">
+              <el-avatar :size="32" :src="userAvatarUrl" class="user-avatar">
                 <el-icon><User /></el-icon>
               </el-avatar>
               <span class="user-name">{{ userInfo?.realName || userInfo?.username }}</span>
@@ -100,6 +100,16 @@ const appStore = useAppStore()
 
 // 用户信息
 const userInfo = computed(() => userStore.userInfo)
+
+// 用户头像URL（处理路径前缀）
+const userAvatarUrl = computed(() => {
+  const avatar = userInfo.value?.avatar
+  if (!avatar) return ''
+  if (avatar.startsWith('http://') || avatar.startsWith('https://')) {
+    return avatar
+  }
+  return '/api' + avatar
+})
 
 // 侧边栏折叠状态
 const isCollapse = computed(() => !appStore.sidebar.opened)
