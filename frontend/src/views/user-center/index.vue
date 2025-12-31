@@ -82,8 +82,9 @@ const handleMenuSelect = (index) => {
   .page-header {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 2px solid #e4e7ed;
-
+    padding-left: 30px;
+    padding-top: 10px;
+    border-bottom: 2px solid #e4e7e
     h1 {
       margin: 0;
       font-size: 28px;

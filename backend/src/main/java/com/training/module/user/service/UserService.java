@@ -1,8 +1,7 @@
 package com.training.module.user.service;
 
-import com.training.module.user.dto.ChangePasswordDTO;
-import com.training.module.user.dto.UpdateUserExtendedProfileDTO;
-import com.training.module.user.dto.UpdateUserProfileDTO;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.training.module.user.dto.*;
 import com.training.module.user.vo.UserExtendedProfileVO;
 import com.training.module.user.vo.UserProfileVO;
 import org.springframework.web.multipart.MultipartFile;
@@ -67,4 +66,53 @@ public interface UserService {
      * @return 头像URL
      */
     String updateAvatar(MultipartFile file);
+
+    // ==================== 管理员专用方法 ====================
+
+    /**
+     * 分页查询用户列表（管理员）
+     *
+     * @param queryDTO 查询条件
+     * @return 用户分页数据
+     */
+    Page<UserProfileVO> getUserPage(UserQueryDTO queryDTO);
+
+    /**
+     * 创建用户（管理员）
+     *
+     * @param createDTO 创建请求
+     * @return 用户ID
+     */
+    Long createUser(CreateUserDTO createDTO);
+
+    /**
+     * 更新用户信息（管理员）
+     *
+     * @param userId 用户ID
+     * @param updateDTO 更新请求
+     * @return 更新后的用户资料
+     */
+    UserProfileVO updateUser(Long userId, UpdateUserDTO updateDTO);
+
+    /**
+     * 删除用户（管理员）
+     *
+     * @param userId 用户ID
+     */
+    void deleteUser(Long userId);
+
+    /**
+     * 批量删除用户（管理员）
+     *
+     * @param userIds 用户ID列表
+     */
+    void batchDeleteUsers(java.util.List<Long> userIds);
+
+    /**
+     * 重置用户密码（管理员）
+     *
+     * @param userId 用户ID
+     * @param newPassword 新密码
+     */
+    void resetPassword(Long userId, String newPassword);
 }

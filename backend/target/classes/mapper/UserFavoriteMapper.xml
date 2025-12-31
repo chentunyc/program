@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.module.user.mapper.UserFavoriteMapper">
+
+    <!-- 收藏VO结果映射 -->
+    <resultMap id="FavoriteVOResultMap" type="com.training.module.user.vo.FavoriteVO">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="resource_type" property="resourceType"/>
+        <result column="resource_id" property="resourceId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="resource_name" property="resourceName"/>
+        <result column="description" property="description"/>
+        <result column="cover_image" property="coverImage"/>
+        <result column="view_count" property="viewCount"/>
+        <result column="download_count" property="downloadCount"/>
+        <result column="resource_type_name" property="resourceTypeName"/>
+    </resultMap>
+
+    <!-- 分页查询用户收藏（带资源详情） -->
+    <select id="selectFavoritePage" resultMap="FavoriteVOResultMap">
+        SELECT
+            f.id,
+            f.user_id,
+            f.resource_type,
+            f.resource_id,
+            f.create_time,
+            r.resource_name,
+            r.description,
+            r.cover_image,
+            r.view_count,
+            r.download_count,
+            CASE f.resource_type
+                WHEN 'SIMULATION' THEN '虚拟仿真'
+                WHEN 'VIDEO' THEN '视频'
+                WHEN 'AUDIO' THEN '音频'
+                WHEN 'DOCUMENT' THEN '文档'
+                ELSE '其他'
+            END AS resource_type_name
+        FROM t_user_favorite f
+        LEFT JOIN t_resource r ON f.resource_id = r.id AND f.resource_type = 'RESOURCE'
+        WHERE f.user_id = #{userId}
+        <if test="resourceType != null and resourceType != ''">
+            AND f.resource_type = #{resourceType}
+        </if>
+        ORDER BY f.create_time DESC
+    </select>
+
+    <!-- 检查是否已收藏 -->
+    <select id="selectByUserAndResource" resultType="com.training.module.user.entity.UserFavorite">
+        SELECT id, user_id, resource_type, resource_id, create_time
+        FROM t_user_favorite
+        WHERE user_id = #{userId}
+          AND resource_type = #{resourceType}
+          AND resource_id = #{resourceId}
+    </select>
+
+    <!-- 统计用户收藏数量 -->
+    <select id="countByUserIdAndType" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM t_user_favorite
+        WHERE user_id = #{userId}
+        <if test="resourceType != null and resourceType != ''">
+            AND resource_type = #{resourceType}
+        </if>
+    </select>
+
+</mapper>

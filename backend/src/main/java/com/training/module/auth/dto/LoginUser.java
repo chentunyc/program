@@ -112,16 +112,28 @@ public class LoginUser implements UserDetails {
 
     /**
      * 获取权限列表
+     * 包含角色和权限
      */
     @Override
     @JsonIgnore
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (permissions != null && !permissions.isEmpty()) {
-            return permissions.stream()
+        java.util.Set<GrantedAuthority> authorities = new java.util.HashSet<>();
+
+        // 添加角色（角色也作为权限）
+        if (roles != null && !roles.isEmpty()) {
+            authorities.addAll(roles.stream()
                     .map(SimpleGrantedAuthority::new)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.toSet()));
         }
-        return List.of();
+
+        // 添加权限
+        if (permissions != null && !permissions.isEmpty()) {
+            authorities.addAll(permissions.stream()
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toSet()));
+        }
+
+        return authorities;
     }
 
     @Override

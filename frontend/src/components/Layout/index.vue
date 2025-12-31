@@ -17,8 +17,9 @@
         router
       >
         <template v-for="route in menuRoutes" :key="route.path">
+          <!-- 没有子菜单的项 -->
           <el-menu-item
-            v-if="!route.meta?.hidden"
+            v-if="!route.children || route.children.length === 0"
             :index="route.path"
             @click="handleMenuClick(route)"
           >
@@ -27,6 +28,26 @@
             </el-icon>
             <template #title>{{ route.meta.title }}</template>
           </el-menu-item>
+
+          <!-- 有子菜单的项 -->
+          <el-sub-menu v-else :index="route.path">
+            <template #title>
+              <el-icon>
+                <component :is="route.meta.icon" />
+              </el-icon>
+              <span>{{ route.meta.title }}</span>
+            </template>
+            <el-menu-item
+              v-for="child in route.children"
+              :key="child.path"
+              :index="route.path + '/' + child.path"
+            >
+              <el-icon v-if="child.meta?.icon">
+                <component :is="child.meta.icon" />
+              </el-icon>
+              <template #title>{{ child.meta.title }}</template>
+            </el-menu-item>
+          </el-sub-menu>
         </template>
       </el-menu>
     </el-aside>
@@ -123,8 +144,30 @@ const activeMenu = computed(() => route.path)
 
 // 菜单路由列表
 const menuRoutes = computed(() => {
-  return router.getRoutes().filter((route) => {
-    return route.path.startsWith('/') && route.meta?.title && !route.meta?.hidden
+  const layoutRoute = router.getRoutes().find(r => r.name === 'Layout')
+  if (!layoutRoute || !layoutRoute.children) {
+    return []
+  }
+
+  // 过滤菜单项
+  return layoutRoute.children.filter((route) => {
+    // 隐藏的路由不显示
+    if (route.meta?.hidden) {
+      return false
+    }
+
+    // 需要管理员权限的路由，检查用户是否为管理员
+    if (route.meta?.requireAdmin && !userStore.isAdmin()) {
+      return false
+    }
+
+    return route.meta?.title
+  }).map(route => {
+    // 处理完整路径
+    return {
+      ...route,
+      path: '/' + route.path
+    }
   })
 })
 
@@ -227,8 +270,40 @@ const handleLogout = () => {
       }
     }
 
-    :deep(.el-icon) {
-      color: inherit;
+    :deep(.el-sub-menu) {
+      .el-sub-menu__title {
+        color: rgba(255, 255, 255, 0.75);
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      .el-icon {
+        color: inherit;
+      }
+
+      // 子菜单容器
+      .el-menu {
+        background-color: #000c17;
+      }
+
+      // 子菜单项样式
+      .el-menu-item {
+        color: rgba(255, 255, 255, 0.75);
+        background-color: #000c17;
+
+        &:hover {
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        &.is-active {
+          color: #fff;
+          background-color: #1890ff;
+        }
+      }
     }
   }
 }

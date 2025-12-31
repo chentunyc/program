@@ -127,6 +127,53 @@ const routes = [
           icon: 'Share',
           requireAuth: true
         }
+      },
+      // 管理员专用路由
+      {
+        path: 'admin',
+        name: 'Admin',
+        redirect: '/admin/users',
+        meta: {
+          title: '平台管理',
+          icon: 'Setting',
+          requireAuth: true,
+          requireAdmin: true
+        },
+        children: [
+          {
+            path: 'users',
+            name: 'AdminUsers',
+            component: () => import('@/views/admin/users/index.vue'),
+            meta: {
+              title: '用户管理',
+              icon: 'User',
+              requireAuth: true,
+              requireAdmin: true
+            }
+          },
+          {
+            path: 'news',
+            name: 'AdminNews',
+            component: () => import('@/views/admin/news/index.vue'),
+            meta: {
+              title: '新闻管理',
+              icon: 'Tickets',
+              requireAuth: true,
+              requireAdmin: true
+            }
+          },
+          {
+            path: 'settings',
+            name: 'AdminSettings',
+            component: () => import('@/views/admin/settings/index.vue'),
+            meta: {
+              title: '平台设置',
+              icon: 'Tools',
+              requireAuth: true,
+              requireAdmin: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -177,7 +224,13 @@ router.beforeEach((to, from, next) => {
         userStore
           .getUserInfo()
           .then(() => {
-            next()
+            // 检查管理员权限
+            if (to.meta.requireAdmin && !userStore.isAdmin()) {
+              ElMessage.error('您没有权限访问该页面')
+              next('/home')
+            } else {
+              next()
+            }
           })
           .catch(() => {
             ElMessage.error('获取用户信息失败')
@@ -185,7 +238,13 @@ router.beforeEach((to, from, next) => {
             next('/login')
           })
       } else {
-        next()
+        // 检查管理员权限
+        if (to.meta.requireAdmin && !userStore.isAdmin()) {
+          ElMessage.error('您没有权限访问该页面')
+          next('/home')
+        } else {
+          next()
+        }
       }
     } else {
       // 未登录,跳转到登录页

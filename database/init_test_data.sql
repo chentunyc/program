@@ -51,12 +51,12 @@ INSERT INTO t_permission (id, permission_name, permission_code, permission_type,
 -- 4. 插入用户数据（修复版）
 -- ===================================
 -- 密码说明（已使用BCrypt加密）：
--- admin123  -> $2a$12$zo8A3ocPhGm5MqSiVl.6eupsgdl7qIbfncQuqbL.dt92h8CZb8wYu
+-- admin123  ->  $2a$10$5t6I9xR.1qywJjtpDmU/G.bLIU0UEvCWwa6EYldgyQhyE3Yy8oy7G
 -- teacher123 -> $2a$12$20QmUSDtJaX.ehG8/2BA7.E8dyJgUG7gQKGO5yCrD1.8s1OHWv0fS
 -- student123 -> $2a$12$q86RfaXgVNLZ31xLV2NXjeErQC77xMnkUz8xVmMzwQesxumcZzVFC
 
 INSERT INTO t_user (id, username, password, real_name, employee_no, gender, phone, email, avatar, status, is_deleted, create_time, update_time, last_login_time) VALUES
-                                                                                                                                                                     (1, 'admin', '$2a$12$zo8A3ocPhGm5MqSiVl.6eupsgdl7qIbfncQuqbL.dt92h8CZb8wYu', '系统管理员', 'A001', 1, '13800138000', 'admin@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
+                                                                                                                                                                     (1, 'admin', '$2a$10$5t6I9xR.1qywJjtpDmU/G.bLIU0UEvCWwa6EYldgyQhyE3Yy8oy7G', '系统管理员', 'A001', 1, '13800138000', 'admin@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
                                                                                                                                                                      (2, 'teacher', '$2a$12$20QmUSDtJaX.ehG8/2BA7.E8dyJgUG7gQKGO5yCrD1.8s1OHWv0fS', '张老师', 'T001', 1, '13800138001', 'teacher@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
                                                                                                                                                                      (3, 'student', '$2a$12$q86RfaXgVNLZ31xLV2NXjeErQC77xMnkUz8xVmMzwQesxumcZzVFC', '李同学', 'S001', 2, '13800138002', 'student@example.com', NULL, 1, 0, NOW(), NOW(), NULL);
 
