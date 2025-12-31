@@ -26,6 +26,10 @@
               <el-icon><Lock /></el-icon>
               <span>安全设置</span>
             </el-menu-item>
+            <el-menu-item index="favorites">
+              <el-icon><Star /></el-icon>
+              <span>我的收藏</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
 
@@ -45,6 +49,11 @@
           <div v-show="activeMenu === 'security'" class="content-section">
             <SecuritySettings />
           </div>
+
+          <!-- 我的收藏 -->
+          <div v-show="activeMenu === 'favorites'" class="content-section">
+            <Favorites />
+          </div>
         </el-main>
       </el-container>
     </div>
@@ -53,10 +62,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import { User, Setting, Lock } from '@element-plus/icons-vue'
+import { User, Setting, Lock, Star } from '@element-plus/icons-vue'
 import ProfileInfo from './components/ProfileInfo.vue'
 import AccountSettings from './components/AccountSettings.vue'
 import SecuritySettings from './components/SecuritySettings.vue'
+import Favorites from './components/Favorites.vue'
 
 // 当前激活的菜单
 const activeMenu = ref('profile')

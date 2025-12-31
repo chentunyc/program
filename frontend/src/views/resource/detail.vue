@@ -83,6 +83,15 @@
                 <el-icon><Download /></el-icon>
                 下载资源
               </el-button>
+              <el-button
+                :type="isFavorited ? 'warning' : 'default'"
+                size="large"
+                @click="handleFavorite"
+                :loading="favoriteLoading"
+              >
+                <el-icon><Star /></el-icon>
+                {{ isFavorited ? '已收藏' : '收藏' }}
+              </el-button>
             </div>
           </div>
         </div>
@@ -238,6 +247,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { getResourceById, getResourcePage, recordDownload } from '@/api/resource'
+import { addFavorite, removeFavorite, checkFavorite } from '@/api/favorite'
 import dayjs from 'dayjs'
 
 const route = useRoute()
@@ -247,6 +257,8 @@ const router = useRouter()
 const resourceDetail = ref(null)
 const relatedResources = ref([])
 const loading = ref(false)
+const isFavorited = ref(false)
+const favoriteLoading = ref(false)
 
 /**
  * 是否有下载链接
@@ -345,11 +357,26 @@ const getDetail = async () => {
     resourceDetail.value = data
     // 获取相关资源
     getRelatedResources()
+    // 检查收藏状态
+    checkFavoriteStatus()
   } catch (error) {
     console.error('获取资源详情失败:', error)
     ElMessage.error(error.message || '获取资源详情失败')
   } finally {
     loading.value = false
+  }
+}
+
+/**
+ * 检查收藏状态
+ */
+const checkFavoriteStatus = async () => {
+  if (!resourceDetail.value) return
+  try {
+    const { data } = await checkFavorite('RESOURCE', resourceDetail.value.id)
+    isFavorited.value = data
+  } catch (error) {
+    console.error('检查收藏状态失败:', error)
   }
 }
 
@@ -439,6 +466,36 @@ const handleDownload = async () => {
   link.download = detail.resourceName
   link.target = '_blank'
   link.click()
+}
+
+/**
+ * 处理收藏/取消收藏
+ */
+const handleFavorite = async () => {
+  if (!resourceDetail.value) return
+
+  favoriteLoading.value = true
+  try {
+    if (isFavorited.value) {
+      // 取消收藏
+      await removeFavorite('RESOURCE', resourceDetail.value.id)
+      isFavorited.value = false
+      ElMessage.success('已取消收藏')
+    } else {
+      // 添加收藏
+      await addFavorite({
+        resourceType: 'RESOURCE',
+        resourceId: resourceDetail.value.id
+      })
+      isFavorited.value = true
+      ElMessage.success('收藏成功')
+    }
+  } catch (error) {
+    console.error('收藏操作失败:', error)
+    ElMessage.error(error.message || '操作失败')
+  } finally {
+    favoriteLoading.value = false
+  }
 }
 
 /**
