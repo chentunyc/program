@@ -1,0 +1,83 @@
+2025-12-31 16:28:52.410 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 32840 (E:\homework\2025last\work\program\backend\target\classes started by pzq80 in E:\homework\2025last\work\program)
+2025-12-31 16:28:52.411 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 16:28:52.411 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 16:28:53.073 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 16:28:53.076 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 16:28:53.098 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-12-31 16:28:53.657 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 16:28:53.665 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 16:28:53.666 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 16:28:53.715 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 16:28:53.715 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1270 ms
+2025-12-31 16:28:53.978 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 16:28:53.995 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 16:28:54.173 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 16:28:54.751 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@14b96c1e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@229514ff, org.springframework.security.web.context.SecurityContextHolderFilter@66226ab, org.springframework.security.web.header.HeaderWriterFilter@29394966, org.springframework.web.filter.CorsFilter@e07b4db, org.springframework.security.web.authentication.logout.LogoutFilter@6e8aea7e, com.training.common.config.JwtAuthenticationFilter@8bc0696, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4713b631, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a0d2c80, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@664254b6, org.springframework.security.web.session.SessionManagementFilter@2173e4d5, org.springframework.security.web.access.ExceptionTranslationFilter@65e92505, org.springframework.security.web.access.intercept.AuthorizationFilter@609ad016]
+2025-12-31 16:28:54.886 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@15eebbff
+2025-12-31 16:28:55.161 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 16:28:55.169 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.135 seconds (process running for 3.732)
+2025-12-31 16:29:02.865 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 16:29:02.866 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 16:29:02.868 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-31 16:29:03.411 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:29:04.731 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:30:03.522 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:31:18.673 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:46:41.564 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 16:46:41.571 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 16:48:51.879 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 42404 (E:\homework\2025last\work\program\backend\target\classes started by pzq80 in E:\homework\2025last\work\program)
+2025-12-31 16:48:51.880 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 16:48:51.880 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 16:48:52.481 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 16:48:52.482 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 16:48:52.502 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-12-31 16:48:52.981 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 16:48:52.991 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 16:48:52.991 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 16:48:53.039 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 16:48:53.039 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1130 ms
+2025-12-31 16:48:53.307 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 16:48:53.325 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 16:48:53.505 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 16:48:54.075 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@594c66c3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64e657b0, org.springframework.security.web.context.SecurityContextHolderFilter@446cc036, org.springframework.security.web.header.HeaderWriterFilter@7f94541b, org.springframework.web.filter.CorsFilter@786ff0ea, org.springframework.security.web.authentication.logout.LogoutFilter@578d5d02, com.training.common.config.JwtAuthenticationFilter@17c53dfb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ad198c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@481bae3f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50013a15, org.springframework.security.web.session.SessionManagementFilter@4cb773c5, org.springframework.security.web.access.ExceptionTranslationFilter@6e7f29d5, org.springframework.security.web.access.intercept.AuthorizationFilter@7d3815f7]
+2025-12-31 16:48:54.180 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1c80e49b
+2025-12-31 16:48:54.359 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 16:48:54.365 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 2.808 seconds (process running for 3.335)
+2025-12-31 16:49:00.490 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 16:49:00.490 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 16:49:00.492 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-31 16:49:00.976 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:49:02.723 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:49:05.275 [http-nio-8080-exec-3] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:49:10.297 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 16:49:10.343 [http-nio-8080-exec-4] INFO  c.training.module.news.controller.NewsController - 分页查询新闻列表: NewsQueryRequest(keyword=, category=null, status=1, isTop=null, isRecommend=null, current=1, size=12)
+2025-12-31 16:52:35.157 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 16:52:35.161 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-31 17:13:15.623 [main] INFO  com.training.VirtualTrainingApplication - Starting VirtualTrainingApplication using Java 21.0.8 with PID 37068 (E:\homework\2025last\work\program\backend\target\classes started by pzq80 in E:\homework\2025last\work\program)
+2025-12-31 17:13:15.623 [main] DEBUG com.training.VirtualTrainingApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-31 17:13:15.624 [main] INFO  com.training.VirtualTrainingApplication - The following 1 profile is active: "dev"
+2025-12-31 17:13:16.223 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-31 17:13:16.226 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-31 17:13:16.251 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-12-31 17:13:16.780 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-31 17:13:16.797 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-31 17:13:16.798 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-31 17:13:16.852 [main] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2025-12-31 17:13:16.853 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1203 ms
+2025-12-31 17:13:17.112 [main] DEBUG c.training.common.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-12-31 17:13:17.132 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-31 17:13:17.314 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-31 17:13:17.916 [main] INFO  o.s.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6fe243a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c8a9266, org.springframework.security.web.context.SecurityContextHolderFilter@75dbe490, org.springframework.security.web.header.HeaderWriterFilter@20db19ff, org.springframework.web.filter.CorsFilter@4fa0ee7e, org.springframework.security.web.authentication.logout.LogoutFilter@6ad198c9, com.training.common.config.JwtAuthenticationFilter@52cb52bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a96f3cb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e0704e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63ad5fe7, org.springframework.security.web.session.SessionManagementFilter@1a947424, org.springframework.security.web.access.ExceptionTranslationFilter@247dcbba, org.springframework.security.web.access.intercept.AuthorizationFilter@183a508b]
+2025-12-31 17:13:18.056 [main] INFO  c.b.m.e.spring.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@30990c1b
+2025-12-31 17:13:18.259 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api'
+2025-12-31 17:13:18.267 [main] INFO  com.training.VirtualTrainingApplication - Started VirtualTrainingApplication in 3.051 seconds (process running for 3.626)
+2025-12-31 17:13:27.398 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-31 17:13:27.398 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-31 17:13:27.399 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-31 17:13:27.857 [http-nio-8080-exec-1] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 17:13:28.749 [http-nio-8080-exec-4] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 17:13:32.009 [http-nio-8080-exec-6] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 17:13:33.717 [http-nio-8080-exec-2] DEBUG c.training.common.config.JwtAuthenticationFilter - 用户 admin 认证成功
+2025-12-31 17:13:33.718 [http-nio-8080-exec-2] INFO  c.training.module.user.controller.UserController - 获取当前用户资料
+2025-12-31 17:13:40.836 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-31 17:13:40.841 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
