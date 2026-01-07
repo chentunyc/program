@@ -61,8 +61,8 @@ INSERT INTO t_user (id, username, password, real_name, employee_no, gender, phon
 (1, 'admin', '$2a$10$5t6I9xR.1qywJjtpDmU/G.bLIU0UEvCWwa6EYldgyQhyE3Yy8oy7G', '系统管理员', 'A001', 1, '13800138000', 'admin@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
 (2, 'teacher', '$2a$12$20QmUSDtJaX.ehG8/2BA7.E8dyJgUG7gQKGO5yCrD1.8s1OHWv0fS', '张老师', 'T001', 1, '13800138001', 'teacher@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
 (3, 'student', '$2a$12$q86RfaXgVNLZ31xLV2NXjeErQC77xMnkUz8xVmMzwQesxumcZzVFC', '李同学', 'S001', 2, '13800138002', 'student@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
-(4, 'guest', '$2a$12$gTDrsYz/wp.R8veyFy79sOZzsDGjgNiTgEBv074Ja1k5ief.SkBV.', '李访客', 'G001', 2, '13800138002', 'student@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
-(5, 'dataadmin', '$2a$12$EmQNlYs0di9It9kNlgj/feOeIwQokPMVWjVa5Y/PweBgJTyuT8l0y', '李资料管理员', 'D001', 2, '13800138002', 'student@example.com', NULL, 1, 0, NOW(), NOW(), NULL);
+(4, 'guest', '$2a$12$gTDrsYz/wp.R8veyFy79sOZzsDGjgNiTgEBv074Ja1k5ief.SkBV.', '李访客', 'G001', 2, '13800138003', 'guest@example.com', NULL, 1, 0, NOW(), NOW(), NULL),
+(5, 'dataadmin', '$2a$12$EmQNlYs0di9It9kNlgj/feOeIwQokPMVWjVa5Y/PweBgJTyuT8l0y', '李资料管理员', 'D001', 2, '13800138004', 'dataadmin@example.com', NULL, 1, 0, NOW(), NOW(), NULL);
 
 -- ===================================
 -- 5. 分配角色权限

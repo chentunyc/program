@@ -115,4 +115,13 @@ public interface UserService {
      * @param newPassword 新密码
      */
     void resetPassword(Long userId, String newPassword);
+
+    /**
+     * 检查员工编号是否可用（管理员）
+     *
+     * @param employeeNo 员工编号
+     * @param excludeUserId 需要排除的用户ID（编辑时传入当前用户ID）
+     * @return true 可用，false 已被使用
+     */
+    boolean checkEmployeeNo(String employeeNo, Long excludeUserId);
 }

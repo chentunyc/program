@@ -188,4 +188,18 @@ public class UserController {
         userService.resetPassword(userId, newPassword);
         return Result.successMsg("密码重置成功");
     }
+
+    /**
+     * 检查员工编号是否可用（管理员）
+     */
+    @Operation(summary = "检查员工编号是否可用")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/admin/check-employee-no")
+    public Result<Boolean> checkEmployeeNo(
+            @RequestParam String employeeNo,
+            @RequestParam(required = false) Long excludeUserId) {
+        log.info("管理员检查员工编号: employeeNo={}, excludeUserId={}", employeeNo, excludeUserId);
+        boolean available = userService.checkEmployeeNo(employeeNo, excludeUserId);
+        return Result.success(available);
+    }
 }

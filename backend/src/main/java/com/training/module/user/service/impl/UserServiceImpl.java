@@ -451,12 +451,38 @@ public class UserServiceImpl implements UserService {
             throw new BusinessException("用户名已存在");
         }
 
+        // 验证角色
+        if (createDTO.getRoleId() == null) {
+            throw new BusinessException("请选择角色");
+        }
+        String roleCode = roleMapper.selectRoleCodeById(createDTO.getRoleId());
+        if (roleCode == null) {
+            throw new BusinessException("角色不存在");
+        }
+
+        // 处理编号
+        String employeeNo;
+        if (Boolean.TRUE.equals(createDTO.getAutoGenerateNo())) {
+            // 自动生成编号
+            employeeNo = generateEmployeeNo(roleCode);
+        } else {
+            employeeNo = createDTO.getEmployeeNo();
+            // 手动输入的编号需要验证前缀
+            if (StrUtil.isNotBlank(employeeNo)) {
+                validateEmployeeNoPrefix(employeeNo, roleCode);
+                // 检查编号是否已存在
+                if (userMapper.countByEmployeeNo(employeeNo) > 0) {
+                    throw new BusinessException("编号已被使用");
+                }
+            }
+        }
+
         // 创建用户
         User user = new User();
         user.setUsername(createDTO.getUsername());
         user.setPassword(passwordEncoder.encode(createDTO.getPassword()));
         user.setRealName(createDTO.getRealName());
-        user.setEmployeeNo(createDTO.getEmployeeNo());
+        user.setEmployeeNo(employeeNo);
         user.setStatus(1); // 默认正常状态
 
         int result = userMapper.insert(user);
@@ -464,12 +490,11 @@ public class UserServiceImpl implements UserService {
             throw new BusinessException("创建用户失败");
         }
 
-        // 分配角色
-        if (createDTO.getRoleIds() != null && !createDTO.getRoleIds().isEmpty()) {
-            saveUserRoles(user.getId(), createDTO.getRoleIds());
-        }
+        // 分配角色（单角色）
+        saveUserRole(user.getId(), createDTO.getRoleId());
 
-        log.info("管理员创建用户成功, userId: {}, username: {}", user.getId(), user.getUsername());
+        log.info("管理员创建用户成功, userId: {}, username: {}, employeeNo: {}",
+                user.getId(), user.getUsername(), employeeNo);
 
         return user.getId();
     }
@@ -484,6 +509,33 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.selectById(userId);
         if (user == null) {
             throw new BusinessException("用户不存在");
+        }
+
+        // 获取角色编码（用于验证编号前缀）
+        String roleCode = null;
+        if (updateDTO.getRoleId() != null) {
+            roleCode = roleMapper.selectRoleCodeById(updateDTO.getRoleId());
+            if (roleCode == null) {
+                throw new BusinessException("角色不存在");
+            }
+        } else {
+            // 如果没有更新角色，使用用户当前的角色
+            List<String> roles = userMapper.selectRolesByUserId(userId);
+            if (!roles.isEmpty()) {
+                roleCode = roles.get(0);
+            }
+        }
+
+        // 检查员工编号
+        if (StrUtil.isNotBlank(updateDTO.getEmployeeNo())) {
+            // 验证前缀与角色匹配
+            if (roleCode != null) {
+                validateEmployeeNoPrefix(updateDTO.getEmployeeNo(), roleCode);
+            }
+            // 检查是否已被其他用户使用
+            if (userMapper.countByEmployeeNoExcludeUser(updateDTO.getEmployeeNo(), userId) > 0) {
+                throw new BusinessException("编号已被使用");
+            }
         }
 
         // 构建更新条件
@@ -529,14 +581,12 @@ public class UserServiceImpl implements UserService {
             }
         }
 
-        // 更新角色
-        if (updateDTO.getRoleIds() != null) {
+        // 更新角色（单角色）
+        if (updateDTO.getRoleId() != null) {
             // 删除旧角色
             userRoleMapper.deleteByUserId(userId);
             // 添加新角色
-            if (!updateDTO.getRoleIds().isEmpty()) {
-                saveUserRoles(userId, updateDTO.getRoleIds());
-            }
+            saveUserRole(userId, updateDTO.getRoleId());
         }
 
         log.info("管理员更新用户信息成功, userId: {}", userId);
@@ -631,7 +681,120 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 保存用户角色关联
+     * 检查员工编号是否可用（管理员）
+     */
+    @Override
+    public boolean checkEmployeeNo(String employeeNo, Long excludeUserId) {
+        if (StrUtil.isBlank(employeeNo)) {
+            return true;
+        }
+
+        if (excludeUserId != null) {
+            // 编辑时，排除当前用户
+            return userMapper.countByEmployeeNoExcludeUser(employeeNo, excludeUserId) == 0;
+        } else {
+            // 新建时，检查所有用户
+            return userMapper.countByEmployeeNo(employeeNo) == 0;
+        }
+    }
+
+    /**
+     * 验证编号前缀与角色是否匹配
+     */
+    private void validateEmployeeNoPrefix(String employeeNo, String roleCode) {
+        if (StrUtil.isBlank(employeeNo) || StrUtil.isBlank(roleCode)) {
+            return;
+        }
+
+        String expectedPrefix = getRolePrefix(roleCode);
+        String actualPrefix = employeeNo.substring(0, 1).toUpperCase();
+
+        if (!expectedPrefix.equals(actualPrefix)) {
+            throw new BusinessException("编号前缀与角色不匹配，" + getRoleName(roleCode) + "的编号应以 " + expectedPrefix + " 开头");
+        }
+    }
+
+    /**
+     * 生成员工编号
+     * 规则: 角色前缀 + 3位序号
+     * A = ADMIN, T = TEACHER, S = STUDENT, G = GUEST, D = DATA_ADMIN
+     */
+    private String generateEmployeeNo(String roleCode) {
+        // 获取角色前缀
+        String prefix = getRolePrefix(roleCode);
+
+        // 查询当前最大编号
+        String maxNo = userMapper.selectMaxEmployeeNo(prefix);
+
+        int nextNo = 1;
+        if (StrUtil.isNotBlank(maxNo) && maxNo.length() > 1) {
+            try {
+                // 提取数字部分
+                String numPart = maxNo.substring(1);
+                nextNo = Integer.parseInt(numPart) + 1;
+            } catch (NumberFormatException e) {
+                log.warn("解析编号失败: {}", maxNo);
+            }
+        }
+
+        // 格式化为3位数字
+        return String.format("%s%03d", prefix, nextNo);
+    }
+
+    /**
+     * 获取角色对应的编号前缀
+     */
+    private String getRolePrefix(String roleCode) {
+        switch (roleCode) {
+            case "ADMIN":
+                return "A";
+            case "TEACHER":
+                return "T";
+            case "STUDENT":
+                return "S";
+            case "GUEST":
+                return "G";
+            case "DATA_ADMIN":
+                return "D";
+            default:
+                return "U"; // 未知角色默认前缀
+        }
+    }
+
+    /**
+     * 获取角色中文名称
+     */
+    private String getRoleName(String roleCode) {
+        switch (roleCode) {
+            case "ADMIN":
+                return "管理员";
+            case "TEACHER":
+                return "教师";
+            case "STUDENT":
+                return "学生";
+            case "GUEST":
+                return "访客";
+            case "DATA_ADMIN":
+                return "资料管理员";
+            default:
+                return "未知角色";
+        }
+    }
+
+    /**
+     * 保存单个用户角色关联
+     */
+    private void saveUserRole(Long userId, Long roleId) {
+        UserRole userRole = new UserRole();
+        userRole.setUserId(userId);
+        userRole.setRoleId(roleId);
+        userRole.setCreateTime(LocalDateTime.now());
+        userRole.setCreateBy(SecurityUtils.getUserId());
+        userRoleMapper.insert(userRole);
+    }
+
+    /**
+     * 保存用户角色关联（批量，保留兼容性）
      */
     private void saveUserRoles(Long userId, List<Long> roleIds) {
         List<UserRole> userRoles = new ArrayList<>();

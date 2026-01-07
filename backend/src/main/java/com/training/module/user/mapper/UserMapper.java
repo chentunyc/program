@@ -75,4 +75,23 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Select("SELECT COUNT(*) FROM t_user WHERE email = #{email}")
     Long countByEmail(String email);
+
+    /**
+     * 检查员工编号是否已被使用（包括已删除的用户，因为数据库唯一索引不区分）
+     *
+     * @param employeeNo 员工编号
+     * @return 数量
+     */
+    @Select("SELECT COUNT(*) FROM t_user WHERE employee_no = #{employeeNo}")
+    Long countByEmployeeNo(String employeeNo);
+
+    /**
+     * 检查员工编号是否已被使用（排除指定用户，用于更新时验证）
+     *
+     * @param employeeNo 员工编号
+     * @param excludeUserId 需要排除的用户ID
+     * @return 数量
+     */
+    @Select("SELECT COUNT(*) FROM t_user WHERE employee_no = #{employeeNo} AND id != #{excludeUserId}")
+    Long countByEmployeeNoExcludeUser(String employeeNo, Long excludeUserId);
 }

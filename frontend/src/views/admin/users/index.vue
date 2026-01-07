@@ -175,12 +175,23 @@
             clearable
           />
         </el-form-item>
-        <el-form-item label="编号">
-          <el-input
-            v-model="userForm.employeeNo"
-            placeholder="学号/工号/访客ID"
-            clearable
-          />
+        <el-form-item label="编号" prop="employeeNo">
+          <div style="display: flex; gap: 10px; align-items: center; width: 100%">
+            <el-input
+              v-model="userForm.employeeNo"
+              :placeholder="employeeNoPlaceholder"
+              :disabled="userForm.autoGenerateNo"
+              clearable
+              style="flex: 1"
+            />
+            <el-checkbox
+              v-if="!isEdit"
+              v-model="userForm.autoGenerateNo"
+              @change="handleAutoGenerateChange"
+            >
+              自动生成
+            </el-checkbox>
+          </div>
         </el-form-item>
         <el-form-item label="性别">
           <el-radio-group v-model="userForm.gender">
@@ -210,12 +221,12 @@
             <el-radio :label="0">禁用</el-radio>
           </el-radio-group>
         </el-form-item>
-        <el-form-item label="角色" prop="roleIds">
+        <el-form-item label="角色" prop="roleId">
           <el-select
-            v-model="userForm.roleIds"
-            multiple
+            v-model="userForm.roleId"
             placeholder="请选择角色"
             style="width: 100%"
+            @change="handleRoleChange"
           >
             <el-option
               v-for="role in roleList"
@@ -266,7 +277,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Delete, Refresh } from '@element-plus/icons-vue'
 import {
@@ -276,7 +287,8 @@ import {
   deleteUser,
   batchDeleteUsers,
   resetPassword,
-  getRoleList
+  getRoleList,
+  checkEmployeeNo
 } from '@/api/admin'
 
 // 组件状态
@@ -317,12 +329,76 @@ const userForm = reactive({
   password: '',
   realName: '',
   employeeNo: '',
+  autoGenerateNo: false,
   gender: 0,
   phone: '',
   email: '',
   status: 1,
-  roleIds: []
+  roleId: null
 })
+
+// 角色编码前缀映射
+const rolePrefixMap = {
+  'ADMIN': 'A',
+  'TEACHER': 'T',
+  'DATA_ADMIN': 'D',
+  'STUDENT': 'S',
+  'GUEST': 'G'
+}
+
+// 获取当前选中角色的编码
+const getSelectedRoleCode = () => {
+  if (!userForm.roleId) return null
+  const role = roleList.value.find(r => r.id === userForm.roleId)
+  return role ? role.roleCode : null
+}
+
+// 编号输入框占位符
+const employeeNoPlaceholder = computed(() => {
+  const roleCode = getSelectedRoleCode()
+  if (roleCode) {
+    const prefix = rolePrefixMap[roleCode] || 'U'
+    return `请输入以 ${prefix} 开头的编号，如 ${prefix}001`
+  }
+  return '请先选择角色'
+})
+
+// 检查编号是否可用的验证器
+const validateEmployeeNo = async (rule, value, callback) => {
+  // 自动生成时跳过验证
+  if (userForm.autoGenerateNo && !isEdit.value) {
+    callback()
+    return
+  }
+
+  if (!value || value.trim() === '') {
+    callback()
+    return
+  }
+
+  // 验证前缀
+  const roleCode = getSelectedRoleCode()
+  if (roleCode) {
+    const expectedPrefix = rolePrefixMap[roleCode] || 'U'
+    const actualPrefix = value.substring(0, 1).toUpperCase()
+    if (actualPrefix !== expectedPrefix) {
+      callback(new Error(`编号必须以 ${expectedPrefix} 开头`))
+      return
+    }
+  }
+
+  try {
+    const excludeUserId = isEdit.value ? userForm.id : null
+    const response = await checkEmployeeNo(value, excludeUserId)
+    if (response.data === true) {
+      callback()
+    } else {
+      callback(new Error('该编号已被使用'))
+    }
+  } catch (error) {
+    callback(new Error('检查编号失败'))
+  }
+}
 
 // 表单验证规则
 const formRules = {
@@ -338,8 +414,11 @@ const formRules = {
     { required: true, message: '请输入真实姓名', trigger: 'blur' },
     { max: 50, message: '姓名长度不能超过50个字符', trigger: 'blur' }
   ],
-  roleIds: [
-    { required: true, message: '请选择至少一个角色', trigger: 'change' }
+  employeeNo: [
+    { validator: validateEmployeeNo, trigger: 'blur' }
+  ],
+  roleId: [
+    { required: true, message: '请选择角色', trigger: 'change' }
   ]
 }
 
@@ -401,6 +480,45 @@ const handleSelectionChange = (selection) => {
   selectedIds.value = selection.map(item => item.id)
 }
 
+// 角色选择变化
+const handleRoleChange = (roleId) => {
+  if (!roleId) {
+    userForm.employeeNo = ''
+    return
+  }
+
+  const role = roleList.value.find(r => r.id === roleId)
+  if (role) {
+    const prefix = rolePrefixMap[role.roleCode] || 'U'
+    // 如果没有勾选自动生成，自动填充前缀
+    if (!userForm.autoGenerateNo) {
+      // 如果当前编号为空或前缀不匹配，自动填充前缀
+      if (!userForm.employeeNo || userForm.employeeNo.substring(0, 1).toUpperCase() !== prefix) {
+        userForm.employeeNo = prefix
+      }
+    }
+  }
+}
+
+// 自动生成开关变化
+const handleAutoGenerateChange = (checked) => {
+  if (checked) {
+    // 勾选自动生成，清空编号输入
+    userForm.employeeNo = ''
+    // 清除验证状态
+    if (formRef.value) {
+      formRef.value.clearValidate('employeeNo')
+    }
+  } else {
+    // 取消勾选，填充前缀
+    const roleCode = getSelectedRoleCode()
+    if (roleCode) {
+      const prefix = rolePrefixMap[roleCode] || 'U'
+      userForm.employeeNo = prefix
+    }
+  }
+}
+
 // 创建用户
 const handleCreate = () => {
   isEdit.value = false
@@ -413,16 +531,28 @@ const handleCreate = () => {
 const handleEdit = (row) => {
   isEdit.value = true
   dialogTitle.value = '编辑用户'
+
+  // 获取用户的角色ID
+  let roleId = null
+  if (row.roles && row.roles.length > 0) {
+    const roleCode = row.roles[0]
+    const role = roleList.value.find(r => r.roleCode === roleCode)
+    if (role) {
+      roleId = role.id
+    }
+  }
+
   Object.assign(userForm, {
     id: row.id,
     username: row.username,
     realName: row.realName,
-    employeeNo: row.employeeNo,
+    employeeNo: row.employeeNo || '',
+    autoGenerateNo: false,
     gender: row.gender ?? 0,
-    phone: row.phone,
-    email: row.email,
+    phone: row.phone || '',
+    email: row.email || '',
     status: row.status,
-    roleIds: []  // 需要从后端获取
+    roleId: roleId
   })
   dialogVisible.value = true
 }
@@ -435,11 +565,12 @@ const resetForm = () => {
     password: '',
     realName: '',
     employeeNo: '',
+    autoGenerateNo: false,
     gender: 0,
     phone: '',
     email: '',
     status: 1,
-    roleIds: []
+    roleId: null
   })
   if (formRef.value) {
     formRef.value.clearValidate()
@@ -467,7 +598,7 @@ const handleSubmit = async () => {
         phone: userForm.phone,
         email: userForm.email,
         status: userForm.status,
-        roleIds: userForm.roleIds
+        roleId: userForm.roleId
       })
       ElMessage.success('用户更新成功')
     } else {
@@ -476,8 +607,9 @@ const handleSubmit = async () => {
         username: userForm.username,
         password: userForm.password,
         realName: userForm.realName,
-        employeeNo: userForm.employeeNo,
-        roleIds: userForm.roleIds
+        employeeNo: userForm.autoGenerateNo ? '' : userForm.employeeNo,
+        autoGenerateNo: userForm.autoGenerateNo,
+        roleId: userForm.roleId
       })
       ElMessage.success('用户创建成功')
     }

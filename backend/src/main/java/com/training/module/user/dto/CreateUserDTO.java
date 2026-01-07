@@ -2,10 +2,9 @@ package com.training.module.user.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * 管理员创建用户请求DTO
@@ -32,9 +31,13 @@ public class CreateUserDTO {
     @Size(max = 50, message = "姓名长度不能超过50个字符")
     private String realName;
 
-    @Schema(description = "编号(学号/工号/访客ID)")
+    @Schema(description = "编号(学号/工号/访客ID)，autoGenerateNo为true时可不填")
     private String employeeNo;
 
-    @Schema(description = "角色ID列表")
-    private List<Long> roleIds;
+    @Schema(description = "是否自动生成编号")
+    private Boolean autoGenerateNo;
+
+    @Schema(description = "角色ID")
+    @NotNull(message = "请选择角色")
+    private Long roleId;
 }

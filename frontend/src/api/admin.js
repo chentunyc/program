@@ -78,3 +78,16 @@ export function getRoleList() {
     method: 'get'
   })
 }
+
+/**
+ * 检查员工编号是否可用（管理员）
+ * @param {string} employeeNo - 员工编号
+ * @param {number} excludeUserId - 排除的用户ID（编辑时传入当前用户ID）
+ */
+export function checkEmployeeNo(employeeNo, excludeUserId) {
+  return request({
+    url: '/v1/user/admin/check-employee-no',
+    method: 'get',
+    params: { employeeNo, excludeUserId }
+  })
+}

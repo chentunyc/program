@@ -4,8 +4,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * 管理员更新用户请求DTO
  *
@@ -35,6 +33,6 @@ public class UpdateUserDTO {
     @Schema(description = "状态:0-禁用,1-正常")
     private Integer status;
 
-    @Schema(description = "角色ID列表")
-    private List<Long> roleIds;
+    @Schema(description = "角色ID")
+    private Long roleId;
 }
