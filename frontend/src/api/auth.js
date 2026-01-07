@@ -40,3 +40,25 @@ export function refreshToken() {
     method: 'post'
   })
 }
+
+/**
+ * 用户注册
+ */
+export function register(data) {
+  return request({
+    url: '/v1/auth/register',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 检查用户名是否可用
+ */
+export function checkUsername(username) {
+  return request({
+    url: '/v1/auth/check-username',
+    method: 'get',
+    params: { username }
+  })
+}

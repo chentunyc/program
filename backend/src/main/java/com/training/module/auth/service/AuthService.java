@@ -2,6 +2,7 @@ package com.training.module.auth.service;
 
 import com.training.module.auth.dto.LoginRequest;
 import com.training.module.auth.dto.LoginUser;
+import com.training.module.auth.dto.RegisterRequest;
 import com.training.module.auth.vo.LoginVO;
 
 /**
@@ -19,6 +20,22 @@ public interface AuthService {
      * @return 登录信息
      */
     LoginVO login(LoginRequest loginRequest);
+
+    /**
+     * 注册
+     *
+     * @param registerRequest 注册请求
+     * @return 用户ID
+     */
+    Long register(RegisterRequest registerRequest);
+
+    /**
+     * 检查用户名是否可用
+     *
+     * @param username 用户名
+     * @return true-可用, false-已存在
+     */
+    boolean checkUsername(String username);
 
     /**
      * 登出

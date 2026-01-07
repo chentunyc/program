@@ -30,6 +30,16 @@ const routes = [
     }
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/register/index.vue'),
+    meta: {
+      title: '注册',
+      requireAuth: false,
+      hidden: true
+    }
+  },
+  {
     path: '/',
     name: 'Layout',
     component: () => import('@/components/Layout/index.vue'),
@@ -255,8 +265,8 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     // 不需要认证
-    if (to.path === '/login' && userStore.token) {
-      // 已登录,访问登录页,跳转到首页
+    if ((to.path === '/login' || to.path === '/register') && userStore.token) {
+      // 已登录,访问登录页或注册页,跳转到首页
       next('/home')
     } else {
       next()

@@ -38,4 +38,41 @@ public interface UserMapper extends BaseMapper<User> {
             "INNER JOIN t_user_role ur ON rp.role_id = ur.role_id " +
             "WHERE ur.user_id = #{userId} AND p.status = 1 AND p.is_deleted = 0")
     List<String> selectPermissionsByUserId(Long userId);
+
+    /**
+     * 获取指定前缀的最大编号
+     *
+     * @param prefix 编号前缀(如 A, T, S, G, D)
+     * @return 最大编号，如 S001
+     */
+    @Select("SELECT employee_no FROM t_user WHERE employee_no LIKE CONCAT(#{prefix}, '%') " +
+            "AND is_deleted = 0 ORDER BY employee_no DESC LIMIT 1")
+    String selectMaxEmployeeNo(String prefix);
+
+    /**
+     * 检查用户名是否存在
+     *
+     * @param username 用户名
+     * @return 数量
+     */
+    @Select("SELECT COUNT(*) FROM t_user WHERE username = #{username} AND is_deleted = 0")
+    Long countByUsername(String username);
+
+    /**
+     * 检查手机号是否已被使用
+     *
+     * @param phone 手机号
+     * @return 数量
+     */
+    @Select("SELECT COUNT(*) FROM t_user WHERE phone = #{phone} AND is_deleted = 0")
+    Long countByPhone(String phone);
+
+    /**
+     * 检查邮箱是否已被使用
+     *
+     * @param email 邮箱
+     * @return 数量
+     */
+    @Select("SELECT COUNT(*) FROM t_user WHERE email = #{email} AND is_deleted = 0")
+    Long countByEmail(String email);
 }

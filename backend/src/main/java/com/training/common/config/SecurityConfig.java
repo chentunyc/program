@@ -74,8 +74,12 @@ public class SecurityConfig {
                 .and()
                 // 配置请求授权
                 .authorizeHttpRequests(auth -> auth
-                        // 登录接口允许匿名访问
-                        .requestMatchers("/v1/auth/login").anonymous()
+                        // 登录、注册接口允许匿名访问
+                        .requestMatchers(
+                                "/v1/auth/login",
+                                "/v1/auth/register",
+                                "/v1/auth/check-username"
+                        ).anonymous()
                         // Swagger文档允许匿名访问
                         .requestMatchers(
                                 "/doc.html",

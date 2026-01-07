@@ -48,6 +48,10 @@
 
       <div class="login-footer">
         <p>默认账号: admin / admin123</p>
+        <p class="register-link">
+          还没有账号？
+          <el-link type="primary" @click="goToRegister">立即注册</el-link>
+        </p>
       </div>
     </div>
   </div>
@@ -109,6 +113,13 @@ const handleLogin = async () => {
     }
   })
 }
+
+/**
+ * 跳转到注册页
+ */
+const goToRegister = () => {
+  router.push('/register')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -163,6 +174,11 @@ const handleLogin = async () => {
   p {
     font-size: 13px;
     color: #909399;
+  }
+
+  .register-link {
+    margin-top: 10px;
+    color: #606266;
   }
 }
 

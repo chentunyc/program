@@ -9,16 +9,22 @@ import com.training.common.utils.RedisUtils;
 import com.training.common.utils.SecurityUtils;
 import com.training.module.auth.dto.LoginRequest;
 import com.training.module.auth.dto.LoginUser;
+import com.training.module.auth.dto.RegisterRequest;
 import com.training.module.auth.service.AuthService;
 import com.training.module.auth.vo.LoginVO;
+import com.training.module.role.mapper.RoleMapper;
 import com.training.module.user.entity.User;
+import com.training.module.user.entity.UserRole;
 import com.training.module.user.mapper.UserMapper;
+import com.training.module.user.mapper.UserRoleMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -49,6 +55,15 @@ public class AuthServiceImpl implements AuthService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private UserRoleMapper userRoleMapper;
+
+    @Autowired
+    private RoleMapper roleMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     /**
      * 登录
@@ -155,6 +170,130 @@ public class AuthServiceImpl implements AuthService {
         redisUtils.set(newRedisKey, loginUser, jwtUtils.getExpiration());
 
         return newToken;
+    }
+
+    /**
+     * 注册新用户
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Long register(RegisterRequest request) {
+        // 验证手机号和邮箱至少填写一个
+        if (StrUtil.isBlank(request.getPhone()) && StrUtil.isBlank(request.getEmail())) {
+            throw new BusinessException("手机号和邮箱至少填写一个");
+        }
+
+        // 检查用户名是否已存在
+        if (userMapper.countByUsername(request.getUsername()) > 0) {
+            throw new BusinessException("用户名已存在");
+        }
+
+        // 检查手机号是否已被使用
+        if (StrUtil.isNotBlank(request.getPhone()) && userMapper.countByPhone(request.getPhone()) > 0) {
+            throw new BusinessException("手机号已被注册");
+        }
+
+        // 检查邮箱是否已被使用
+        if (StrUtil.isNotBlank(request.getEmail()) && userMapper.countByEmail(request.getEmail()) > 0) {
+            throw new BusinessException("邮箱已被注册");
+        }
+
+        // 验证角色是否存在
+        Long roleId = roleMapper.selectIdByRoleCode(request.getRoleCode());
+        if (roleId == null) {
+            throw new BusinessException("角色不存在");
+        }
+
+        // 不允许自行注册管理员
+        if ("ADMIN".equals(request.getRoleCode())) {
+            throw new BusinessException("无法注册管理员账号");
+        }
+
+        // 生成员工编号
+        String employeeNo = generateEmployeeNo(request.getRoleCode());
+
+        // 创建用户
+        User user = new User();
+        user.setUsername(request.getUsername());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRealName(request.getRealName());
+        user.setEmployeeNo(employeeNo);
+        user.setPhone(request.getPhone());
+        user.setEmail(request.getEmail());
+        user.setStatus(1); // 默认正常状态
+        user.setGender(0); // 默认未知
+
+        int result = userMapper.insert(user);
+        if (result <= 0) {
+            throw new BusinessException("注册失败");
+        }
+
+        // 分配角色
+        UserRole userRole = new UserRole();
+        userRole.setUserId(user.getId());
+        userRole.setRoleId(roleId);
+        userRole.setCreateTime(LocalDateTime.now());
+        userRoleMapper.insert(userRole);
+
+        log.info("用户注册成功, userId: {}, username: {}, employeeNo: {}",
+                user.getId(), user.getUsername(), employeeNo);
+
+        return user.getId();
+    }
+
+    /**
+     * 检查用户名是否可用
+     */
+    @Override
+    public boolean checkUsername(String username) {
+        return userMapper.countByUsername(username) == 0;
+    }
+
+    /**
+     * 生成员工编号
+     * 规则: 角色前缀 + 3位序号
+     * A = ADMIN, T = TEACHER, S = STUDENT, G = GUEST, D = DATA_ADMIN
+     */
+    private String generateEmployeeNo(String roleCode) {
+        // 获取角色前缀
+        String prefix = getRolePrefix(roleCode);
+
+        // 查询当前最大编号
+        String maxNo = userMapper.selectMaxEmployeeNo(prefix);
+
+        int nextNo = 1;
+        if (StrUtil.isNotBlank(maxNo) && maxNo.length() > 1) {
+            try {
+                // 提取数字部分
+                String numPart = maxNo.substring(1);
+                nextNo = Integer.parseInt(numPart) + 1;
+            } catch (NumberFormatException e) {
+                log.warn("解析编号失败: {}", maxNo);
+            }
+        }
+
+        // 格式化为3位数字
+        return String.format("%s%03d", prefix, nextNo);
+    }
+
+    /**
+     * 获取角色对应的编号前缀
+     */
+    private String getRolePrefix(String roleCode) {
+        switch (roleCode) {
+            case "ADMIN":
+                return "A";
+            case "TEACHER":
+                return "T";
+            case "STUDENT":
+                return "S";
+            case "GUEST":
+                return "G";
+            case "DATA_ADMIN":
+                return "D";
+            default:
+                return "U"; // 未知角色默认前缀
+        }
     }
 
     /**

@@ -3,6 +3,7 @@ package com.training.module.auth.controller;
 import com.training.common.base.Result;
 import com.training.module.auth.dto.LoginRequest;
 import com.training.module.auth.dto.LoginUser;
+import com.training.module.auth.dto.RegisterRequest;
 import com.training.module.auth.service.AuthService;
 import com.training.module.auth.vo.LoginVO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,13 +15,13 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 认证控制器
- * 处理登录、登出、获取用户信息等请求
+ * 处理登录、登出、注册、获取用户信息等请求
  *
  * @author Training Team
  * @since 2024-01-01
  */
 @Slf4j
-@Tag(name = "认证管理", description = "用户登录、登出、获取用户信息")
+@Tag(name = "认证管理", description = "用户登录、登出、注册、获取用户信息")
 @RestController
 @RequestMapping("/v1/auth")
 public class AuthController {
@@ -37,6 +38,27 @@ public class AuthController {
         log.info("用户登录: {}", loginRequest.getUsername());
         LoginVO loginVO = authService.login(loginRequest);
         return Result.success("登录成功", loginVO);
+    }
+
+    /**
+     * 注册
+     */
+    @Operation(summary = "用户注册")
+    @PostMapping("/register")
+    public Result<Long> register(@Validated @RequestBody RegisterRequest registerRequest) {
+        log.info("用户注册: {}, 角色: {}", registerRequest.getUsername(), registerRequest.getRoleCode());
+        Long userId = authService.register(registerRequest);
+        return Result.success("注册成功", userId);
+    }
+
+    /**
+     * 检查用户名是否可用
+     */
+    @Operation(summary = "检查用户名是否可用")
+    @GetMapping("/check-username")
+    public Result<Boolean> checkUsername(@RequestParam String username) {
+        boolean available = authService.checkUsername(username);
+        return Result.success(available ? "用户名可用" : "用户名已存在", available);
     }
 
     /**

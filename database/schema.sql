@@ -142,31 +142,6 @@ CREATE TABLE `t_news` (
   KEY `idx_create_time` (`create_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='新闻资讯表';
 
--- 公告通知表
-DROP TABLE IF EXISTS `t_notice`;
-CREATE TABLE `t_notice` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '公告ID',
-  `title` VARCHAR(200) NOT NULL COMMENT '公告标题',
-  `content` TEXT NOT NULL COMMENT '公告内容',
-  `notice_type` TINYINT NOT NULL COMMENT '公告类型:1-系统公告,2-教学通知,3-活动公告',
-  `level` TINYINT DEFAULT 1 COMMENT '重要级别:1-一般,2-重要,3-紧急',
-  `target_role` VARCHAR(50) DEFAULT NULL COMMENT '目标角色(ALL/STUDENT/TEACHER/ADMIN,逗号分隔)',
-  `is_top` TINYINT DEFAULT 0 COMMENT '是否置顶:0-否,1-是',
-  `publish_time` DATETIME DEFAULT NULL COMMENT '发布时间',
-  `expire_time` DATETIME DEFAULT NULL COMMENT '过期时间',
-  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-草稿,1-已发布,2-已过期',
-  `view_count` INT DEFAULT 0 COMMENT '浏览次数',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_notice_type` (`notice_type`),
-  KEY `idx_status` (`status`),
-  KEY `idx_publish_time` (`publish_time`),
-  KEY `idx_create_time` (`create_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='公告通知表';
 
 -- ====================================================
 -- 3. 用户中心模块
@@ -429,182 +404,13 @@ CREATE TABLE `t_user_course` (
   KEY `idx_course_id` (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户课程关联表';
 
--- ====================================================
--- 6. 实验室模块
--- ====================================================
 
--- 实验室表
-DROP TABLE IF EXISTS `t_laboratory`;
-CREATE TABLE `t_laboratory` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '实验室ID',
-  `lab_code` VARCHAR(50) NOT NULL COMMENT '实验室编码',
-  `lab_name` VARCHAR(200) NOT NULL COMMENT '实验室名称',
-  `description` TEXT DEFAULT NULL COMMENT '实验室描述',
-  `location` VARCHAR(200) DEFAULT NULL COMMENT '所在位置',
-  `building` VARCHAR(100) DEFAULT NULL COMMENT '所在楼栋',
-  `room_number` VARCHAR(50) DEFAULT NULL COMMENT '房间号',
-  `capacity` INT DEFAULT NULL COMMENT '容纳人数',
-  `area` DECIMAL(10,2) DEFAULT NULL COMMENT '面积(平方米)',
-  `manager_id` BIGINT DEFAULT NULL COMMENT '管理员ID',
-  `equipment_list` TEXT DEFAULT NULL COMMENT '设备清单',
-  `open_time` VARCHAR(200) DEFAULT NULL COMMENT '开放时间',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-停用,1-正常,2-维护中',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_lab_code` (`lab_code`),
-  KEY `idx_manager_id` (`manager_id`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实验室表';
-
--- 实验室预约表
-DROP TABLE IF EXISTS `t_lab_reservation`;
-CREATE TABLE `t_lab_reservation` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '预约ID',
-  `lab_id` BIGINT NOT NULL COMMENT '实验室ID',
-  `user_id` BIGINT NOT NULL COMMENT '预约用户ID',
-  `reservation_date` DATE NOT NULL COMMENT '预约日期',
-  `start_time` TIME NOT NULL COMMENT '开始时间',
-  `end_time` TIME NOT NULL COMMENT '结束时间',
-  `purpose` VARCHAR(500) DEFAULT NULL COMMENT '使用目的',
-  `people_count` INT DEFAULT 1 COMMENT '使用人数',
-  `contact_phone` VARCHAR(20) DEFAULT NULL COMMENT '联系电话',
-  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-待审核,1-已批准,2-已拒绝,3-已取消,4-已完成',
-  `approve_by` BIGINT DEFAULT NULL COMMENT '审批人ID',
-  `approve_time` DATETIME DEFAULT NULL COMMENT '审批时间',
-  `approve_comment` VARCHAR(500) DEFAULT NULL COMMENT '审批意见',
-  `check_in_time` DATETIME DEFAULT NULL COMMENT '签到时间',
-  `check_out_time` DATETIME DEFAULT NULL COMMENT '签退时间',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_lab_id` (`lab_id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_reservation_date` (`reservation_date`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实验室预约表';
-
--- 实验室使用记录表
-DROP TABLE IF EXISTS `t_lab_usage_record`;
-CREATE TABLE `t_lab_usage_record` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '记录ID',
-  `lab_id` BIGINT NOT NULL COMMENT '实验室ID',
-  `reservation_id` BIGINT DEFAULT NULL COMMENT '预约ID',
-  `user_id` BIGINT NOT NULL COMMENT '使用用户ID',
-  `use_date` DATE NOT NULL COMMENT '使用日期',
-  `start_time` DATETIME NOT NULL COMMENT '开始时间',
-  `end_time` DATETIME DEFAULT NULL COMMENT '结束时间',
-  `duration` INT DEFAULT NULL COMMENT '使用时长(分钟)',
-  `purpose` VARCHAR(500) DEFAULT NULL COMMENT '使用目的',
-  `feedback` TEXT DEFAULT NULL COMMENT '使用反馈',
-  `equipment_status` VARCHAR(500) DEFAULT NULL COMMENT '设备状态记录',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_lab_id` (`lab_id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_use_date` (`use_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实验室使用记录表';
-
--- ====================================================
--- 7. 共享开放模块
--- ====================================================
-
--- 共享资源表(引用资源中心资源,标记为共享)
--- 使用 t_resource 表的 is_shared 字段标识
-
--- 共享实验室表(引用实验室,标记为对外开放)
-DROP TABLE IF EXISTS `t_shared_lab`;
-CREATE TABLE `t_shared_lab` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `lab_id` BIGINT NOT NULL COMMENT '实验室ID',
-  `share_type` TINYINT NOT NULL COMMENT '共享类型:1-校内共享,2-校际共享,3-社会开放',
-  `share_start_time` DATETIME NOT NULL COMMENT '共享开始时间',
-  `share_end_time` DATETIME DEFAULT NULL COMMENT '共享结束时间',
-  `open_days` VARCHAR(100) DEFAULT NULL COMMENT '开放日期(1-7,逗号分隔)',
-  `open_time_slots` VARCHAR(500) DEFAULT NULL COMMENT '开放时段(JSON格式)',
-  `max_appointments` INT DEFAULT NULL COMMENT '最大预约数/天',
-  `is_need_approve` TINYINT DEFAULT 1 COMMENT '是否需要审批:0-否,1-是',
-  `description` TEXT DEFAULT NULL COMMENT '共享说明',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-停止共享,1-正常共享',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_lab_id` (`lab_id`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='共享实验室表';
 
 -- ====================================================
 -- 8. 教师功能模块(预留)
 -- ====================================================
 
--- 设备监控表
-DROP TABLE IF EXISTS `t_device_monitor`;
-CREATE TABLE `t_device_monitor` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '监控ID',
-  `lab_id` BIGINT NOT NULL COMMENT '实验室ID',
-  `device_name` VARCHAR(200) NOT NULL COMMENT '设备名称',
-  `device_code` VARCHAR(100) DEFAULT NULL COMMENT '设备编码',
-  `device_status` TINYINT NOT NULL COMMENT '设备状态:0-离线,1-正常,2-异常,3-维护中',
-  `cpu_usage` DECIMAL(5,2) DEFAULT NULL COMMENT 'CPU使用率(%)',
-  `memory_usage` DECIMAL(5,2) DEFAULT NULL COMMENT '内存使用率(%)',
-  `disk_usage` DECIMAL(5,2) DEFAULT NULL COMMENT '磁盘使用率(%)',
-  `network_status` TINYINT DEFAULT NULL COMMENT '网络状态:0-断开,1-正常',
-  `last_check_time` DATETIME DEFAULT NULL COMMENT '最后检查时间',
-  `error_message` TEXT DEFAULT NULL COMMENT '错误信息',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_lab_id` (`lab_id`),
-  KEY `idx_device_status` (`device_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='设备监控表';
 
--- 资源监控表
-DROP TABLE IF EXISTS `t_resource_monitor`;
-CREATE TABLE `t_resource_monitor` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '监控ID',
-  `resource_id` BIGINT NOT NULL COMMENT '资源ID',
-  `access_count` INT DEFAULT 0 COMMENT '访问次数',
-  `download_count` INT DEFAULT 0 COMMENT '下载次数',
-  `error_count` INT DEFAULT 0 COMMENT '错误次数',
-  `avg_response_time` INT DEFAULT NULL COMMENT '平均响应时间(毫秒)',
-  `storage_size` BIGINT DEFAULT NULL COMMENT '存储大小(字节)',
-  `last_access_time` DATETIME DEFAULT NULL COMMENT '最后访问时间',
-  `monitor_date` DATE NOT NULL COMMENT '监控日期',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_resource_date` (`resource_id`, `monitor_date`),
-  KEY `idx_monitor_date` (`monitor_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='资源监控表';
-
--- 教学监控表
-DROP TABLE IF EXISTS `t_teaching_monitor`;
-CREATE TABLE `t_teaching_monitor` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '监控ID',
-  `course_id` BIGINT NOT NULL COMMENT '课程ID',
-  `teacher_id` BIGINT NOT NULL COMMENT '教师ID',
-  `monitor_date` DATE NOT NULL COMMENT '监控日期',
-  `active_students` INT DEFAULT 0 COMMENT '活跃学生数',
-  `task_completion_rate` DECIMAL(5,2) DEFAULT NULL COMMENT '任务完成率(%)',
-  `avg_score` DECIMAL(5,2) DEFAULT NULL COMMENT '平均分数',
-  `online_duration` INT DEFAULT NULL COMMENT '在线时长(分钟)',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_course_date` (`course_id`, `monitor_date`),
-  KEY `idx_teacher_id` (`teacher_id`),
-  KEY `idx_monitor_date` (`monitor_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='教学监控表';
 
 -- 教学计划表
 DROP TABLE IF EXISTS `t_teaching_plan`;
@@ -649,33 +455,6 @@ CREATE TABLE `t_process_result` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_task_user` (`task_id`, `user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='过程结果表';
-
--- 实验室申请表(教师申请实验室使用)
-DROP TABLE IF EXISTS `t_lab_application`;
-CREATE TABLE `t_lab_application` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '申请ID',
-  `teacher_id` BIGINT NOT NULL COMMENT '申请教师ID',
-  `lab_id` BIGINT NOT NULL COMMENT '实验室ID',
-  `course_id` BIGINT DEFAULT NULL COMMENT '关联课程ID',
-  `apply_date` DATE NOT NULL COMMENT '申请日期',
-  `start_time` TIME NOT NULL COMMENT '开始时间',
-  `end_time` TIME NOT NULL COMMENT '结束时间',
-  `purpose` VARCHAR(500) NOT NULL COMMENT '申请用途',
-  `student_count` INT DEFAULT NULL COMMENT '预计学生人数',
-  `equipment_requirement` TEXT DEFAULT NULL COMMENT '设备需求',
-  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-待审核,1-已批准,2-已拒绝,3-已取消',
-  `approve_by` BIGINT DEFAULT NULL COMMENT '审批人ID',
-  `approve_time` DATETIME DEFAULT NULL COMMENT '审批时间',
-  `approve_comment` VARCHAR(500) DEFAULT NULL COMMENT '审批意见',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_teacher_id` (`teacher_id`),
-  KEY `idx_lab_id` (`lab_id`),
-  KEY `idx_status` (`status`),
-  KEY `idx_apply_date` (`apply_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实验室申请表';
 
 -- ====================================================
 -- 9. 管理员功能模块(预留)
@@ -743,36 +522,6 @@ CREATE TABLE `t_platform_setting` (
   KEY `idx_group_name` (`group_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='平台设置表';
 
--- 仿真设备表
-DROP TABLE IF EXISTS `t_simulation_device`;
-CREATE TABLE `t_simulation_device` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '设备ID',
-  `device_code` VARCHAR(100) NOT NULL COMMENT '设备编码',
-  `device_name` VARCHAR(200) NOT NULL COMMENT '设备名称',
-  `device_type` VARCHAR(100) DEFAULT NULL COMMENT '设备类型',
-  `manufacturer` VARCHAR(200) DEFAULT NULL COMMENT '生产厂商',
-  `model` VARCHAR(100) DEFAULT NULL COMMENT '型号',
-  `lab_id` BIGINT DEFAULT NULL COMMENT '所属实验室ID',
-  `purchase_date` DATE DEFAULT NULL COMMENT '购置日期',
-  `purchase_price` DECIMAL(12,2) DEFAULT NULL COMMENT '购置价格',
-  `warranty_period` INT DEFAULT NULL COMMENT '质保期(月)',
-  `service_life` INT DEFAULT NULL COMMENT '使用年限',
-  `maintenance_cycle` INT DEFAULT NULL COMMENT '维护周期(天)',
-  `last_maintenance_date` DATE DEFAULT NULL COMMENT '最后维护日期',
-  `next_maintenance_date` DATE DEFAULT NULL COMMENT '下次维护日期',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-报废,1-正常,2-故障,3-维修中',
-  `remark` TEXT DEFAULT NULL COMMENT '备注',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_device_code` (`device_code`),
-  KEY `idx_lab_id` (`lab_id`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='仿真设备表';
-
 -- 师资信息表
 DROP TABLE IF EXISTS `t_teacher_info`;
 CREATE TABLE `t_teacher_info` (
@@ -795,26 +544,6 @@ CREATE TABLE `t_teacher_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='师资信息表';
-
--- ====================================================
--- 初始化基础数据
--- ====================================================
-
--- 插入角色数据
-INSERT INTO `t_role` (`id`, `role_code`, `role_name`, `description`, `sort_order`, `create_by`) VALUES
-(1, 'ADMIN', '管理员', '系统管理员,拥有所有权限', 1, 1),
-(2, 'TEACHER', '教师', '教师用户,拥有教学管理权限', 2, 1),
-(3, 'STUDENT', '学生', '学生用户,拥有学习相关权限', 3, 1),
-(4, 'GUEST', '访客', '访客用户,只能访问首页、新闻公告、个人中心和资源中心', 4, 1),
-(5, 'DATA_ADMIN', '资料管理员', '资料管理员,拥有资料审核权限', 5, 1);
-
--- 插入默认管理员用户 (密码: admin123, 需要加密后替换)
-INSERT INTO `t_user` (`id`, `username`, `password`, `real_name`, `employee_no`, `gender`, `phone`, `email`, `create_by`) VALUES
-(1, 'admin', '$2a$12$dJGfkwUNyTHacQhMsA.QzeT16wE4WzdBzi7DxDkhnneNrHHqzZb1q', '系统管理员', 'ADMIN001', 1, '13800138000', 'admin@example.com', 1);
-
--- 插入管理员角色关联
-INSERT INTO `t_user_role` (`user_id`, `role_id`, `create_by`) VALUES
-(1, 1, 1);
 
 -- 插入数据字典示例数据
 INSERT INTO `t_data_dict` (`dict_type`, `dict_code`, `dict_label`, `dict_value`, `sort_order`, `create_by`) VALUES
