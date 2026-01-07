@@ -52,8 +52,48 @@
             <if test="status != null">
                 AND status = #{status}
             </if>
+            <if test="onlyShared != null and onlyShared == true">
+                AND is_shared = 1
+            </if>
         </where>
         ORDER BY create_time DESC
+    </select>
+
+    <!-- 根据资源类型统计数量 -->
+    <select id="countByType" resultType="java.lang.Long">
+        SELECT COUNT(*) FROM t_resource
+        WHERE resource_type = #{resourceType}
+        AND is_deleted = 0
+        AND status = 1
+        <if test="onlyShared != null and onlyShared == true">
+            AND is_shared = 1
+        </if>
+    </select>
+
+    <!-- 获取热门资源 -->
+    <select id="selectHotResources" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_resource
+        WHERE is_deleted = 0 AND status = 1
+        <if test="onlyShared != null and onlyShared == true">
+            AND is_shared = 1
+        </if>
+        ORDER BY view_count DESC
+        LIMIT #{limit}
+    </select>
+
+    <!-- 获取最新资源 -->
+    <select id="selectLatestResources" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_resource
+        WHERE is_deleted = 0 AND status = 1
+        <if test="onlyShared != null and onlyShared == true">
+            AND is_shared = 1
+        </if>
+        ORDER BY create_time DESC
+        LIMIT #{limit}
     </select>
 
 </mapper>

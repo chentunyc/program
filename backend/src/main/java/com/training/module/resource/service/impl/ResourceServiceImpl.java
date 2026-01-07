@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.training.common.base.PageResult;
 import com.training.common.exception.BusinessException;
+import com.training.common.utils.SecurityUtils;
 import com.training.module.resource.dto.ResourceCreateDTO;
 import com.training.module.resource.dto.ResourceQueryDTO;
 import com.training.module.resource.dto.ResourceUpdateDTO;
@@ -68,12 +69,16 @@ public class ResourceServiceImpl implements ResourceService {
     public PageResult<ResourceVO> getResourcePage(ResourceQueryDTO queryDTO) {
         Page<Resource> page = new Page<>(queryDTO.getPageNum(), queryDTO.getPageSize());
 
+        // 判断是否为访客（未登录或GUEST角色），访客只能查看共享资源
+        Boolean onlyShared = isGuest();
+
         IPage<Resource> resourcePage = resourceMapper.selectResourcePage(
                 page,
                 queryDTO.getResourceType(),
                 queryDTO.getCategory(),
                 queryDTO.getKeyword(),
-                queryDTO.getStatus()
+                queryDTO.getStatus(),
+                onlyShared
         );
 
         List<ResourceVO> voList = resourcePage.getRecords().stream()
@@ -88,6 +93,11 @@ public class ResourceServiceImpl implements ResourceService {
         Resource resource = resourceMapper.selectById(id);
         if (resource == null || resource.getIsDeleted() == 1) {
             throw new BusinessException("资源不存在");
+        }
+
+        // 访客（未登录或GUEST角色）访问非共享资源时拒绝访问
+        if (isGuest() && resource.getIsShared() != 1) {
+            throw new BusinessException("该资源不对访客开放，请使用其他账户登录后访问");
         }
 
         ResourceDetailVO detailVO = new ResourceDetailVO();
@@ -260,11 +270,14 @@ public class ResourceServiceImpl implements ResourceService {
 
     @Override
     public ResourceStatsVO getResourceStats() {
+        // 判断是否为访客，访客只统计共享资源
+        Boolean onlyShared = isGuest();
+
         ResourceStatsVO stats = new ResourceStatsVO();
-        stats.setSimulationCount(resourceMapper.countByType("SIMULATION"));
-        stats.setVideoCount(resourceMapper.countByType("VIDEO"));
-        stats.setAudioCount(resourceMapper.countByType("AUDIO"));
-        stats.setDocumentCount(resourceMapper.countByType("DOCUMENT"));
+        stats.setSimulationCount(resourceMapper.countByType("SIMULATION", onlyShared));
+        stats.setVideoCount(resourceMapper.countByType("VIDEO", onlyShared));
+        stats.setAudioCount(resourceMapper.countByType("AUDIO", onlyShared));
+        stats.setDocumentCount(resourceMapper.countByType("DOCUMENT", onlyShared));
         stats.setTotalCount(stats.getSimulationCount() + stats.getVideoCount() +
                 stats.getAudioCount() + stats.getDocumentCount());
         return stats;
@@ -272,7 +285,10 @@ public class ResourceServiceImpl implements ResourceService {
 
     @Override
     public List<ResourceVO> getHotResources(Integer limit) {
-        List<Resource> resources = resourceMapper.selectHotResources(limit != null ? limit : 10);
+        // 判断是否为访客，访客只能查看共享资源
+        Boolean onlyShared = isGuest();
+
+        List<Resource> resources = resourceMapper.selectHotResources(limit != null ? limit : 10, onlyShared);
         return resources.stream()
                 .map(this::convertToVO)
                 .collect(Collectors.toList());
@@ -280,7 +296,10 @@ public class ResourceServiceImpl implements ResourceService {
 
     @Override
     public List<ResourceVO> getLatestResources(Integer limit) {
-        List<Resource> resources = resourceMapper.selectLatestResources(limit != null ? limit : 10);
+        // 判断是否为访客，访客只能查看共享资源
+        Boolean onlyShared = isGuest();
+
+        List<Resource> resources = resourceMapper.selectLatestResources(limit != null ? limit : 10, onlyShared);
         return resources.stream()
                 .map(this::convertToVO)
                 .collect(Collectors.toList());
@@ -500,5 +519,15 @@ public class ResourceServiceImpl implements ResourceService {
             }
             documentMapper.updateById(document);
         }
+    }
+
+    /**
+     * 判断当前用户是否为访客（未登录或GUEST角色）
+     * 访客只能访问共享资源
+     *
+     * @return 如果是访客返回 true，否则返回 false
+     */
+    private Boolean isGuest() {
+        return SecurityUtils.isGuest();
     }
 }

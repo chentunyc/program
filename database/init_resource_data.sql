@@ -9,7 +9,7 @@ DELETE FROM t_resource WHERE id IN (1, 2, 3, 4);
 
 -- 虚拟仿真资源（第1类）
 INSERT INTO t_resource (id, resource_name, resource_type, description, cover_image, category, tags, uploader_id, file_size, download_count, view_count, is_shared, status, create_time, update_time, is_deleted) VALUES
-(1, '化学实验室虚拟仿真系统', 'SIMULATION', '完整的化学实验虚拟仿真，包含多种实验场景', '/images/resources/simulation/chem-lab.png', '化学实验', '虚拟仿真,化学,实验', 2, 1024000000, 156, 1250, 1, 1, NOW(), NOW(), 0);
+(1, '化学实验室虚拟仿真系统', 'SIMULATION', '完整的化学实验虚拟仿真，包含多种实验场景', '/images/resources/simulation/chem-lab.png', '化学实验', '虚拟仿真,化学,实验', 2, 1024000000, 156, 1250, 0, 1, NOW(), NOW(), 0);
 
 INSERT INTO t_resource_simulation (id, resource_id, simulation_url, technology, support_platform, min_requirement) VALUES
 (1, 1, '/simulations/chem-lab.html', 'Unity3D, WebGL', 'PC, Web', 'CPU: i5, RAM: 8GB, GPU: GTX1050');

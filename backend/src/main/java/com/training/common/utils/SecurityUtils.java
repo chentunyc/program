@@ -86,4 +86,16 @@ public class SecurityUtils {
             return false;
         }
     }
+
+    /**
+     * 是否为访客角色
+     */
+    public static boolean isGuest() {
+        try {
+            return getLoginUser().isGuest();
+        } catch (Exception e) {
+            // 未登录时也视为访客
+            return true;
+        }
+    }
 }

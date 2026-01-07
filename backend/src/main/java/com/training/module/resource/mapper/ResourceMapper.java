@@ -28,6 +28,7 @@ public interface ResourceMapper extends BaseMapper<Resource> {
      * @param category 分类
      * @param keyword 关键词
      * @param status 状态
+     * @param onlyShared 是否只查询共享资源（访客访问时为true）
      * @return 分页结果
      */
     IPage<Resource> selectResourcePage(
@@ -35,35 +36,36 @@ public interface ResourceMapper extends BaseMapper<Resource> {
             @Param("resourceType") String resourceType,
             @Param("category") String category,
             @Param("keyword") String keyword,
-            @Param("status") Integer status
+            @Param("status") Integer status,
+            @Param("onlyShared") Boolean onlyShared
     );
 
     /**
      * 根据资源类型统计数量
      *
      * @param resourceType 资源类型
+     * @param onlyShared 是否只统计共享资源
      * @return 数量
      */
-    @Select("SELECT COUNT(*) FROM t_resource WHERE resource_type = #{resourceType} AND is_deleted = 0 AND status = 1")
-    Long countByType(@Param("resourceType") String resourceType);
+    Long countByType(@Param("resourceType") String resourceType, @Param("onlyShared") Boolean onlyShared);
 
     /**
      * 获取热门资源
      *
      * @param limit 数量限制
+     * @param onlyShared 是否只查询共享资源
      * @return 资源列表
      */
-    @Select("SELECT * FROM t_resource WHERE is_deleted = 0 AND status = 1 ORDER BY view_count DESC LIMIT #{limit}")
-    List<Resource> selectHotResources(@Param("limit") Integer limit);
+    List<Resource> selectHotResources(@Param("limit") Integer limit, @Param("onlyShared") Boolean onlyShared);
 
     /**
      * 获取最新资源
      *
      * @param limit 数量限制
+     * @param onlyShared 是否只查询共享资源
      * @return 资源列表
      */
-    @Select("SELECT * FROM t_resource WHERE is_deleted = 0 AND status = 1 ORDER BY create_time DESC LIMIT #{limit}")
-    List<Resource> selectLatestResources(@Param("limit") Integer limit);
+    List<Resource> selectLatestResources(@Param("limit") Integer limit, @Param("onlyShared") Boolean onlyShared);
 
     /**
      * 增加浏览次数
