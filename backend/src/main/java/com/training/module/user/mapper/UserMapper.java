@@ -50,29 +50,29 @@ public interface UserMapper extends BaseMapper<User> {
     String selectMaxEmployeeNo(String prefix);
 
     /**
-     * 检查用户名是否存在
+     * 检查用户名是否存在（包括已删除的用户，因为数据库唯一索引不区分）
      *
      * @param username 用户名
      * @return 数量
      */
-    @Select("SELECT COUNT(*) FROM t_user WHERE username = #{username} AND is_deleted = 0")
+    @Select("SELECT COUNT(*) FROM t_user WHERE username = #{username}")
     Long countByUsername(String username);
 
     /**
-     * 检查手机号是否已被使用
+     * 检查手机号是否已被使用（包括已删除的用户）
      *
      * @param phone 手机号
      * @return 数量
      */
-    @Select("SELECT COUNT(*) FROM t_user WHERE phone = #{phone} AND is_deleted = 0")
+    @Select("SELECT COUNT(*) FROM t_user WHERE phone = #{phone}")
     Long countByPhone(String phone);
 
     /**
-     * 检查邮箱是否已被使用
+     * 检查邮箱是否已被使用（包括已删除的用户）
      *
      * @param email 邮箱
      * @return 数量
      */
-    @Select("SELECT COUNT(*) FROM t_user WHERE email = #{email} AND is_deleted = 0")
+    @Select("SELECT COUNT(*) FROM t_user WHERE email = #{email}")
     Long countByEmail(String email);
 }

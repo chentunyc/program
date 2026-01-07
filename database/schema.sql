@@ -410,8 +410,6 @@ CREATE TABLE `t_user_course` (
 -- 8. 教师功能模块(预留)
 -- ====================================================
 
-
-
 -- 教学计划表
 DROP TABLE IF EXISTS `t_teaching_plan`;
 CREATE TABLE `t_teaching_plan` (
@@ -460,68 +458,6 @@ CREATE TABLE `t_process_result` (
 -- 9. 管理员功能模块(预留)
 -- ====================================================
 
--- 数据字典表
-DROP TABLE IF EXISTS `t_data_dict`;
-CREATE TABLE `t_data_dict` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '字典ID',
-  `dict_type` VARCHAR(100) NOT NULL COMMENT '字典类型',
-  `dict_code` VARCHAR(100) NOT NULL COMMENT '字典编码',
-  `dict_label` VARCHAR(200) NOT NULL COMMENT '字典标签',
-  `dict_value` VARCHAR(200) NOT NULL COMMENT '字典值',
-  `sort_order` INT DEFAULT 0 COMMENT '排序',
-  `remark` VARCHAR(500) DEFAULT NULL COMMENT '备注',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-停用,1-正常',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_type_code` (`dict_type`, `dict_code`),
-  KEY `idx_dict_type` (`dict_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='数据字典表';
-
--- 系统日志表
-DROP TABLE IF EXISTS `t_system_log`;
-CREATE TABLE `t_system_log` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '日志ID',
-  `log_type` TINYINT NOT NULL COMMENT '日志类型:1-登录日志,2-操作日志,3-异常日志',
-  `user_id` BIGINT DEFAULT NULL COMMENT '用户ID',
-  `username` VARCHAR(50) DEFAULT NULL COMMENT '用户名',
-  `operation` VARCHAR(200) DEFAULT NULL COMMENT '操作内容',
-  `method` VARCHAR(200) DEFAULT NULL COMMENT '请求方法',
-  `params` TEXT DEFAULT NULL COMMENT '请求参数',
-  `ip_address` VARCHAR(50) DEFAULT NULL COMMENT 'IP地址',
-  `location` VARCHAR(100) DEFAULT NULL COMMENT 'IP归属地',
-  `browser` VARCHAR(100) DEFAULT NULL COMMENT '浏览器',
-  `os` VARCHAR(100) DEFAULT NULL COMMENT '操作系统',
-  `status` TINYINT DEFAULT 1 COMMENT '状态:0-失败,1-成功',
-  `error_message` TEXT DEFAULT NULL COMMENT '错误信息',
-  `execute_time` INT DEFAULT NULL COMMENT '执行时长(毫秒)',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_log_type` (`log_type`),
-  KEY `idx_create_time` (`create_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='系统日志表';
-
--- 平台设置表
-DROP TABLE IF EXISTS `t_platform_setting`;
-CREATE TABLE `t_platform_setting` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '设置ID',
-  `setting_key` VARCHAR(100) NOT NULL COMMENT '设置键',
-  `setting_value` TEXT DEFAULT NULL COMMENT '设置值',
-  `setting_type` VARCHAR(50) DEFAULT NULL COMMENT '设置类型:STRING,NUMBER,BOOLEAN,JSON',
-  `description` VARCHAR(500) DEFAULT NULL COMMENT '设置描述',
-  `group_name` VARCHAR(50) DEFAULT NULL COMMENT '分组名称',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_setting_key` (`setting_key`),
-  KEY `idx_group_name` (`group_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='平台设置表';
-
 -- 师资信息表
 DROP TABLE IF EXISTS `t_teacher_info`;
 CREATE TABLE `t_teacher_info` (
@@ -544,15 +480,3 @@ CREATE TABLE `t_teacher_info` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='师资信息表';
-
--- 插入数据字典示例数据
-INSERT INTO `t_data_dict` (`dict_type`, `dict_code`, `dict_label`, `dict_value`, `sort_order`, `create_by`) VALUES
-('user_gender', 'UNKNOWN', '未知', '0', 1, 1),
-('user_gender', 'MALE', '男', '1', 2, 1),
-('user_gender', 'FEMALE', '女', '2', 3, 1),
-('user_status', 'DISABLED', '禁用', '0', 1, 1),
-('user_status', 'NORMAL', '正常', '1', 2, 1),
-('resource_type', 'SIMULATION', '虚拟仿真', 'SIMULATION', 1, 1),
-('resource_type', 'VIDEO', '视频资源', 'VIDEO', 2, 1),
-('resource_type', 'AUDIO', '音频资源', 'AUDIO', 3, 1),
-('resource_type', 'DOCUMENT', '文档资源', 'DOCUMENT', 4, 1);
