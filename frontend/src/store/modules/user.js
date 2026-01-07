@@ -108,6 +108,20 @@ export const useUserStore = defineStore('user', () => {
     return hasRole('STUDENT')
   }
 
+  /**
+   * 判断是否为访客
+   */
+  const isGuest = () => {
+    return hasRole('GUEST')
+  }
+
+  /**
+   * 判断是否为资料管理员
+   */
+  const isDataAdmin = () => {
+    return hasRole('DATA_ADMIN')
+  }
+
   return {
     // 状态
     token,
@@ -123,6 +137,8 @@ export const useUserStore = defineStore('user', () => {
     hasPermission,
     isAdmin,
     isTeacher,
-    isStudent
+    isStudent,
+    isGuest,
+    isDataAdmin
   }
 })

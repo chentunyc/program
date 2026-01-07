@@ -26,7 +26,17 @@ public enum RoleEnum {
     /**
      * 学生
      */
-    STUDENT("STUDENT", "学生");
+    STUDENT("STUDENT", "学生"),
+
+    /**
+     * 访客
+     */
+    GUEST("GUEST", "访客"),
+
+    /**
+     * 资料管理员
+     */
+    DATA_ADMIN("DATA_ADMIN", "资料管理员");
 
     /**
      * 角色编码

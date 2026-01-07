@@ -105,27 +105,9 @@ const routes = [
         meta: {
           title: '实训中心',
           icon: 'Notebook',
-          requireAuth: true
-        }
-      },
-      {
-        path: 'laboratory',
-        name: 'Laboratory',
-        component: () => import('@/views/laboratory/index.vue'),
-        meta: {
-          title: '实验室',
-          icon: 'House',
-          requireAuth: true
-        }
-      },
-      {
-        path: 'share',
-        name: 'Share',
-        component: () => import('@/views/share/index.vue'),
-        meta: {
-          title: '共享开放',
-          icon: 'Share',
-          requireAuth: true
+          requireAuth: true,
+          // 访客不可访问实训中心
+          excludeRoles: ['GUEST']
         }
       },
       // 管理员专用路由
@@ -203,6 +185,18 @@ const router = createRouter({
 })
 
 /**
+ * 检查用户是否被排除在路由之外
+ */
+const isExcludedByRole = (route, userStore) => {
+  const excludeRoles = route.meta?.excludeRoles
+  if (!excludeRoles || excludeRoles.length === 0) {
+    return false
+  }
+  // 如果用户拥有任一被排除的角色，则返回true（被排除）
+  return excludeRoles.some(role => userStore.hasRole(role))
+}
+
+/**
  * 全局前置守卫 - 权限验证
  */
 router.beforeEach((to, from, next) => {
@@ -228,6 +222,10 @@ router.beforeEach((to, from, next) => {
             if (to.meta.requireAdmin && !userStore.isAdmin()) {
               ElMessage.error('您没有权限访问该页面')
               next('/home')
+            } else if (isExcludedByRole(to, userStore)) {
+              // 检查是否被角色排除
+              ElMessage.error('您没有权限访问该页面')
+              next('/home')
             } else {
               next()
             }
@@ -240,6 +238,10 @@ router.beforeEach((to, from, next) => {
       } else {
         // 检查管理员权限
         if (to.meta.requireAdmin && !userStore.isAdmin()) {
+          ElMessage.error('您没有权限访问该页面')
+          next('/home')
+        } else if (isExcludedByRole(to, userStore)) {
+          // 检查是否被角色排除
           ElMessage.error('您没有权限访问该页面')
           next('/home')
         } else {

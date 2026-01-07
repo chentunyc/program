@@ -161,6 +161,15 @@ const menuRoutes = computed(() => {
       return false
     }
 
+    // 检查是否被角色排除
+    const excludeRoles = route.meta?.excludeRoles
+    if (excludeRoles && excludeRoles.length > 0) {
+      const isExcluded = excludeRoles.some(role => userStore.hasRole(role))
+      if (isExcluded) {
+        return false
+      }
+    }
+
     return route.meta?.title
   }).map(route => {
     // 处理完整路径

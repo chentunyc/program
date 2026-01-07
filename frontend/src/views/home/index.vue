@@ -89,15 +89,26 @@ const userInfo = computed(() => userStore.userInfo)
 const currentTime = ref(dayjs().format('YYYY-MM-DD HH:mm:ss'))
 let timer = null
 
-// 快捷入口
-const quickEntries = [
-  { title: '新闻公告', icon: 'Bell', path: '/news', color: '#409eff' },
-  { title: '用户中心', icon: 'User', path: '/user-center', color: '#67c23a' },
-  { title: '资源中心', icon: 'Folder', path: '/resource', color: '#e6a23c' },
-  { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c' },
-  { title: '实验室', icon: 'House', path: '/laboratory', color: '#909399' },
-  { title: '共享开放', icon: 'Share', path: '/share', color: '#409eff' }
-]
+// 快捷入口（根据角色动态过滤）
+const quickEntries = computed(() => {
+  const allEntries = [
+    { title: '新闻公告', icon: 'Bell', path: '/news', color: '#409eff' },
+    { title: '用户中心', icon: 'User', path: '/user-center', color: '#67c23a' },
+    { title: '资源中心', icon: 'Folder', path: '/resource', color: '#e6a23c' },
+    { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c', excludeRoles: ['GUEST'] }
+  ]
+
+  const roles = userInfo.value?.roles || []
+
+  return allEntries.filter(entry => {
+    // 如果没有角色限制，显示
+    if (!entry.excludeRoles || entry.excludeRoles.length === 0) {
+      return true
+    }
+    // 如果用户拥有被排除的角色，不显示
+    return !entry.excludeRoles.some(role => roles.includes(role))
+  })
+})
 
 /**
  * 获取角色名称
@@ -106,7 +117,9 @@ const getRoleName = () => {
   const roles = userInfo.value?.roles || []
   if (roles.includes('ADMIN')) return '管理员'
   if (roles.includes('TEACHER')) return '教师'
+  if (roles.includes('DATA_ADMIN')) return '资料管理员'
   if (roles.includes('STUDENT')) return '学生'
+  if (roles.includes('GUEST')) return '访客'
   return '未知'
 }
 

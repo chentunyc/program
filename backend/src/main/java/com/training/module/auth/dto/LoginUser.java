@@ -202,4 +202,18 @@ public class LoginUser implements UserDetails {
     public boolean isStudent() {
         return roles != null && roles.contains(RoleEnum.STUDENT.getCode());
     }
+
+    /**
+     * 是否为访客
+     */
+    public boolean isGuest() {
+        return roles != null && roles.contains(RoleEnum.GUEST.getCode());
+    }
+
+    /**
+     * 是否为资料管理员
+     */
+    public boolean isDataAdmin() {
+        return roles != null && roles.contains(RoleEnum.DATA_ADMIN.getCode());
+    }
 }

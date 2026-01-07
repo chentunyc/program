@@ -806,7 +806,9 @@ CREATE TABLE `t_teacher_info` (
 INSERT INTO `t_role` (`id`, `role_code`, `role_name`, `description`, `sort_order`, `create_by`) VALUES
 (1, 'ADMIN', '管理员', '系统管理员,拥有所有权限', 1, 1),
 (2, 'TEACHER', '教师', '教师用户,拥有教学管理权限', 2, 1),
-(3, 'STUDENT', '学生', '学生用户,拥有学习相关权限', 3, 1);
+(3, 'STUDENT', '学生', '学生用户,拥有学习相关权限', 3, 1),
+(4, 'GUEST', '访客', '访客用户,只能访问首页、新闻公告、个人中心和资源中心', 4, 1),
+(5, 'DATA_ADMIN', '资料管理员', '资料管理员,拥有资料审核权限', 5, 1);
 
 -- 插入默认管理员用户 (密码: admin123, 需要加密后替换)
 INSERT INTO `t_user` (`id`, `username`, `password`, `real_name`, `employee_no`, `gender`, `phone`, `email`, `create_by`) VALUES
