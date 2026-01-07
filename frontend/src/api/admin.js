@@ -91,3 +91,51 @@ export function checkEmployeeNo(employeeNo, excludeUserId) {
     params: { employeeNo, excludeUserId }
   })
 }
+
+/**
+ * ==================== 系统配置 API ====================
+ */
+
+/**
+ * 获取所有系统配置
+ */
+export function getAllConfig() {
+  return request({
+    url: '/v1/system/config',
+    method: 'get'
+  })
+}
+
+/**
+ * 获取指定组的配置
+ * @param {string} group - 配置组（basic, upload, security）
+ */
+export function getConfigByGroup(group) {
+  return request({
+    url: `/v1/system/config/${group}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 保存指定组的配置
+ * @param {string} group - 配置组
+ * @param {object} config - 配置数据
+ */
+export function saveConfigByGroup(group, config) {
+  return request({
+    url: `/v1/system/config/${group}`,
+    method: 'put',
+    data: config
+  })
+}
+
+/**
+ * 获取系统统计信息
+ */
+export function getStatistics() {
+  return request({
+    url: '/v1/system/config/statistics',
+    method: 'get'
+  })
+}

@@ -38,21 +38,22 @@
         <div class="settings-section">
           <h3>统计信息</h3>
           <el-row :gutter="20">
-            <el-col :xs="24" :sm="12" :md="6">
+            <el-col :xs="24" :sm="12" :md="12">
               <el-statistic title="总用户数" :value="statistics.totalUsers">
                 <template #prefix>
                   <el-icon><User /></el-icon>
                 </template>
               </el-statistic>
             </el-col>
-            <el-col :xs="24" :sm="12" :md="6">
+            <el-col :xs="24" :sm="12" :md="12">
               <el-statistic title="新闻数量" :value="statistics.totalNews">
                 <template #prefix>
                   <el-icon><Document /></el-icon>
                 </template>
               </el-statistic>
             </el-col>
-            <el-col :xs="24" :sm="12" :md="6">
+            <!-- 访问统计功能待实现，暂时隐藏 -->
+            <!-- <el-col :xs="24" :sm="12" :md="6">
               <el-statistic title="今日访问" :value="statistics.todayVisits">
                 <template #prefix>
                   <el-icon><View /></el-icon>
@@ -65,7 +66,7 @@
                   <el-icon><TrendCharts /></el-icon>
                 </template>
               </el-statistic>
-            </el-col>
+            </el-col> -->
           </el-row>
         </div>
       </el-tab-pane>
@@ -240,67 +241,122 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 import { User, Document, View, TrendCharts } from '@element-plus/icons-vue'
+import { getAllConfig, saveConfigByGroup, getStatistics } from '@/api/admin'
 
 // 当前激活的标签页
 const activeTab = ref('info')
 
+// 加载状态
+const loading = ref(false)
+
 // 保存状态
 const saving = ref(false)
 
-// 统计信息（模拟数据）
+// 统计信息
 const statistics = reactive({
-  totalUsers: 156,
-  totalNews: 48,
-  todayVisits: 1234,
-  totalVisits: 45678
+  totalUsers: 0,
+  totalNews: 0,
+  todayVisits: 0,
+  totalVisits: 0
 })
 
 // 基本配置
 const basicConfig = reactive({
-  siteName: '虚拟仿真实训教学管理及资源共享云平台',
-  siteLogo: '/logo.png',
-  siteDescription: '专业的虚拟仿真实训教学管理平台，提供资源共享、实训管理等功能',
-  icpNumber: '粤ICP备XXXXXXXX号',
-  copyright: '© 2024 虚拟仿真实训平台 版权所有',
-  supportEmail: 'support@training.com',
-  supportPhone: '400-123-4567'
+  siteName: '',
+  siteLogo: '',
+  siteDescription: '',
+  icpNumber: '',
+  copyright: '',
+  supportEmail: '',
+  supportPhone: ''
 })
 
-const basicConfigBackup = { ...basicConfig }
+// 用于重置的备份
+let basicConfigBackup = {}
 
 // 上传配置
 const uploadConfig = reactive({
-  uploadPath: './uploads',
-  allowedTypes: 'image/jpeg,image/png,image/gif,application/pdf',
+  uploadPath: '',
+  allowedTypes: '',
   maxFileSize: 10,
   imageCompression: true
 })
 
-const uploadConfigBackup = { ...uploadConfig }
+let uploadConfigBackup = {}
 
 // 安全配置
 const securityConfig = reactive({
   minPasswordLength: 6,
-  passwordRequirements: ['lowercase', 'number'],
+  passwordRequirements: [],
   sessionTimeout: 120,
   loginLockEnabled: true,
   maxLoginAttempts: 5
 })
 
-const securityConfigBackup = { ...securityConfig }
+let securityConfigBackup = {}
+
+// 加载所有配置
+const loadAllConfig = async () => {
+  loading.value = true
+  try {
+    const res = await getAllConfig()
+    if (res.code === 200) {
+      const data = res.data
+
+      // 加载基本配置
+      if (data.basic) {
+        Object.assign(basicConfig, data.basic)
+        basicConfigBackup = { ...data.basic }
+      }
+
+      // 加载上传配置
+      if (data.upload) {
+        Object.assign(uploadConfig, data.upload)
+        uploadConfigBackup = { ...data.upload }
+      }
+
+      // 加载安全配置
+      if (data.security) {
+        Object.assign(securityConfig, data.security)
+        securityConfigBackup = { ...data.security }
+      }
+    }
+  } catch (error) {
+    console.error('加载配置失败:', error)
+    ElMessage.error('加载配置失败')
+  } finally {
+    loading.value = false
+  }
+}
+
+// 加载统计信息
+const loadStatistics = async () => {
+  try {
+    const res = await getStatistics()
+    if (res.code === 200) {
+      Object.assign(statistics, res.data)
+    }
+  } catch (error) {
+    console.error('加载统计信息失败:', error)
+  }
+}
 
 // 保存基本配置
 const handleSaveBasic = async () => {
   saving.value = true
   try {
-    // 模拟保存
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    ElMessage.success('基本配置保存成功')
-    Object.assign(basicConfigBackup, basicConfig)
+    const res = await saveConfigByGroup('basic', basicConfig)
+    if (res.code === 200) {
+      ElMessage.success('基本配置保存成功')
+      basicConfigBackup = { ...basicConfig }
+    } else {
+      ElMessage.error(res.message || '保存失败')
+    }
   } catch (error) {
+    console.error('保存失败:', error)
     ElMessage.error('保存失败')
   } finally {
     saving.value = false
@@ -317,11 +373,15 @@ const handleResetBasic = () => {
 const handleSaveUpload = async () => {
   saving.value = true
   try {
-    // 模拟保存
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    ElMessage.success('上传配置保存成功')
-    Object.assign(uploadConfigBackup, uploadConfig)
+    const res = await saveConfigByGroup('upload', uploadConfig)
+    if (res.code === 200) {
+      ElMessage.success('上传配置保存成功')
+      uploadConfigBackup = { ...uploadConfig }
+    } else {
+      ElMessage.error(res.message || '保存失败')
+    }
   } catch (error) {
+    console.error('保存失败:', error)
     ElMessage.error('保存失败')
   } finally {
     saving.value = false
@@ -338,11 +398,15 @@ const handleResetUpload = () => {
 const handleSaveSecurity = async () => {
   saving.value = true
   try {
-    // 模拟保存
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    ElMessage.success('安全配置保存成功')
-    Object.assign(securityConfigBackup, securityConfig)
+    const res = await saveConfigByGroup('security', securityConfig)
+    if (res.code === 200) {
+      ElMessage.success('安全配置保存成功')
+      securityConfigBackup = { ...securityConfig }
+    } else {
+      ElMessage.error(res.message || '保存失败')
+    }
   } catch (error) {
+    console.error('保存失败:', error)
     ElMessage.error('保存失败')
   } finally {
     saving.value = false
@@ -354,6 +418,12 @@ const handleResetSecurity = () => {
   Object.assign(securityConfig, securityConfigBackup)
   ElMessage.info('已重置为上次保存的配置')
 }
+
+// 页面加载时获取数据
+onMounted(() => {
+  loadAllConfig()
+  loadStatistics()
+})
 </script>
 
 <style lang="scss" scoped>
