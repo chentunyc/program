@@ -11,7 +11,7 @@
         <el-col :xs="24" :sm="12" :md="8">
           <el-input
             v-model="queryParams.keyword"
-            placeholder="搜索用户名/姓名/学号/工号"
+            placeholder="搜索用户名/姓名/编号"
             clearable
             @keyup.enter="handleSearch"
           >
@@ -30,7 +30,9 @@
           >
             <el-option label="管理员" value="ADMIN" />
             <el-option label="教师" value="TEACHER" />
+            <el-option label="资料管理员" value="DATA_ADMIN" />
             <el-option label="学生" value="STUDENT" />
+            <el-option label="访客" value="GUEST" />
           </el-select>
         </el-col>
         <el-col :xs="24" :sm="12" :md="8">
@@ -73,9 +75,9 @@
       <el-table-column type="selection" width="55" />
       <el-table-column prop="username" label="用户名" min-width="120" />
       <el-table-column prop="realName" label="真实姓名" min-width="100" />
-      <el-table-column label="学号/工号" min-width="120">
+      <el-table-column label="编号" min-width="120">
         <template #default="{ row }">
-          {{ row.studentNo || row.employeeNo || '-' }}
+          {{ row.employeeNo || '-' }}
         </template>
       </el-table-column>
       <el-table-column label="性别" width="80">
@@ -173,17 +175,10 @@
             clearable
           />
         </el-form-item>
-        <el-form-item label="学号">
-          <el-input
-            v-model="userForm.studentNo"
-            placeholder="学生填写学号"
-            clearable
-          />
-        </el-form-item>
-        <el-form-item label="工号">
+        <el-form-item label="编号">
           <el-input
             v-model="userForm.employeeNo"
-            placeholder="教师/管理员填写工号"
+            placeholder="学号/工号/访客ID"
             clearable
           />
         </el-form-item>
@@ -321,7 +316,6 @@ const userForm = reactive({
   username: '',
   password: '',
   realName: '',
-  studentNo: '',
   employeeNo: '',
   gender: 0,
   phone: '',
@@ -354,7 +348,9 @@ const getRoleName = (roleCode) => {
   const roleMap = {
     'ADMIN': '管理员',
     'TEACHER': '教师',
-    'STUDENT': '学生'
+    'DATA_ADMIN': '资料管理员',
+    'STUDENT': '学生',
+    'GUEST': '访客'
   }
   return roleMap[roleCode] || roleCode
 }
@@ -421,7 +417,6 @@ const handleEdit = (row) => {
     id: row.id,
     username: row.username,
     realName: row.realName,
-    studentNo: row.studentNo,
     employeeNo: row.employeeNo,
     gender: row.gender ?? 0,
     phone: row.phone,
@@ -439,7 +434,6 @@ const resetForm = () => {
     username: '',
     password: '',
     realName: '',
-    studentNo: '',
     employeeNo: '',
     gender: 0,
     phone: '',
@@ -468,7 +462,6 @@ const handleSubmit = async () => {
       // 编辑用户
       await updateUser(userForm.id, {
         realName: userForm.realName,
-        studentNo: userForm.studentNo,
         employeeNo: userForm.employeeNo,
         gender: userForm.gender,
         phone: userForm.phone,
@@ -483,7 +476,6 @@ const handleSubmit = async () => {
         username: userForm.username,
         password: userForm.password,
         realName: userForm.realName,
-        studentNo: userForm.studentNo,
         employeeNo: userForm.employeeNo,
         roleIds: userForm.roleIds
       })

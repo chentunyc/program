@@ -38,12 +38,7 @@ public class User extends BaseEntity {
     private String realName;
 
     /**
-     * 学号(学生)
-     */
-    private String studentNo;
-
-    /**
-     * 工号(教师/管理员)
+     * 编号(学号/工号/访客ID)
      */
     private String employeeNo;
 

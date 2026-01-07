@@ -21,8 +21,7 @@ CREATE TABLE `t_user` (
   `username` VARCHAR(50) NOT NULL COMMENT '用户名',
   `password` VARCHAR(200) NOT NULL COMMENT '密码(加密)',
   `real_name` VARCHAR(50) NOT NULL COMMENT '真实姓名',
-  `student_no` VARCHAR(50) DEFAULT NULL COMMENT '学号(学生)',
-  `employee_no` VARCHAR(50) DEFAULT NULL COMMENT '工号(教师/管理员)',
+  `employee_no` VARCHAR(50) DEFAULT NULL COMMENT '编号(学号/工号/访客ID)',
   `gender` TINYINT DEFAULT NULL COMMENT '性别:0-未知,1-男,2-女',
   `phone` VARCHAR(20) DEFAULT NULL COMMENT '手机号',
   `email` VARCHAR(100) DEFAULT NULL COMMENT '邮箱',
@@ -37,7 +36,6 @@ CREATE TABLE `t_user` (
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_username` (`username`),
-  KEY `idx_student_no` (`student_no`),
   KEY `idx_employee_no` (`employee_no`),
   KEY `idx_phone` (`phone`),
   KEY `idx_create_time` (`create_time`)

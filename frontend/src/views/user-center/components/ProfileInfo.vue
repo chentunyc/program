@@ -38,10 +38,7 @@
         <el-descriptions-item label="真实姓名" :span="1">
           {{ userProfile.realName || '-' }}
         </el-descriptions-item>
-        <el-descriptions-item label="学号" :span="1">
-          {{ userProfile.studentNo || '-' }}
-        </el-descriptions-item>
-        <el-descriptions-item label="工号" :span="1">
+        <el-descriptions-item :label="getIdLabel()" :span="1">
           {{ userProfile.employeeNo || '-' }}
         </el-descriptions-item>
         <el-descriptions-item label="性别" :span="1">
@@ -52,7 +49,7 @@
         <el-descriptions-item label="手机号" :span="1">
           {{ userProfile.phone || '-' }}
         </el-descriptions-item>
-        <el-descriptions-item label="邮箱" :span="2">
+        <el-descriptions-item label="邮箱" :span="1">
           {{ userProfile.email || '-' }}
         </el-descriptions-item>
         <el-descriptions-item label="账号状态" :span="1">
@@ -140,7 +137,7 @@
         >
           <template #default>
             <ul style="margin: 0; padding-left: 20px;">
-              <li>用户名、学号、工号等信息不可修改</li>
+              <li>用户名、{{ getIdLabel() }}等信息不可修改</li>
               <li>修改信息后请点击"保存"按钮</li>
             </ul>
           </template>
@@ -192,9 +189,20 @@ const getRoleName = (roleCode) => {
   const roleMap = {
     'ADMIN': '管理员',
     'TEACHER': '教师',
-    'STUDENT': '学生'
+    'DATA_ADMIN': '资料管理员',
+    'STUDENT': '学生',
+    'GUEST': '访客'
   }
   return roleMap[roleCode] || roleCode
+}
+
+// 根据角色获取编号标签
+const getIdLabel = () => {
+  const roles = userProfile.value?.roles || []
+  if (roles.includes('STUDENT')) return '学号'
+  if (roles.includes('ADMIN') || roles.includes('TEACHER') || roles.includes('DATA_ADMIN')) return '工号'
+  if (roles.includes('GUEST')) return '访客ID'
+  return '编号'
 }
 
 // 加载用户资料

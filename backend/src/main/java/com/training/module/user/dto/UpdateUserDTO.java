@@ -20,10 +20,7 @@ public class UpdateUserDTO {
     @Size(max = 50, message = "姓名长度不能超过50个字符")
     private String realName;
 
-    @Schema(description = "学号(学生)")
-    private String studentNo;
-
-    @Schema(description = "工号(教师/管理员)")
+    @Schema(description = "编号(学号/工号/访客ID)")
     private String employeeNo;
 
     @Schema(description = "性别:0-未知,1-男,2-女")

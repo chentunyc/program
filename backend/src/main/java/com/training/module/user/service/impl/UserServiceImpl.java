@@ -379,7 +379,6 @@ public class UserServiceImpl implements UserService {
         vo.setId(user.getId());
         vo.setUsername(user.getUsername());
         vo.setRealName(user.getRealName());
-        vo.setStudentNo(user.getStudentNo());
         vo.setEmployeeNo(user.getEmployeeNo());
         vo.setGender(user.getGender());
         vo.setPhone(user.getPhone());
@@ -409,7 +408,6 @@ public class UserServiceImpl implements UserService {
             queryWrapper.and(wrapper -> wrapper
                     .like(User::getUsername, keyword)
                     .or().like(User::getRealName, keyword)
-                    .or().like(User::getStudentNo, keyword)
                     .or().like(User::getEmployeeNo, keyword)
             );
         }
@@ -458,7 +456,6 @@ public class UserServiceImpl implements UserService {
         user.setUsername(createDTO.getUsername());
         user.setPassword(passwordEncoder.encode(createDTO.getPassword()));
         user.setRealName(createDTO.getRealName());
-        user.setStudentNo(createDTO.getStudentNo());
         user.setEmployeeNo(createDTO.getEmployeeNo());
         user.setStatus(1); // 默认正常状态
 
@@ -497,11 +494,6 @@ public class UserServiceImpl implements UserService {
 
         if (StrUtil.isNotBlank(updateDTO.getRealName())) {
             updateWrapper.set(User::getRealName, updateDTO.getRealName());
-            hasUpdate = true;
-        }
-
-        if (StrUtil.isNotBlank(updateDTO.getStudentNo())) {
-            updateWrapper.set(User::getStudentNo, updateDTO.getStudentNo());
             hasUpdate = true;
         }
 
