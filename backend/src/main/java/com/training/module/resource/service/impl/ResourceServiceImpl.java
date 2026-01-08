@@ -376,16 +376,22 @@ public class ResourceServiceImpl implements ResourceService {
             // 生成文件名
             String filename = UUID.randomUUID().toString().replace("-", "") + extension;
 
+            // 将相对路径转换为绝对路径，避免 Tomcat 临时目录问题
+            Path basePath = Paths.get(uploadPath);
+            if (!basePath.isAbsolute()) {
+                basePath = Paths.get(System.getProperty("user.dir")).resolve(uploadPath).normalize();
+            }
+
             // 按类型分目录存储
-            String typePath = resourceFilePath + "/" + resourceType.toLowerCase();
-            Path dirPath = Paths.get(uploadPath, typePath);
+            String typePath = resourceFilePath.startsWith("/") ? resourceFilePath.substring(1) : resourceFilePath;
+            Path dirPath = basePath.resolve(typePath).resolve(resourceType.toLowerCase());
             if (!Files.exists(dirPath)) {
                 Files.createDirectories(dirPath);
             }
 
-            // 保存文件
+            // 保存文件 - 使用绝对路径
             Path filePath = dirPath.resolve(filename);
-            file.transferTo(filePath.toFile());
+            file.transferTo(filePath.toAbsolutePath().toFile());
 
             log.info("资源文件上传成功: {}", filePath);
             return typePath + "/" + filename;
@@ -422,15 +428,22 @@ public class ResourceServiceImpl implements ResourceService {
             // 生成文件名
             String filename = UUID.randomUUID().toString().replace("-", "") + extension;
 
+            // 将相对路径转换为绝对路径，避免 Tomcat 临时目录问题
+            Path basePath = Paths.get(uploadPath);
+            if (!basePath.isAbsolute()) {
+                basePath = Paths.get(System.getProperty("user.dir")).resolve(uploadPath).normalize();
+            }
+
             // 创建目录
-            Path dirPath = Paths.get(uploadPath, coverPath);
+            String coverDir = coverPath.startsWith("/") ? coverPath.substring(1) : coverPath;
+            Path dirPath = basePath.resolve(coverDir);
             if (!Files.exists(dirPath)) {
                 Files.createDirectories(dirPath);
             }
 
-            // 保存文件
+            // 保存文件 - 使用绝对路径
             Path filePath = dirPath.resolve(filename);
-            file.transferTo(filePath.toFile());
+            file.transferTo(filePath.toAbsolutePath().toFile());
 
             log.info("封面图片上传成功: {}", filePath);
             return coverPath + "/" + filename;

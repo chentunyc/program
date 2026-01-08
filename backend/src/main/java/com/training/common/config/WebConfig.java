@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * Web配置
  * 配置静态资源映射
@@ -24,8 +27,16 @@ public class WebConfig implements WebMvcConfigurer {
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 将相对路径转换为绝对路径
+        Path basePath = Paths.get(uploadPath);
+        if (!basePath.isAbsolute()) {
+            basePath = Paths.get(System.getProperty("user.dir")).resolve(uploadPath).normalize();
+        }
         // 确保路径以/结尾
-        String location = uploadPath.endsWith("/") ? uploadPath : uploadPath + "/";
+        String location = basePath.toAbsolutePath().toString().replace("\\", "/");
+        if (!location.endsWith("/")) {
+            location = location + "/";
+        }
 
         // 头像资源映射
         registry.addResourceHandler("/avatars/**")

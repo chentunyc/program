@@ -336,15 +336,20 @@ public class UserServiceImpl implements UserService {
                     : ".jpg";
             String filename = UUID.randomUUID().toString().replace("-", "") + extension;
 
-            // 创建目录
-            Path dirPath = Paths.get(uploadPath, avatarPath);
+            // 创建目录 - 将相对路径转换为绝对路径，避免 Tomcat 临时目录问题
+            Path basePath = Paths.get(uploadPath);
+            if (!basePath.isAbsolute()) {
+                // 相对路径基于项目运行目录
+                basePath = Paths.get(System.getProperty("user.dir")).resolve(uploadPath).normalize();
+            }
+            Path dirPath = basePath.resolve(avatarPath.startsWith("/") ? avatarPath.substring(1) : avatarPath);
             if (!Files.exists(dirPath)) {
                 Files.createDirectories(dirPath);
             }
 
-            // 保存文件
+            // 保存文件 - 使用绝对路径
             Path filePath = dirPath.resolve(filename);
-            file.transferTo(filePath.toFile());
+            file.transferTo(filePath.toAbsolutePath().toFile());
 
             // 生成访问URL
             String avatarUrl = avatarPath + "/" + filename;
