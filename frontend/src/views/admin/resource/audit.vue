@@ -517,7 +517,10 @@ const getMediaUrl = (url) => {
   if (url.startsWith('http://') || url.startsWith('https://')) {
     return url
   }
-  // 静态资源直接访问，不走/api代理
+  // 确保路径以/开头，以便Vite代理能正确匹配
+  if (!url.startsWith('/')) {
+    url = '/' + url
+  }
   return url
 }
 

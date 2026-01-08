@@ -1,4 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -6,11 +8,66 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import viteCompression from 'vite-plugin-compression'
 import svgLoader from 'vite-svg-loader'
+import http from 'http'
+
+// public 目录路径
+const publicDir = fileURLToPath(new URL('./public', import.meta.url))
+
+// 需要智能代理的静态资源路径（同时存在于前端 public 和后端）
+const smartProxyPaths = ['/images', '/documents', '/videos', '/audios', '/simulations']
+
+/**
+ * 智能代理插件：本地有文件则返回本地，否则代理到后端
+ */
+function smartProxyPlugin() {
+  return {
+    name: 'smart-proxy',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const url = req.url?.split('?')[0] || ''
+
+        // 检查是否是需要智能代理的路径
+        const needsSmartProxy = smartProxyPaths.some(p => url.startsWith(p))
+        if (!needsSmartProxy) {
+          return next()
+        }
+
+        // 检查本地 public 目录是否存在该文件
+        const localPath = join(publicDir, url)
+        if (existsSync(localPath)) {
+          // 本地存在，让 Vite 处理（返回本地文件）
+          return next()
+        }
+
+        // 本地不存在，代理到后端
+        const proxyReq = http.request({
+          hostname: 'localhost',
+          port: 8080,
+          path: '/api' + url,
+          method: req.method,
+          headers: { ...req.headers, host: 'localhost:8080' }
+        }, (proxyRes) => {
+          res.writeHead(proxyRes.statusCode || 200, proxyRes.headers)
+          proxyRes.pipe(res)
+        })
+
+        proxyReq.on('error', (err) => {
+          console.error('Smart proxy error:', err.message)
+          next()
+        })
+
+        req.pipe(proxyReq)
+      })
+    }
+  }
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    // 智能代理插件
+    smartProxyPlugin(),
     // ElementPlus自动导入
     AutoImport({
       resolvers: [ElementPlusResolver()],
@@ -48,28 +105,27 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path
       },
-      // 静态资源代理
+      // 静态资源代理 - 需要添加 /api 前缀，因为后端 context-path 是 /api
       '/avatars': {
         target: 'http://localhost:8080',
-        changeOrigin: true
+        changeOrigin: true,
+        rewrite: (path) => '/api' + path
       },
       '/uploads': {
         target: 'http://localhost:8080',
-        changeOrigin: true
+        changeOrigin: true,
+        rewrite: (path) => '/api' + path
       },
-      // 注意：移除了 /images 代理，因为 public/images 目录下有前端静态资源
-      // 如需访问后端 /images/** 资源，请使用 /api/images 路径
       '/resources': {
         target: 'http://localhost:8080',
-        changeOrigin: true
+        changeOrigin: true,
+        rewrite: (path) => '/api' + path
       },
       '/covers': {
         target: 'http://localhost:8080',
-        changeOrigin: true
-      },
-      // 注意：移除了 /documents 代理，因为 public/documents 目录下有前端静态资源
-      // 如需访问后端 /documents/** 资源，请使用其他路径
-
+        changeOrigin: true,
+        rewrite: (path) => '/api' + path
+      }
     }
   },
   build: {

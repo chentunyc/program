@@ -215,5 +215,5 @@ training:
 file:
   upload:
     # 使用相对路径，文件保存在项目根目录下的 uploads 文件夹
-    path: ../uploads
+    path: ./uploads
     avatar-path: /avatars

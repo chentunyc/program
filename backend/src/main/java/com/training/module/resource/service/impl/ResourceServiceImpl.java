@@ -394,7 +394,8 @@ public class ResourceServiceImpl implements ResourceService {
             file.transferTo(filePath.toAbsolutePath().toFile());
 
             log.info("资源文件上传成功: {}", filePath);
-            return typePath + "/" + filename;
+            // 返回带前导斜杠的路径，确保前端代理能正确匹配
+            return "/" + typePath + "/" + resourceType.toLowerCase() + "/" + filename;
         } catch (Exception e) {
             log.error("资源文件上传失败", e);
             throw new BusinessException("文件上传失败：" + e.getMessage());
