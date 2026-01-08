@@ -15,12 +15,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Value("${file.upload.path:E:/uploads}")
+    @Value("${file.upload.path:./uploads}")
     private String uploadPath;
 
     /**
      * 配置静态资源映射
-     * 将/avatars/**映射到实际的文件上传目录
+     * 将静态资源路径映射到实际的文件上传目录
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -34,5 +34,21 @@ public class WebConfig implements WebMvcConfigurer {
         // 上传文件资源映射
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("file:" + location);
+
+        // 图片资源映射
+        registry.addResourceHandler("/images/**")
+                .addResourceLocations("file:" + location + "images/");
+
+        // 资源文件映射（视频、音频、文档、仿真等）
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("file:" + location + "resources/");
+
+        // 封面图片映射
+        registry.addResourceHandler("/covers/**")
+                .addResourceLocations("file:" + location + "covers/");
+
+        // 文档资源映射
+        registry.addResourceHandler("/documents/**")
+                .addResourceLocations("file:" + location + "documents/");
     }
 }

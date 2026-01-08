@@ -47,7 +47,29 @@ export default defineConfig({
         target: 'http://localhost:8080',
         changeOrigin: true,
         rewrite: (path) => path
-      }
+      },
+      // 静态资源代理
+      '/avatars': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      },
+      '/uploads': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      },
+      // 注意：移除了 /images 代理，因为 public/images 目录下有前端静态资源
+      // 如需访问后端 /images/** 资源，请使用 /api/images 路径
+      '/resources': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      },
+      '/covers': {
+        target: 'http://localhost:8080',
+        changeOrigin: true
+      },
+      // 注意：移除了 /documents 代理，因为 public/documents 目录下有前端静态资源
+      // 如需访问后端 /documents/** 资源，请使用其他路径
+
     }
   },
   build: {

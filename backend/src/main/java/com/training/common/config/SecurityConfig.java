@@ -91,7 +91,11 @@ public class SecurityConfig {
                         // 静态资源允许匿名访问
                         .requestMatchers(
                                 "/avatars/**",
-                                "/uploads/**"
+                                "/uploads/**",
+                                "/images/**",
+                                "/resources/**",
+                                "/covers/**",
+                                "/documents/**"
                         ).permitAll()
                         // Druid监控允许匿名访问(生产环境应该配置认证)
                         .requestMatchers("/druid/**").permitAll()
