@@ -2,7 +2,8 @@
   <div class="resource-container">
     <!-- 页面头部 - 统计信息 -->
     <div class="resource-header">
-      <div class="stats-cards">
+      <div class="header-top">
+        <div class="stats-cards">
         <div class="stat-card simulation" @click="filterByType('SIMULATION')">
           <div class="stat-icon">
             <el-icon><Monitor /></el-icon>
@@ -38,6 +39,7 @@
             <span class="stat-value">{{ stats.documentCount || 0 }}</span>
             <span class="stat-label">文档资源</span>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -330,10 +332,18 @@ onMounted(() => {
 .resource-header {
   margin-bottom: 20px;
 
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
   .stats-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    flex: 1;
 
     .stat-card {
       display: flex;
@@ -545,8 +555,19 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 1024px) {
-  .resource-header .stats-cards {
-    grid-template-columns: repeat(2, 1fr);
+  .resource-header {
+    .header-top {
+      flex-direction: column;
+    }
+
+    .manage-btn {
+      width: 100%;
+      height: 44px;
+    }
+
+    .stats-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .resource-list .resource-grid {

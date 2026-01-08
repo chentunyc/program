@@ -21,13 +21,15 @@ import com.training.module.user.entity.User;
 import com.training.module.user.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -47,6 +49,27 @@ public class ResourceServiceImpl implements ResourceService {
     private final ResourceAudioMapper audioMapper;
     private final ResourceDocumentMapper documentMapper;
     private final UserMapper userMapper;
+    private final com.training.module.system.service.SystemConfigService systemConfigService;
+
+    @Value("${file.upload.path:./uploads}")
+    private String uploadPath;
+
+    @Value("${file.upload.resource-path:/resources}")
+    private String resourceFilePath;
+
+    @Value("${file.upload.cover-path:/covers}")
+    private String coverPath;
+
+    // 允许的文件类型
+    private static final Map<String, Set<String>> ALLOWED_EXTENSIONS = new HashMap<>();
+    static {
+        ALLOWED_EXTENSIONS.put("VIDEO", Set.of(".mp4", ".avi", ".mov", ".wmv", ".flv", ".mkv", ".webm"));
+        ALLOWED_EXTENSIONS.put("AUDIO", Set.of(".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma"));
+        ALLOWED_EXTENSIONS.put("DOCUMENT", Set.of(".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".txt"));
+        ALLOWED_EXTENSIONS.put("SIMULATION", Set.of(".zip", ".rar", ".7z", ".html", ".unity3d"));
+    }
+
+    private static final Set<String> IMAGE_EXTENSIONS = Set.of(".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp");
 
     // 资源类型映射
     private static final Map<String, String> RESOURCE_TYPE_MAP = new HashMap<>();
@@ -313,6 +336,130 @@ public class ResourceServiceImpl implements ResourceService {
     @Override
     public void incrementDownloadCount(Long id) {
         resourceMapper.incrementDownloadCount(id);
+    }
+
+    @Override
+    public boolean updateResourceShare(Long id, Integer isShared) {
+        Resource resource = resourceMapper.selectById(id);
+        if (resource == null || resource.getIsDeleted() == 1) {
+            throw new BusinessException("资源不存在");
+        }
+        resource.setIsShared(isShared);
+        return resourceMapper.updateById(resource) > 0;
+    }
+
+    @Override
+    public String uploadResourceFile(MultipartFile file, String resourceType) {
+        if (file == null || file.isEmpty()) {
+            throw new BusinessException("请选择要上传的文件");
+        }
+
+        // 验证文件类型
+        String originalFilename = file.getOriginalFilename();
+        String extension = getFileExtension(originalFilename);
+
+        Set<String> allowedExtensions = ALLOWED_EXTENSIONS.get(resourceType);
+        if (allowedExtensions == null || !allowedExtensions.contains(extension.toLowerCase())) {
+            throw new BusinessException("不支持的文件格式，该资源类型允许的格式为：" +
+                    (allowedExtensions != null ? String.join(", ", allowedExtensions) : "无"));
+        }
+
+        // 从平台设置获取最大文件大小（默认500MB）
+        long maxFileSizeMB = getMaxFileSize();
+        long maxFileSizeBytes = maxFileSizeMB * 1024 * 1024;
+
+        if (file.getSize() > maxFileSizeBytes) {
+            throw new BusinessException("文件大小不能超过" + maxFileSizeMB + "MB");
+        }
+
+        try {
+            // 生成文件名
+            String filename = UUID.randomUUID().toString().replace("-", "") + extension;
+
+            // 按类型分目录存储
+            String typePath = resourceFilePath + "/" + resourceType.toLowerCase();
+            Path dirPath = Paths.get(uploadPath, typePath);
+            if (!Files.exists(dirPath)) {
+                Files.createDirectories(dirPath);
+            }
+
+            // 保存文件
+            Path filePath = dirPath.resolve(filename);
+            file.transferTo(filePath.toFile());
+
+            log.info("资源文件上传成功: {}", filePath);
+            return typePath + "/" + filename;
+        } catch (Exception e) {
+            log.error("资源文件上传失败", e);
+            throw new BusinessException("文件上传失败：" + e.getMessage());
+        }
+    }
+
+    @Override
+    public String uploadCoverImage(MultipartFile file) {
+        if (file == null || file.isEmpty()) {
+            throw new BusinessException("请选择要上传的图片");
+        }
+
+        // 验证文件类型
+        String contentType = file.getContentType();
+        if (contentType == null || !contentType.startsWith("image/")) {
+            throw new BusinessException("只能上传图片文件");
+        }
+
+        String originalFilename = file.getOriginalFilename();
+        String extension = getFileExtension(originalFilename);
+        if (!IMAGE_EXTENSIONS.contains(extension.toLowerCase())) {
+            throw new BusinessException("不支持的图片格式，允许的格式为：" + String.join(", ", IMAGE_EXTENSIONS));
+        }
+
+        // 验证文件大小 (最大5MB)
+        if (file.getSize() > 5 * 1024 * 1024) {
+            throw new BusinessException("图片大小不能超过5MB");
+        }
+
+        try {
+            // 生成文件名
+            String filename = UUID.randomUUID().toString().replace("-", "") + extension;
+
+            // 创建目录
+            Path dirPath = Paths.get(uploadPath, coverPath);
+            if (!Files.exists(dirPath)) {
+                Files.createDirectories(dirPath);
+            }
+
+            // 保存文件
+            Path filePath = dirPath.resolve(filename);
+            file.transferTo(filePath.toFile());
+
+            log.info("封面图片上传成功: {}", filePath);
+            return coverPath + "/" + filename;
+        } catch (Exception e) {
+            log.error("封面图片上传失败", e);
+            throw new BusinessException("图片上传失败：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 从平台设置获取最大文件大小（MB）
+     */
+    private long getMaxFileSize() {
+        try {
+            Object maxSize = systemConfigService.getConfigValue("upload", "maxFileSize");
+            if (maxSize instanceof Number) {
+                return ((Number) maxSize).longValue();
+            }
+        } catch (Exception e) {
+            log.warn("获取平台上传配置失败，使用默认值", e);
+        }
+        return 500; // 默认500MB
+    }
+
+    private String getFileExtension(String filename) {
+        if (filename == null || !filename.contains(".")) {
+            return "";
+        }
+        return filename.substring(filename.lastIndexOf("."));
     }
 
     // ===== 私有辅助方法 =====

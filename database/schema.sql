@@ -305,67 +305,64 @@ CREATE TABLE `t_resource_document` (
 -- 5. 实训中心模块
 -- ====================================================
 
--- 课程表
-DROP TABLE IF EXISTS `t_course`;
-CREATE TABLE `t_course` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '课程ID',
-  `course_code` VARCHAR(50) NOT NULL COMMENT '课程编码',
-  `course_name` VARCHAR(200) NOT NULL COMMENT '课程名称',
-  `description` TEXT DEFAULT NULL COMMENT '课程描述',
-  `cover_image` VARCHAR(500) DEFAULT NULL COMMENT '课程封面',
-  `teacher_id` BIGINT NOT NULL COMMENT '授课教师ID',
-  `department` VARCHAR(100) DEFAULT NULL COMMENT '开课院系',
-  `credit` DECIMAL(3,1) DEFAULT NULL COMMENT '学分',
-  `total_hours` INT DEFAULT NULL COMMENT '总学时',
-  `category` VARCHAR(50) DEFAULT NULL COMMENT '课程类别',
+-- 实训项目表
+DROP TABLE IF EXISTS `t_training_project`;
+CREATE TABLE `t_training_project` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '项目ID',
+  `project_code` VARCHAR(50) NOT NULL COMMENT '项目编码',
+  `project_name` VARCHAR(200) NOT NULL COMMENT '项目名称',
+  `description` TEXT DEFAULT NULL COMMENT '项目描述',
+  `cover_image` VARCHAR(500) DEFAULT NULL COMMENT '项目封面',
+  `manager_id` BIGINT DEFAULT NULL COMMENT '项目负责人ID',
+  `category` VARCHAR(50) DEFAULT NULL COMMENT '项目类别',
   `difficulty` TINYINT DEFAULT 1 COMMENT '难度等级:1-初级,2-中级,3-高级',
-  `start_time` DATETIME DEFAULT NULL COMMENT '开课时间',
-  `end_time` DATETIME DEFAULT NULL COMMENT '结课时间',
-  `max_students` INT DEFAULT NULL COMMENT '最大学生数',
-  `enrolled_count` INT DEFAULT 0 COMMENT '已报名人数',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-未开课,1-进行中,2-已结课',
+  `start_time` DATETIME DEFAULT NULL COMMENT '开始时间',
+  `end_time` DATETIME DEFAULT NULL COMMENT '结束时间',
+  `max_members` INT DEFAULT NULL COMMENT '最大参与人数',
+  `member_count` INT DEFAULT 0 COMMENT '已参与人数',
+  `total_tasks` INT DEFAULT 0 COMMENT '任务总数',
+  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-未开始,1-进行中,2-已结束',
   `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
   `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_course_code` (`course_code`),
-  KEY `idx_teacher_id` (`teacher_id`),
+  UNIQUE KEY `uk_project_code` (`project_code`),
+  KEY `idx_manager_id` (`manager_id`),
   KEY `idx_status` (`status`),
   KEY `idx_create_time` (`create_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='课程表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实训项目表';
 
 -- 实训任务表
 DROP TABLE IF EXISTS `t_training_task`;
 CREATE TABLE `t_training_task` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '任务ID',
-  `course_id` BIGINT NOT NULL COMMENT '课程ID',
+  `project_id` BIGINT NOT NULL COMMENT '项目ID',
   `task_name` VARCHAR(200) NOT NULL COMMENT '任务名称',
   `description` TEXT DEFAULT NULL COMMENT '任务描述',
-  `task_type` TINYINT NOT NULL COMMENT '任务类型:1-理论学习,2-实践操作,3-综合项目',
+  `task_type` TINYINT NOT NULL DEFAULT 1 COMMENT '任务类型:1-理论学习,2-实践操作,3-综合项目',
   `resource_id` BIGINT DEFAULT NULL COMMENT '关联资源ID',
-  `lab_id` BIGINT DEFAULT NULL COMMENT '关联实验室ID',
   `difficulty` TINYINT DEFAULT 1 COMMENT '难度等级:1-初级,2-中级,3-高级',
   `total_score` INT DEFAULT 100 COMMENT '总分',
   `pass_score` INT DEFAULT 60 COMMENT '及格分',
   `time_limit` INT DEFAULT NULL COMMENT '时间限制(分钟)',
-  `start_time` DATETIME DEFAULT NULL COMMENT '开始时间',
-  `end_time` DATETIME DEFAULT NULL COMMENT '结束时间',
+  `sort_order` INT DEFAULT 0 COMMENT '排序序号',
   `attachment_url` VARCHAR(500) DEFAULT NULL COMMENT '附件URL',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-未发布,1-进行中,2-已结束',
+  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-未发布,1-已发布',
   `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
   `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
-  KEY `idx_course_id` (`course_id`),
-  KEY `idx_status` (`status`),
-  KEY `idx_create_time` (`create_time`)
+  KEY `idx_project_id` (`project_id`),
+  KEY `idx_resource_id` (`resource_id`),
+  KEY `idx_sort_order` (`sort_order`),
+  KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实训任务表';
 
--- 实训记录表
+-- 实训记录表（学生参与任务的记录）
 DROP TABLE IF EXISTS `t_training_record`;
 CREATE TABLE `t_training_record` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '记录ID',
@@ -383,63 +380,39 @@ CREATE TABLE `t_training_record` (
   `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_task_user` (`task_id`, `user_id`),
   KEY `idx_task_id` (`task_id`),
   KEY `idx_user_id` (`user_id`),
   KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实训记录表';
 
--- 用户课程关联表
-DROP TABLE IF EXISTS `t_user_course`;
-CREATE TABLE `t_user_course` (
+-- 用户项目关联表（学生参与项目）
+DROP TABLE IF EXISTS `t_user_project`;
+CREATE TABLE `t_user_project` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `user_id` BIGINT NOT NULL COMMENT '用户ID',
-  `course_id` BIGINT NOT NULL COMMENT '课程ID',
-  `enroll_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '报名时间',
-  `progress` INT DEFAULT 0 COMMENT '学习进度(%)',
+  `project_id` BIGINT NOT NULL COMMENT '项目ID',
+  `join_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '加入时间',
+  `progress` INT DEFAULT 0 COMMENT '完成进度(%)',
+  `completed_tasks` INT DEFAULT 0 COMMENT '已完成任务数',
   `total_score` DECIMAL(5,2) DEFAULT NULL COMMENT '总成绩',
-  `status` TINYINT DEFAULT 1 COMMENT '状态:1-学习中,2-已完成,3-已退出',
+  `status` TINYINT DEFAULT 1 COMMENT '状态:1-进行中,2-已完成,3-已退出',
   `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_user_course` (`user_id`, `course_id`),
+  UNIQUE KEY `uk_user_project` (`user_id`, `project_id`),
   KEY `idx_user_id` (`user_id`),
-  KEY `idx_course_id` (`course_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户课程关联表';
+  KEY `idx_project_id` (`project_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户项目关联表';
 
 
 
 -- ====================================================
--- 8. 教师功能模块(预留)
+-- 8. 过程记录模块
 -- ====================================================
 
--- 教学计划表
-DROP TABLE IF EXISTS `t_teaching_plan`;
-CREATE TABLE `t_teaching_plan` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '计划ID',
-  `course_id` BIGINT NOT NULL COMMENT '课程ID',
-  `teacher_id` BIGINT NOT NULL COMMENT '教师ID',
-  `plan_name` VARCHAR(200) NOT NULL COMMENT '计划名称',
-  `semester` VARCHAR(50) DEFAULT NULL COMMENT '学期',
-  `week_number` INT DEFAULT NULL COMMENT '周次',
-  `content` TEXT DEFAULT NULL COMMENT '教学内容',
-  `objective` TEXT DEFAULT NULL COMMENT '教学目标',
-  `method` VARCHAR(500) DEFAULT NULL COMMENT '教学方法',
-  `resource_ids` VARCHAR(500) DEFAULT NULL COMMENT '关联资源ID(逗号分隔)',
-  `homework` TEXT DEFAULT NULL COMMENT '作业安排',
-  `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-计划中,1-进行中,2-已完成',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_course_id` (`course_id`),
-  KEY `idx_teacher_id` (`teacher_id`),
-  KEY `idx_status` (`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='教学计划表';
-
--- 过程结果表
+-- 过程结果表（学生实训过程数据）
 DROP TABLE IF EXISTS `t_process_result`;
 CREATE TABLE `t_process_result` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '结果ID',

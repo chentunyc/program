@@ -37,16 +37,39 @@
               </el-icon>
               <span>{{ route.meta.title }}</span>
             </template>
-            <el-menu-item
-              v-for="child in route.children"
-              :key="child.path"
-              :index="route.path + '/' + child.path"
-            >
-              <el-icon v-if="child.meta?.icon">
-                <component :is="child.meta.icon" />
-              </el-icon>
-              <template #title>{{ child.meta.title }}</template>
-            </el-menu-item>
+
+            <template v-for="child in route.children" :key="child.path">
+              <!-- 二级菜单无子菜单 -->
+              <el-menu-item
+                v-if="!child.children || child.children.length === 0"
+                :index="route.path + '/' + child.path"
+              >
+                <el-icon v-if="child.meta?.icon">
+                  <component :is="child.meta.icon" />
+                </el-icon>
+                <template #title>{{ child.meta.title }}</template>
+              </el-menu-item>
+
+              <!-- 二级菜单有子菜单（三级菜单） -->
+              <el-sub-menu v-else :index="route.path + '/' + child.path">
+                <template #title>
+                  <el-icon v-if="child.meta?.icon">
+                    <component :is="child.meta.icon" />
+                  </el-icon>
+                  <span>{{ child.meta.title }}</span>
+                </template>
+                <el-menu-item
+                  v-for="subChild in child.children"
+                  :key="subChild.path"
+                  :index="route.path + '/' + child.path + '/' + subChild.path"
+                >
+                  <el-icon v-if="subChild.meta?.icon">
+                    <component :is="subChild.meta.icon" />
+                  </el-icon>
+                  <template #title>{{ subChild.meta.title }}</template>
+                </el-menu-item>
+              </el-sub-menu>
+            </template>
           </el-sub-menu>
         </template>
       </el-menu>
@@ -149,16 +172,22 @@ const menuRoutes = computed(() => {
     return []
   }
 
-  // 过滤菜单项
-  return layoutRoute.children.filter((route) => {
+  /**
+   * 检查用户是否有权限访问路由
+   */
+  const hasPermission = (route) => {
     // 隐藏的路由不显示
     if (route.meta?.hidden) {
       return false
     }
 
-    // 需要管理员权限的路由，检查用户是否为管理员
-    if (route.meta?.requireAdmin && !userStore.isAdmin()) {
-      return false
+    // 检查 allowedRoles
+    const allowedRoles = route.meta?.allowedRoles
+    if (allowedRoles && allowedRoles.length > 0) {
+      const hasRole = allowedRoles.some(role => userStore.hasRole(role))
+      if (!hasRole) {
+        return false
+      }
     }
 
     // 检查是否被角色排除
@@ -171,13 +200,46 @@ const menuRoutes = computed(() => {
     }
 
     return route.meta?.title
-  }).map(route => {
-    // 处理完整路径
-    return {
-      ...route,
-      path: '/' + route.path
-    }
-  })
+  }
+
+  /**
+   * 递归过滤子菜单
+   */
+  const filterChildren = (children) => {
+    if (!children) return []
+    return children
+      .filter(child => hasPermission(child))
+      .map(child => ({
+        ...child,
+        children: filterChildren(child.children)
+      }))
+      .filter(child => {
+        // 如果有子菜单要求但过滤后没有子菜单了，也隐藏父菜单
+        if (child.children && child.children.length === 0 && child.redirect) {
+          return false
+        }
+        return true
+      })
+  }
+
+  // 过滤一级菜单
+  return layoutRoute.children
+    .filter(route => hasPermission(route))
+    .map(route => {
+      const filteredChildren = filterChildren(route.children)
+      return {
+        ...route,
+        path: '/' + route.path,
+        children: filteredChildren
+      }
+    })
+    .filter(route => {
+      // 如果有子菜单要求但过滤后没有子菜单了，也隐藏父菜单
+      if (route.children && route.children.length === 0 && route.redirect) {
+        return false
+      }
+      return true
+    })
 })
 
 /**

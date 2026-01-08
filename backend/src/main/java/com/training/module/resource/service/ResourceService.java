@@ -120,4 +120,30 @@ public interface ResourceService {
      * @param id 资源ID
      */
     void incrementDownloadCount(Long id);
+
+    /**
+     * 更新资源共享状态
+     *
+     * @param id 资源ID
+     * @param isShared 是否共享（0-否，1-是）
+     * @return 是否成功
+     */
+    boolean updateResourceShare(Long id, Integer isShared);
+
+    /**
+     * 上传资源文件
+     *
+     * @param file 文件
+     * @param resourceType 资源类型
+     * @return 文件访问路径
+     */
+    String uploadResourceFile(org.springframework.web.multipart.MultipartFile file, String resourceType);
+
+    /**
+     * 上传封面图片
+     *
+     * @param file 图片文件
+     * @return 图片访问路径
+     */
+    String uploadCoverImage(org.springframework.web.multipart.MultipartFile file);
 }

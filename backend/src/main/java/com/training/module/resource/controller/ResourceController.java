@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -64,7 +65,7 @@ public class ResourceController {
      * 创建资源
      */
     @Operation(summary = "创建资源")
-    @PreAuthorize("hasAnyAuthority('resource:create', 'ADMIN', 'TEACHER')")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
     @PostMapping
     public Result<Long> createResource(@Validated @RequestBody ResourceCreateDTO createDTO) {
         log.info("创建资源: {}", createDTO.getResourceName());
@@ -77,7 +78,7 @@ public class ResourceController {
      * 更新资源
      */
     @Operation(summary = "更新资源")
-    @PreAuthorize("hasAnyAuthority('resource:edit', 'ADMIN', 'TEACHER')")
+    @PreAuthorize("hasAnyAuthority('resource:edit', 'TEACHER', 'DATA_ADMIN')")
     @PutMapping
     public Result<?> updateResource(@Validated @RequestBody ResourceUpdateDTO updateDTO) {
         log.info("更新资源: id={}", updateDTO.getId());
@@ -90,7 +91,7 @@ public class ResourceController {
      * 删除资源
      */
     @Operation(summary = "删除资源")
-    @PreAuthorize("hasAnyAuthority('resource:delete', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:delete', 'DATA_ADMIN')")
     @DeleteMapping("/{id}")
     public Result<?> deleteResource(@PathVariable Long id) {
         log.info("删除资源: id={}", id);
@@ -102,7 +103,7 @@ public class ResourceController {
      * 批量删除资源
      */
     @Operation(summary = "批量删除资源")
-    @PreAuthorize("hasAnyAuthority('resource:delete', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:delete', 'DATA_ADMIN')")
     @DeleteMapping("/batch")
     public Result<?> batchDeleteResource(@RequestBody Long[] ids) {
         log.info("批量删除资源: ids={}", ids);
@@ -114,7 +115,7 @@ public class ResourceController {
      * 发布资源
      */
     @Operation(summary = "发布资源")
-    @PreAuthorize("hasAnyAuthority('resource:publish', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:publish', 'DATA_ADMIN')")
     @PutMapping("/{id}/publish")
     public Result<?> publishResource(@PathVariable Long id) {
         log.info("发布资源: id={}", id);
@@ -126,12 +127,24 @@ public class ResourceController {
      * 下架资源
      */
     @Operation(summary = "下架资源")
-    @PreAuthorize("hasAnyAuthority('resource:offline', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:offline', 'DATA_ADMIN')")
     @PutMapping("/{id}/offline")
     public Result<?> offlineResource(@PathVariable Long id) {
         log.info("下架资源: id={}", id);
         boolean success = resourceService.offlineResource(id);
         return success ? Result.success("下架成功") : Result.error("下架失败");
+    }
+
+    /**
+     * 更新资源共享状态
+     */
+    @Operation(summary = "更新资源共享状态")
+    @PreAuthorize("hasAnyAuthority('resource:edit', 'DATA_ADMIN')")
+    @PutMapping("/{id}/share")
+    public Result<?> updateResourceShare(@PathVariable Long id, @RequestParam Integer isShared) {
+        log.info("更新资源共享状态: id={}, isShared={}", id, isShared);
+        boolean success = resourceService.updateResourceShare(id, isShared);
+        return success ? Result.success("更新成功") : Result.error("更新失败");
     }
 
     /**
@@ -176,5 +189,31 @@ public class ResourceController {
         log.info("记录下载: id={}", id);
         resourceService.incrementDownloadCount(id);
         return Result.success("记录成功");
+    }
+
+    /**
+     * 上传资源文件
+     */
+    @Operation(summary = "上传资源文件")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
+    @PostMapping("/upload/file")
+    public Result<String> uploadResourceFile(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("resourceType") String resourceType) {
+        log.info("上传资源文件: type={}, filename={}", resourceType, file.getOriginalFilename());
+        String filePath = resourceService.uploadResourceFile(file, resourceType);
+        return Result.success("上传成功", filePath);
+    }
+
+    /**
+     * 上传封面图片
+     */
+    @Operation(summary = "上传封面图片")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
+    @PostMapping("/upload/cover")
+    public Result<String> uploadCoverImage(@RequestParam("file") MultipartFile file) {
+        log.info("上传封面图片: filename={}", file.getOriginalFilename());
+        String coverUrl = resourceService.uploadCoverImage(file);
+        return Result.success("上传成功", coverUrl);
     }
 }

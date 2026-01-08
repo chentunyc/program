@@ -120,7 +120,7 @@ const routes = [
           excludeRoles: ['GUEST']
         }
       },
-      // 管理员专用路由
+      // 平台管理 - 多角色可访问
       {
         path: 'admin',
         name: 'Admin',
@@ -129,9 +129,11 @@ const routes = [
           title: '平台管理',
           icon: 'Setting',
           requireAuth: true,
-          requireAdmin: true
+          // 允许管理员、教师、资源管理员访问
+          allowedRoles: ['ADMIN', 'TEACHER', 'DATA_ADMIN']
         },
         children: [
+          // === 仅管理员可见 ===
           {
             path: 'users',
             name: 'AdminUsers',
@@ -140,7 +142,7 @@ const routes = [
               title: '用户管理',
               icon: 'User',
               requireAuth: true,
-              requireAdmin: true
+              allowedRoles: ['ADMIN']
             }
           },
           {
@@ -151,7 +153,7 @@ const routes = [
               title: '新闻管理',
               icon: 'Tickets',
               requireAuth: true,
-              requireAdmin: true
+              allowedRoles: ['ADMIN']
             }
           },
           {
@@ -162,8 +164,78 @@ const routes = [
               title: '平台设置',
               icon: 'Tools',
               requireAuth: true,
-              requireAdmin: true
+              allowedRoles: ['ADMIN']
             }
+          },
+          {
+            path: 'data',
+            name: 'AdminData',
+            component: () => import('@/views/admin/data/index.vue'),
+            meta: {
+              title: '数据管理',
+              icon: 'DataAnalysis',
+              requireAuth: true,
+              allowedRoles: ['TEACHER']
+            }
+          },
+          // === 仅教师可见 ===
+          {
+            path: 'training',
+            name: 'AdminTraining',
+            component: () => import('@/views/admin/training/index.vue'),
+            meta: {
+              title: '实训管理',
+              icon: 'Notebook',
+              requireAuth: true,
+              allowedRoles: ['TEACHER']
+            }
+          },
+          // === 资源管理子模块 ===
+          {
+            path: 'resource',
+            name: 'AdminResource',
+            redirect: '/admin/resource/edit',
+            meta: {
+              title: '资源管理',
+              icon: 'Folder',
+              requireAuth: true,
+              allowedRoles: ['ADMIN', 'TEACHER', 'DATA_ADMIN']
+            },
+            children: [
+              {
+                path: 'edit',
+                name: 'AdminResourceEdit',
+                component: () => import('@/views/admin/resource/edit.vue'),
+                meta: {
+                  title: '资源编辑',
+                  icon: 'Edit',
+                  requireAuth: true,
+                  allowedRoles: ['DATA_ADMIN']
+                }
+              },
+              {
+                path: 'audit',
+                name: 'AdminResourceAudit',
+                component: () => import('@/views/admin/resource/audit.vue'),
+                meta: {
+                  title: '资源审核',
+                  icon: 'Checked',
+                  requireAuth: true,
+                  allowedRoles: ['DATA_ADMIN']
+                }
+              },
+              {
+                path: 'upload',
+                name: 'AdminResourceUpload',
+                component: () => import('@/views/admin/resource/upload.vue'),
+                meta: {
+                  title: '资源上传',
+                  icon: 'Upload',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN', 'TEACHER']
+                }
+              }
+            ]
           }
         ]
       }
@@ -207,6 +279,19 @@ const isExcludedByRole = (route, userStore) => {
 }
 
 /**
+ * 检查用户是否有权限访问路由（基于allowedRoles）
+ */
+const hasRoutePermission = (route, userStore) => {
+  const allowedRoles = route.meta?.allowedRoles
+  // 如果没有设置allowedRoles，则允许所有人访问
+  if (!allowedRoles || allowedRoles.length === 0) {
+    return true
+  }
+  // 检查用户是否拥有任一允许的角色
+  return allowedRoles.some(role => userStore.hasRole(role))
+}
+
+/**
  * 全局前置守卫 - 权限验证
  */
 router.beforeEach((to, from, next) => {
@@ -228,8 +313,8 @@ router.beforeEach((to, from, next) => {
         userStore
           .getUserInfo()
           .then(() => {
-            // 检查管理员权限
-            if (to.meta.requireAdmin && !userStore.isAdmin()) {
+            // 检查allowedRoles权限
+            if (!hasRoutePermission(to, userStore)) {
               ElMessage.error('您没有权限访问该页面')
               next('/home')
             } else if (isExcludedByRole(to, userStore)) {
@@ -246,8 +331,8 @@ router.beforeEach((to, from, next) => {
             next('/login')
           })
       } else {
-        // 检查管理员权限
-        if (to.meta.requireAdmin && !userStore.isAdmin()) {
+        // 检查allowedRoles权限
+        if (!hasRoutePermission(to, userStore)) {
           ElMessage.error('您没有权限访问该页面')
           next('/home')
         } else if (isExcludedByRole(to, userStore)) {

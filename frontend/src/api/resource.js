@@ -125,3 +125,47 @@ export function recordDownload(id) {
     method: 'post'
   })
 }
+
+/**
+ * 更新资源共享状态
+ */
+export function updateResourceShare(id, isShared) {
+  return request({
+    url: `/v1/resource/${id}/share`,
+    method: 'put',
+    params: { isShared }
+  })
+}
+
+/**
+ * 上传资源文件
+ */
+export function uploadResourceFile(file, resourceType) {
+  const formData = new FormData()
+  formData.append('file', file)
+  formData.append('resourceType', resourceType)
+  return request({
+    url: '/v1/resource/upload/file',
+    method: 'post',
+    data: formData,
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+}
+
+/**
+ * 上传封面图片
+ */
+export function uploadCoverImage(file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  return request({
+    url: '/v1/resource/upload/cover',
+    method: 'post',
+    data: formData,
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+}
