@@ -285,11 +285,7 @@ CREATE TABLE `t_training_task` (
   `project_id` BIGINT NOT NULL COMMENT '项目ID',
   `task_name` VARCHAR(200) NOT NULL COMMENT '任务名称',
   `description` TEXT DEFAULT NULL COMMENT '任务描述',
-  `task_type` TINYINT NOT NULL DEFAULT 1 COMMENT '任务类型:1-理论学习,2-实践操作,3-综合项目',
-  `resource_id` BIGINT DEFAULT NULL COMMENT '关联资源ID',
-  `difficulty` TINYINT DEFAULT 1 COMMENT '难度等级:1-初级,2-中级,3-高级',
-  `total_score` INT DEFAULT 100 COMMENT '总分',
-  `pass_score` INT DEFAULT 60 COMMENT '及格分',
+  `score_weight` DECIMAL(5,2) DEFAULT 0 COMMENT '任务权重(在项目总分100分中占的分数)',
   `time_limit` INT DEFAULT NULL COMMENT '时间限制(分钟)',
   `sort_order` INT DEFAULT 0 COMMENT '排序序号',
   `attachment_url` VARCHAR(500) DEFAULT NULL COMMENT '附件URL',
@@ -301,7 +297,6 @@ CREATE TABLE `t_training_task` (
   `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
   PRIMARY KEY (`id`),
   KEY `idx_project_id` (`project_id`),
-  KEY `idx_resource_id` (`resource_id`),
   KEY `idx_sort_order` (`sort_order`),
   KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='实训任务表';
@@ -312,11 +307,9 @@ CREATE TABLE `t_training_record` (
   `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '记录ID',
   `task_id` BIGINT NOT NULL COMMENT '任务ID',
   `user_id` BIGINT NOT NULL COMMENT '用户ID',
-  `start_time` DATETIME NOT NULL COMMENT '开始时间',
-  `end_time` DATETIME DEFAULT NULL COMMENT '结束时间',
+  `submit_time` DATETIME DEFAULT NULL COMMENT '上传时间',
   `duration` INT DEFAULT NULL COMMENT '用时(分钟)',
   `score` DECIMAL(5,2) DEFAULT NULL COMMENT '得分',
-  `submit_content` TEXT DEFAULT NULL COMMENT '提交内容',
   `submit_attachment` VARCHAR(500) DEFAULT NULL COMMENT '提交附件URL',
   `teacher_comment` TEXT DEFAULT NULL COMMENT '教师评语',
   `status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态:0-进行中,1-已提交,2-已评分',
@@ -351,7 +344,7 @@ CREATE TABLE `t_user_project` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户项目关联表';
 
 -- ====================================================
--- 6. 管理员功能模块(预留)
+-- 6. 管理员功能模块
 -- ====================================================
 
 -- 系统配置表

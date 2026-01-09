@@ -89,18 +89,23 @@ const userInfo = computed(() => userStore.userInfo)
 const currentTime = ref(dayjs().format('YYYY-MM-DD HH:mm:ss'))
 let timer = null
 
-// 快捷入口（根据角色动态过滤）
+// 快捷入口（根据登录状态和角色动态过滤）
 const quickEntries = computed(() => {
   const allEntries = [
-    { title: '新闻公告', icon: 'Bell', path: '/news', color: '#409eff' },
-    { title: '用户中心', icon: 'User', path: '/user-center', color: '#67c23a' },
-    { title: '资源中心', icon: 'Folder', path: '/resource', color: '#e6a23c' },
-    { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c', excludeRoles: ['GUEST'] }
+    { title: '新闻公告', icon: 'Bell', path: '/news', color: '#409eff', requireAuth: false },
+    { title: '用户中心', icon: 'User', path: '/user-center', color: '#67c23a', requireAuth: true },
+    { title: '资源中心', icon: 'Folder', path: '/resource', color: '#e6a23c', requireAuth: true },
+    { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c', requireAuth: true, excludeRoles: ['GUEST'] }
   ]
 
+  const isLoggedIn = !!userStore.token
   const roles = userInfo.value?.roles || []
 
   return allEntries.filter(entry => {
+    // 未登录时，只显示不需要认证的入口
+    if (!isLoggedIn && entry.requireAuth) {
+      return false
+    }
     // 如果没有角色限制，显示
     if (!entry.excludeRoles || entry.excludeRoles.length === 0) {
       return true

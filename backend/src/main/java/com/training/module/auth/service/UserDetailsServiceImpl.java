@@ -51,9 +51,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<String> roles = userMapper.selectRolesByUserId(user.getId());
         user.setRoles(roles);
 
-        // 查询用户权限
-        List<String> permissions = userMapper.selectPermissionsByUserId(user.getId());
-        user.setPermissions(permissions);
+        // 权限列表设置为空（当前系统仅基于角色进行权限控制）
+        user.setPermissions(java.util.Collections.emptyList());
 
         // 构造LoginUser
         return new LoginUser(user);

@@ -28,18 +28,6 @@ public interface UserMapper extends BaseMapper<User> {
     List<String> selectRolesByUserId(Long userId);
 
     /**
-     * 根据用户ID查询权限列表
-     *
-     * @param userId 用户ID
-     * @return 权限编码列表
-     */
-    @Select("SELECT DISTINCT p.permission_code FROM t_permission p " +
-            "INNER JOIN t_role_permission rp ON p.id = rp.permission_id " +
-            "INNER JOIN t_user_role ur ON rp.role_id = ur.role_id " +
-            "WHERE ur.user_id = #{userId} AND p.status = 1 AND p.is_deleted = 0")
-    List<String> selectPermissionsByUserId(Long userId);
-
-    /**
      * 获取指定前缀的最大编号（包括已删除的记录，因为唯一索引不区分）
      *
      * @param prefix 编号前缀(如 A, T, S, G, D)

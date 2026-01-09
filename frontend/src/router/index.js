@@ -180,17 +180,41 @@ const routes = [
               allowedRoles: ['TEACHER']
             }
           },
-          // === 仅教师可见 ===
+          // === 管理员和教师可见 ===
           {
             path: 'training',
             name: 'AdminTraining',
-            component: () => import('@/views/admin/training/index.vue'),
+            redirect: '/admin/training/project',
             meta: {
               title: '实训管理',
               icon: 'Notebook',
               requireAuth: true,
-              allowedRoles: ['TEACHER']
-            }
+              allowedRoles: ['ADMIN', 'TEACHER']
+            },
+            children: [
+              {
+                path: 'project',
+                name: 'AdminTrainingProject',
+                component: () => import('@/views/admin/training/project/index.vue'),
+                meta: {
+                  title: '项目管理',
+                  icon: 'FolderOpened',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN', 'TEACHER']
+                }
+              },
+              {
+                path: 'task',
+                name: 'AdminTrainingTask',
+                component: () => import('@/views/admin/training/task/index.vue'),
+                meta: {
+                  title: '任务管理',
+                  icon: 'List',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN', 'TEACHER']
+                }
+              }
+            ]
           },
           // === 资源管理子模块 ===
           {
