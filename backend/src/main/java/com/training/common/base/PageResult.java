@@ -61,6 +61,20 @@ public class PageResult<T> implements Serializable {
     }
 
     /**
+     * 手动构建分页结果
+     *
+     * @param records 数据列表
+     * @param total 总记录数
+     * @param current 当前页码
+     * @param size 每页大小
+     * @return 分页结果
+     */
+    public static <T> PageResult<T> of(List<T> records, long total, int current, int size) {
+        long pages = (total + size - 1) / size;
+        return new PageResult<>(records, total, (long) current, (long) size, pages);
+    }
+
+    /**
      * 转换数据类型
      */
     public <R> PageResult<R> convert(List<R> records) {
