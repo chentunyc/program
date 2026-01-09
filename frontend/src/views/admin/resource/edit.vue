@@ -316,11 +316,19 @@
           </el-col>
           <el-col :span="12">
             <el-form-item label="状态">
-              <el-radio-group v-model="resourceForm.status">
+              <!-- 编辑模式：可选择状态 -->
+              <el-radio-group v-if="isEdit" v-model="resourceForm.status">
                 <el-radio :label="0">待审核</el-radio>
                 <el-radio :label="1">已发布</el-radio>
                 <el-radio :label="2">已下架</el-radio>
               </el-radio-group>
+              <!-- 创建模式：固定为待审核 -->
+              <template v-else>
+                <el-tag type="warning">待审核</el-tag>
+                <span style="margin-left: 8px; font-size: 12px; color: #909399">
+                  新创建的资源需要审核后才能发布
+                </span>
+              </template>
             </el-form-item>
           </el-col>
         </el-row>

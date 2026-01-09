@@ -65,7 +65,7 @@ public class ResourceController {
      * 创建资源
      */
     @Operation(summary = "创建资源")
-    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'ADMIN', 'TEACHER', 'DATA_ADMIN')")
     @PostMapping
     public Result<Long> createResource(@Validated @RequestBody ResourceCreateDTO createDTO) {
         log.info("创建资源: {}", createDTO.getResourceName());
@@ -195,7 +195,7 @@ public class ResourceController {
      * 上传资源文件
      */
     @Operation(summary = "上传资源文件")
-    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'ADMIN', 'TEACHER', 'DATA_ADMIN')")
     @PostMapping("/upload/file")
     public Result<String> uploadResourceFile(
             @RequestParam("file") MultipartFile file,
@@ -209,7 +209,7 @@ public class ResourceController {
      * 上传封面图片
      */
     @Operation(summary = "上传封面图片")
-    @PreAuthorize("hasAnyAuthority('resource:create', 'TEACHER', 'DATA_ADMIN')")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'ADMIN', 'TEACHER', 'DATA_ADMIN')")
     @PostMapping("/upload/cover")
     public Result<String> uploadCoverImage(@RequestParam("file") MultipartFile file) {
         log.info("上传封面图片: filename={}", file.getOriginalFilename());
