@@ -40,13 +40,13 @@ public interface UserMapper extends BaseMapper<User> {
     List<String> selectPermissionsByUserId(Long userId);
 
     /**
-     * 获取指定前缀的最大编号
+     * 获取指定前缀的最大编号（包括已删除的记录，因为唯一索引不区分）
      *
      * @param prefix 编号前缀(如 A, T, S, G, D)
      * @return 最大编号，如 S001
      */
     @Select("SELECT employee_no FROM t_user WHERE employee_no LIKE CONCAT(#{prefix}, '%') " +
-            "AND is_deleted = 0 ORDER BY employee_no DESC LIMIT 1")
+            "ORDER BY employee_no DESC LIMIT 1")
     String selectMaxEmployeeNo(String prefix);
 
     /**
