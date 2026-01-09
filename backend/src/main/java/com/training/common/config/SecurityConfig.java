@@ -80,6 +80,11 @@ public class SecurityConfig {
                                 "/v1/auth/register",
                                 "/v1/auth/check-username"
                         ).anonymous()
+                        // 公开页面API允许匿名访问（首页、新闻公告）
+                        .requestMatchers(
+                                "/v1/news/page",
+                                "/v1/news/{id}"
+                        ).permitAll()
                         // Swagger文档允许匿名访问
                         .requestMatchers(
                                 "/doc.html",

@@ -52,6 +52,12 @@
           还没有账号？
           <el-link type="primary" @click="goToRegister">立即注册</el-link>
         </p>
+        <p class="home-link">
+          <el-link type="info" @click="goToHome">
+            <el-icon><HomeFilled /></el-icon>
+            返回首页
+          </el-link>
+        </p>
       </div>
     </div>
   </div>
@@ -62,6 +68,7 @@ import { ref, reactive } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useUserStore } from '@/store/modules/user'
 import { ElMessage } from 'element-plus'
+import { HomeFilled } from '@element-plus/icons-vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -119,6 +126,13 @@ const handleLogin = async () => {
  */
 const goToRegister = () => {
   router.push('/register')
+}
+
+/**
+ * 返回首页
+ */
+const goToHome = () => {
+  router.push('/home')
 }
 </script>
 
@@ -179,6 +193,15 @@ const goToRegister = () => {
   .register-link {
     margin-top: 10px;
     color: #606266;
+  }
+
+  .home-link {
+    margin-top: 15px;
+
+    .el-icon {
+      margin-right: 4px;
+      vertical-align: middle;
+    }
   }
 }
 

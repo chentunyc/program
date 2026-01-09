@@ -158,6 +158,12 @@
           已有账号？
           <el-link type="primary" @click="goToLogin">立即登录</el-link>
         </p>
+        <p class="home-link">
+          <el-link type="info" @click="goToHome">
+            <el-icon><HomeFilled /></el-icon>
+            返回首页
+          </el-link>
+        </p>
       </div>
     </div>
   </div>
@@ -178,7 +184,8 @@ import {
   View,
   Loading,
   CircleCheck,
-  CircleClose
+  CircleClose,
+  HomeFilled
 } from '@element-plus/icons-vue'
 import { register, checkUsername } from '@/api/auth'
 
@@ -316,6 +323,13 @@ const handleRegister = async () => {
 const goToLogin = () => {
   router.push('/login')
 }
+
+/**
+ * 返回首页
+ */
+const goToHome = () => {
+  router.push('/home')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -419,6 +433,15 @@ const goToLogin = () => {
   p {
     font-size: 14px;
     color: #606266;
+  }
+
+  .home-link {
+    margin-top: 15px;
+
+    .el-icon {
+      margin-right: 4px;
+      vertical-align: middle;
+    }
   }
 }
 

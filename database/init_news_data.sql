@@ -16,7 +16,7 @@ INSERT INTO t_news (
     '上线,通知,重要', 1523, 1, 1, NOW(), 
     1, NOW(), NOW(), 0, '/images/news/1.png');
 
--- 插入其他9条新闻（不包含cover_image字段）
+-- 插入其他9条新闻
 INSERT INTO t_news (
     title, summary, content, category, author, source,
     tags, view_count, is_top, is_recommend, publish_time, 

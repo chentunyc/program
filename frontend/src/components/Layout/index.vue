@@ -94,27 +94,36 @@
         </div>
 
         <div class="header-right">
-          <!-- 用户信息 -->
-          <el-dropdown @command="handleCommand">
-            <div class="user-info">
-              <el-avatar :size="32" :src="userAvatarUrl" class="user-avatar">
-                <el-icon><User /></el-icon>
-              </el-avatar>
-              <span class="user-name">{{ userInfo?.realName || userInfo?.username }}</span>
-            </div>
-            <template #dropdown>
-              <el-dropdown-menu>
-                <el-dropdown-item command="profile">
+          <!-- 已登录：显示用户信息 -->
+          <template v-if="isLoggedIn">
+            <el-dropdown @command="handleCommand">
+              <div class="user-info">
+                <el-avatar :size="32" :src="userAvatarUrl" class="user-avatar">
                   <el-icon><User /></el-icon>
-                  个人中心
-                </el-dropdown-item>
-                <el-dropdown-item command="logout" divided>
-                  <el-icon><SwitchButton /></el-icon>
-                  退出登录
-                </el-dropdown-item>
-              </el-dropdown-menu>
-            </template>
-          </el-dropdown>
+                </el-avatar>
+                <span class="user-name">{{ userInfo?.realName || userInfo?.username }}</span>
+              </div>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item command="profile">
+                    <el-icon><User /></el-icon>
+                    个人中心
+                  </el-dropdown-item>
+                  <el-dropdown-item command="logout" divided>
+                    <el-icon><SwitchButton /></el-icon>
+                    退出登录
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
+          </template>
+          <!-- 未登录：显示登录/注册按钮 -->
+          <template v-else>
+            <div class="auth-buttons">
+              <el-button type="primary" @click="goToLogin">登录</el-button>
+              <el-button @click="goToRegister">注册</el-button>
+            </div>
+          </template>
         </div>
       </el-header>
 
@@ -144,6 +153,9 @@ const appStore = useAppStore()
 
 // 用户信息
 const userInfo = computed(() => userStore.userInfo)
+
+// 是否已登录
+const isLoggedIn = computed(() => !!userStore.token)
 
 // 用户头像URL（处理路径前缀）
 const userAvatarUrl = computed(() => {
@@ -181,6 +193,12 @@ const menuRoutes = computed(() => {
       return false
     }
 
+    // 未登录用户：只显示标记为 showInPublic 的路由
+    if (!isLoggedIn.value) {
+      return route.meta?.showInPublic === true
+    }
+
+    // 已登录用户：正常权限检查
     // 检查 allowedRoles
     const allowedRoles = route.meta?.allowedRoles
     if (allowedRoles && allowedRoles.length > 0) {
@@ -285,6 +303,20 @@ const handleLogout = () => {
     .catch(() => {
       // 取消操作
     })
+}
+
+/**
+ * 跳转到登录页
+ */
+const goToLogin = () => {
+  router.push('/login')
+}
+
+/**
+ * 跳转到注册页
+ */
+const goToRegister = () => {
+  router.push('/register')
 }
 </script>
 
@@ -436,6 +468,11 @@ const handleLogout = () => {
         font-size: 14px;
         color: #303133;
       }
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
     }
   }
 }

@@ -55,7 +55,8 @@ const routes = [
         meta: {
           title: '首页',
           icon: 'HomeFilled',
-          requireAuth: true
+          requireAuth: false,  // 允许未登录访问
+          showInPublic: true   // 未登录时也显示在菜单中
         }
       },
       {
@@ -65,7 +66,8 @@ const routes = [
         meta: {
           title: '新闻公告',
           icon: 'Bell',
-          requireAuth: true
+          requireAuth: false,  // 允许未登录访问
+          showInPublic: true   // 未登录时也显示在菜单中
         }
       },
       {
@@ -74,7 +76,7 @@ const routes = [
         component: () => import('@/views/news/detail.vue'),
         meta: {
           title: '新闻详情',
-          requireAuth: true,
+          requireAuth: false,  // 允许未登录访问
           hidden: true
         }
       },
@@ -294,7 +296,7 @@ const hasRoutePermission = (route, userStore) => {
 /**
  * 全局前置守卫 - 权限验证
  */
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   NProgress.start()
 
   // 设置页面标题
@@ -349,11 +351,20 @@ router.beforeEach((to, from, next) => {
       next(`/login?redirect=${to.fullPath}`)
     }
   } else {
-    // 不需要认证
+    // 不需要认证的页面
     if ((to.path === '/login' || to.path === '/register') && userStore.token) {
       // 已登录,访问登录页或注册页,跳转到首页
       next('/home')
     } else {
+      // 如果用户已登录但还没有获取用户信息，尝试获取（用于显示正确的菜单）
+      if (userStore.token && !userStore.userInfo) {
+        try {
+          await userStore.getUserInfo()
+        } catch (error) {
+          // 获取失败不影响页面访问，只是菜单可能不完整
+          console.warn('获取用户信息失败，将以访客身份访问')
+        }
+      }
       next()
     }
   }

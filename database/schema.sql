@@ -62,28 +62,6 @@ CREATE TABLE `t_role` (
   UNIQUE KEY `uk_role_code` (`role_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='角色表';
 
--- 权限表
-DROP TABLE IF EXISTS `t_permission`;
-CREATE TABLE `t_permission` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '权限ID',
-  `parent_id` BIGINT DEFAULT 0 COMMENT '父权限ID',
-  `permission_code` VARCHAR(100) NOT NULL COMMENT '权限编码',
-  `permission_name` VARCHAR(100) NOT NULL COMMENT '权限名称',
-  `permission_type` TINYINT NOT NULL COMMENT '权限类型:1-菜单,2-按钮',
-  `menu_path` VARCHAR(200) DEFAULT NULL COMMENT '菜单路径',
-  `menu_icon` VARCHAR(100) DEFAULT NULL COMMENT '菜单图标',
-  `sort_order` INT DEFAULT 0 COMMENT '排序',
-  `status` TINYINT NOT NULL DEFAULT 1 COMMENT '状态:0-禁用,1-正常',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  `update_by` BIGINT DEFAULT NULL COMMENT '更新人ID',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_permission_code` (`permission_code`),
-  KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='权限表';
-
 -- 用户角色关联表
 DROP TABLE IF EXISTS `t_user_role`;
 CREATE TABLE `t_user_role` (
@@ -97,20 +75,6 @@ CREATE TABLE `t_user_role` (
   KEY `idx_user_id` (`user_id`),
   KEY `idx_role_id` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户角色关联表';
-
--- 角色权限关联表
-DROP TABLE IF EXISTS `t_role_permission`;
-CREATE TABLE `t_role_permission` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `role_id` BIGINT NOT NULL COMMENT '角色ID',
-  `permission_id` BIGINT NOT NULL COMMENT '权限ID',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `create_by` BIGINT DEFAULT NULL COMMENT '创建人ID',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_role_permission` (`role_id`, `permission_id`),
-  KEY `idx_role_id` (`role_id`),
-  KEY `idx_permission_id` (`permission_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='角色权限关联表';
 
 -- ====================================================
 -- 2. 新闻公告模块
@@ -183,26 +147,6 @@ CREATE TABLE `t_user_favorite` (
   KEY `idx_user_id` (`user_id`),
   KEY `idx_resource` (`resource_type`, `resource_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户收藏表';
-
--- 用户消息表
-DROP TABLE IF EXISTS `t_user_message`;
-CREATE TABLE `t_user_message` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '消息ID',
-  `user_id` BIGINT NOT NULL COMMENT '接收用户ID',
-  `sender_id` BIGINT DEFAULT NULL COMMENT '发送者ID(系统消息为NULL)',
-  `message_type` TINYINT NOT NULL COMMENT '消息类型:1-系统消息,2-课程通知,3-实验提醒,4-审核通知',
-  `title` VARCHAR(200) NOT NULL COMMENT '消息标题',
-  `content` TEXT NOT NULL COMMENT '消息内容',
-  `link_url` VARCHAR(500) DEFAULT NULL COMMENT '关联链接',
-  `is_read` TINYINT DEFAULT 0 COMMENT '是否已读:0-未读,1-已读',
-  `read_time` DATETIME DEFAULT NULL COMMENT '阅读时间',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  KEY `idx_user_id` (`user_id`),
-  KEY `idx_is_read` (`is_read`),
-  KEY `idx_create_time` (`create_time`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户消息表';
 
 -- ====================================================
 -- 4. 资源中心模块
@@ -406,32 +350,8 @@ CREATE TABLE `t_user_project` (
   KEY `idx_project_id` (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='用户项目关联表';
 
-
-
 -- ====================================================
--- 8. 过程记录模块
--- ====================================================
-
--- 过程结果表（学生实训过程数据）
-DROP TABLE IF EXISTS `t_process_result`;
-CREATE TABLE `t_process_result` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '结果ID',
-  `task_id` BIGINT NOT NULL COMMENT '任务ID',
-  `user_id` BIGINT NOT NULL COMMENT '学生ID',
-  `process_data` TEXT DEFAULT NULL COMMENT '过程数据(JSON格式)',
-  `step_records` TEXT DEFAULT NULL COMMENT '步骤记录',
-  `answer_records` TEXT DEFAULT NULL COMMENT '答题记录',
-  `operation_logs` TEXT DEFAULT NULL COMMENT '操作日志',
-  `score_details` TEXT DEFAULT NULL COMMENT '评分明细(JSON格式)',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_task_user` (`task_id`, `user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='过程结果表';
-
--- ====================================================
--- 9. 管理员功能模块(预留)
+-- 6. 管理员功能模块(预留)
 -- ====================================================
 
 -- 系统配置表
@@ -453,48 +373,3 @@ CREATE TABLE `t_system_config` (
   UNIQUE KEY `uk_group_key` (`config_group`, `config_key`),
   KEY `idx_config_group` (`config_group`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='系统配置表';
-
--- 初始化系统配置数据
-INSERT INTO `t_system_config` (`config_group`, `config_key`, `config_value`, `config_type`, `description`, `sort_order`) VALUES
--- 基本配置
-('basic', 'siteName', '虚拟仿真实训教学管理及资源共享云平台', 'string', '站点名称', 1),
-('basic', 'siteLogo', '/logo.png', 'string', '站点Logo', 2),
-('basic', 'siteDescription', '专业的虚拟仿真实训教学管理平台，提供资源共享、实训管理等功能', 'string', '站点描述', 3),
-('basic', 'icpNumber', '粤ICP备XXXXXXXX号', 'string', 'ICP备案号', 4),
-('basic', 'copyright', '© 2024 虚拟仿真实训平台 版权所有', 'string', '版权信息', 5),
-('basic', 'supportEmail', 'support@training.com', 'string', '客服邮箱', 6),
-('basic', 'supportPhone', '400-123-4567', 'string', '客服电话', 7),
--- 上传配置
-('upload', 'uploadPath', './uploads', 'string', '上传路径', 1),
-('upload', 'allowedTypes', 'image/jpeg,image/png,image/gif,application/pdf', 'string', '允许的文件类型', 2),
-('upload', 'maxFileSize', '10', 'number', '最大文件大小(MB)', 3),
-('upload', 'imageCompression', 'true', 'boolean', '图片压缩', 4),
--- 安全配置
-('security', 'minPasswordLength', '6', 'number', '密码最小长度', 1),
-('security', 'passwordRequirements', '["lowercase","number"]', 'json', '密码复杂度要求', 2),
-('security', 'sessionTimeout', '120', 'number', '会话超时时间(分钟)', 3),
-('security', 'loginLockEnabled', 'true', 'boolean', '登录失败锁定', 4),
-('security', 'maxLoginAttempts', '5', 'number', '失败次数阈值', 5);
-
--- 师资信息表
-DROP TABLE IF EXISTS `t_teacher_info`;
-CREATE TABLE `t_teacher_info` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `user_id` BIGINT NOT NULL COMMENT '用户ID',
-  `title` VARCHAR(50) DEFAULT NULL COMMENT '职称',
-  `degree` VARCHAR(50) DEFAULT NULL COMMENT '学位',
-  `research_direction` VARCHAR(500) DEFAULT NULL COMMENT '研究方向',
-  `achievements` TEXT DEFAULT NULL COMMENT '教学成果',
-  `projects` TEXT DEFAULT NULL COMMENT '科研项目',
-  `publications` TEXT DEFAULT NULL COMMENT '发表论文',
-  `awards` TEXT DEFAULT NULL COMMENT '获奖情况',
-  `teaching_years` INT DEFAULT NULL COMMENT '教学年限',
-  `course_count` INT DEFAULT 0 COMMENT '授课门数',
-  `student_count` INT DEFAULT 0 COMMENT '指导学生数',
-  `rating` DECIMAL(3,2) DEFAULT NULL COMMENT '教学评分(5分制)',
-  `create_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `update_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `is_deleted` TINYINT NOT NULL DEFAULT 0 COMMENT '逻辑删除:0-未删除,1-已删除',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='师资信息表';

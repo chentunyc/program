@@ -58,7 +58,8 @@ export const useUserStore = defineStore('user', () => {
       roles.value = []
       permissions.value = []
       removeToken()
-      router.push('/login')
+      // 退出后跳转到首页而不是登录页
+      router.push('/home')
     }
   }
 
