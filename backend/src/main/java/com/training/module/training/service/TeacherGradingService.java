@@ -56,4 +56,9 @@ public interface TeacherGradingService {
      * 完成学生项目评分(计算总分)
      */
     boolean completeStudentGrading(Long projectId, Long studentId, Long teacherId);
+
+    /**
+     * 获取项目所有学生的详细任务成绩(用于导出)
+     */
+    List<TaskSubmissionVO> getDetailedScores(Long projectId, Long teacherId);
 }

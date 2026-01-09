@@ -196,4 +196,18 @@ public class TeacherGradingServiceImpl implements TeacherGradingService {
 
         return userProjectMapper.updateById(up) > 0;
     }
+
+    @Override
+    public List<TaskSubmissionVO> getDetailedScores(Long projectId, Long teacherId) {
+        // 验证教师权限
+        TrainingProject project = projectMapper.selectById(projectId);
+        if (project == null || project.getIsDeleted() == 1) {
+            throw new BusinessException("项目不存在");
+        }
+        if (!project.getManagerId().equals(teacherId)) {
+            throw new BusinessException("您不是该项目的负责人");
+        }
+
+        return trainingRecordMapper.selectAllDetailedScores(projectId);
+    }
 }

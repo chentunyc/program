@@ -30,6 +30,26 @@
             </el-select>
           </el-form-item>
 
+          <el-form-item v-if="selectedProjectId" label="选择任务">
+            <el-select
+              v-model="selectedTaskId"
+              placeholder="全部任务"
+              clearable
+              style="width: 100%"
+              @change="handleTaskChange"
+            >
+              <el-option
+                v-for="task in projectTasks"
+                :key="task.id"
+                :label="task.taskName"
+                :value="task.id"
+              >
+                <span>{{ task.taskName }}</span>
+                <el-tag size="small" style="margin-left: 8px">{{ task.scoreWeight }}分</el-tag>
+              </el-option>
+            </el-select>
+          </el-form-item>
+
           <el-form-item label="学生姓名">
             <el-input
               v-model="queryParams.studentName"
@@ -273,12 +293,17 @@ import {
   getProjectStudents,
   getSubmissions,
   getSubmissionDetail,
-  gradeSubmission
+  gradeSubmission,
+  getTasksByProjectId
 } from '@/api/training'
 
 // 项目列表
 const projects = ref([])
 const selectedProjectId = ref(null)
+
+// 任务列表
+const projectTasks = ref([])
+const selectedTaskId = ref(null)
 
 // 学生列表
 const students = ref([])
@@ -292,6 +317,7 @@ const queryParams = reactive({
   pageNum: 1,
   pageSize: 10,
   projectId: null,
+  taskId: null,
   studentName: '',
   status: null
 })
@@ -325,6 +351,22 @@ const loadProjects = async () => {
   }
 }
 
+// 加载项目任务列表
+const loadProjectTasks = async () => {
+  if (!selectedProjectId.value) {
+    projectTasks.value = []
+    return
+  }
+  try {
+    const res = await getTasksByProjectId(selectedProjectId.value)
+    if (res.code === 200) {
+      projectTasks.value = res.data || []
+    }
+  } catch (error) {
+    console.error('加载任务列表失败:', error)
+  }
+}
+
 // 加载学生列表
 const loadStudents = async () => {
   if (!selectedProjectId.value) {
@@ -350,7 +392,8 @@ const loadSubmissions = async () => {
   try {
     const params = {
       ...queryParams,
-      projectId: selectedProjectId.value
+      projectId: selectedProjectId.value,
+      taskId: selectedTaskId.value
     }
     const res = await getSubmissions(params)
     if (res.code === 200) {
@@ -367,8 +410,17 @@ const loadSubmissions = async () => {
 // 项目变更
 const handleProjectChange = () => {
   queryParams.projectId = selectedProjectId.value
+  selectedTaskId.value = null
+  queryParams.taskId = null
   selectedStudentId.value = null
+  loadProjectTasks()
   loadStudents()
+  loadSubmissions()
+}
+
+// 任务变更
+const handleTaskChange = () => {
+  queryParams.taskId = selectedTaskId.value
   loadSubmissions()
 }
 

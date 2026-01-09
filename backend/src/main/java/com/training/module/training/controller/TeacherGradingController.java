@@ -141,4 +141,17 @@ public class TeacherGradingController {
         boolean success = teacherGradingService.completeStudentGrading(projectId, studentId, teacherId);
         return success ? Result.success("评分完成") : Result.error("操作失败");
     }
+
+    /**
+     * 获取项目所有学生的详细任务成绩(用于导出)
+     */
+    @Operation(summary = "获取详细成绩(用于导出)")
+    @PreAuthorize("hasAuthority('TEACHER')")
+    @GetMapping("/project/{projectId}/detailed-scores")
+    public Result<List<TaskSubmissionVO>> getDetailedScores(@PathVariable Long projectId) {
+        Long teacherId = SecurityUtils.getUserId();
+        log.info("教师获取详细成绩导出: teacherId={}, projectId={}", teacherId, projectId);
+        List<TaskSubmissionVO> scores = teacherGradingService.getDetailedScores(projectId, teacherId);
+        return Result.success(scores);
+    }
 }

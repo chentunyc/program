@@ -68,4 +68,9 @@ public interface TrainingRecordMapper extends BaseMapper<TrainingRecord> {
             @Param("userId") Long userId,
             @Param("projectId") Long projectId
     );
+
+    /**
+     * 获取项目所有学生的详细任务成绩(用于导出)
+     */
+    List<TaskSubmissionVO> selectAllDetailedScores(@Param("projectId") Long projectId);
 }

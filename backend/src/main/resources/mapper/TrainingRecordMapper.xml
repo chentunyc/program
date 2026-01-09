@@ -140,4 +140,30 @@
         AND tr.status = 2
     </select>
 
+    <!-- 获取项目所有学生的详细任务成绩(用于导出) -->
+    <select id="selectAllDetailedScores" resultType="com.training.module.training.vo.TaskSubmissionVO">
+        SELECT
+            tr.id,
+            tr.user_id AS studentId,
+            t.id AS taskId,
+            t.project_id AS projectId,
+            tr.score,
+            tr.status,
+            tr.submit_time AS submitTime,
+            t.task_name AS taskName,
+            t.score_weight AS scoreWeight,
+            t.sort_order AS sortOrder,
+            p.project_name AS projectName,
+            u.real_name AS studentName,
+            u.username AS studentUsername
+        FROM t_user_project up
+        INNER JOIN t_user u ON up.user_id = u.id AND u.is_deleted = 0
+        INNER JOIN t_training_project p ON up.project_id = p.id AND p.is_deleted = 0
+        CROSS JOIN t_training_task t ON t.project_id = up.project_id AND t.is_deleted = 0 AND t.status = 1
+        LEFT JOIN t_training_record tr ON tr.user_id = up.user_id AND tr.task_id = t.id AND tr.is_deleted = 0
+        WHERE up.is_deleted = 0
+        AND up.project_id = #{projectId}
+        ORDER BY u.username ASC, t.sort_order ASC
+    </select>
+
 </mapper>

@@ -81,7 +81,16 @@
             up.project_id AS projectId,
             up.join_time AS enrollTime,
             up.completed_tasks AS completedTasks,
-            up.total_score AS totalScore,
+            COALESCE(
+                (SELECT SUM(tr.score)
+                 FROM t_training_record tr
+                 INNER JOIN t_training_task tt ON tr.task_id = tt.id AND tt.is_deleted = 0
+                 WHERE tr.user_id = up.user_id
+                 AND tt.project_id = up.project_id
+                 AND tr.is_deleted = 0
+                 AND tr.status = 2),
+                up.total_score
+            ) AS totalScore,
             up.status,
             up.progress AS progressPercent,
             u.real_name AS studentName,

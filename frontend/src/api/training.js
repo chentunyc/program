@@ -396,3 +396,13 @@ export function completeStudentGrading(projectId, studentId) {
     method: 'post'
   })
 }
+
+/**
+ * 获取项目详细成绩(用于导出)
+ */
+export function getDetailedScores(projectId) {
+  return request({
+    url: `/v1/admin/training/grading/project/${projectId}/detailed-scores`,
+    method: 'get'
+  })
+}

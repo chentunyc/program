@@ -118,8 +118,8 @@ const routes = [
           title: '实训中心',
           icon: 'Notebook',
           requireAuth: true,
-          // 访客不可访问实训中心
-          excludeRoles: ['GUEST']
+          // 仅学生可访问实训中心
+          excludeRoles: ['GUEST', 'ADMIN', 'TEACHER', 'DATA_ADMIN']
         }
       },
       {
@@ -130,14 +130,15 @@ const routes = [
           title: '实训详情',
           requireAuth: true,
           hidden: true,
-          excludeRoles: ['GUEST']
+          // 仅学生可访问实训详情
+          excludeRoles: ['GUEST', 'ADMIN', 'TEACHER', 'DATA_ADMIN']
         }
       },
       // 平台管理 - 多角色可访问
       {
         path: 'admin',
         name: 'Admin',
-        redirect: '/admin/users',
+        redirect: '/admin/general/users',
         meta: {
           title: '平台管理',
           icon: 'Setting',
@@ -146,40 +147,54 @@ const routes = [
           allowedRoles: ['ADMIN', 'TEACHER', 'DATA_ADMIN']
         },
         children: [
-          // === 仅管理员可见 ===
+          // === 综合管理(仅管理员可见) ===
           {
-            path: 'users',
-            name: 'AdminUsers',
-            component: () => import('@/views/admin/users/index.vue'),
+            path: 'general',
+            name: 'AdminGeneral',
+            redirect: '/admin/general/users',
             meta: {
-              title: '用户管理',
-              icon: 'User',
+              title: '综合管理',
+              icon: 'Grid',
               requireAuth: true,
               allowedRoles: ['ADMIN']
-            }
+            },
+            children: [
+              {
+                path: 'users',
+                name: 'AdminUsers',
+                component: () => import('@/views/admin/users/index.vue'),
+                meta: {
+                  title: '用户管理',
+                  icon: 'User',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN']
+                }
+              },
+              {
+                path: 'news',
+                name: 'AdminNews',
+                component: () => import('@/views/admin/news/index.vue'),
+                meta: {
+                  title: '新闻公告管理',
+                  icon: 'Tickets',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN']
+                }
+              },
+              {
+                path: 'settings',
+                name: 'AdminSettings',
+                component: () => import('@/views/admin/settings/index.vue'),
+                meta: {
+                  title: '平台设置',
+                  icon: 'Tools',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN']
+                }
+              }
+            ]
           },
-          {
-            path: 'news',
-            name: 'AdminNews',
-            component: () => import('@/views/admin/news/index.vue'),
-            meta: {
-              title: '新闻管理',
-              icon: 'Tickets',
-              requireAuth: true,
-              allowedRoles: ['ADMIN']
-            }
-          },
-          {
-            path: 'settings',
-            name: 'AdminSettings',
-            component: () => import('@/views/admin/settings/index.vue'),
-            meta: {
-              title: '平台设置',
-              icon: 'Tools',
-              requireAuth: true,
-              allowedRoles: ['ADMIN']
-            }
-          },
+          // === 数据管理(仅教师可见) ===
           {
             path: 'data',
             name: 'AdminData',
@@ -191,7 +206,7 @@ const routes = [
               allowedRoles: ['TEACHER']
             }
           },
-          // === 管理员和教师可见 ===
+          // === 仅教师可见（实训管理） ===
           {
             path: 'training',
             name: 'AdminTraining',
@@ -200,7 +215,7 @@ const routes = [
               title: '实训管理',
               icon: 'Notebook',
               requireAuth: true,
-              allowedRoles: ['ADMIN', 'TEACHER']
+              allowedRoles: ['TEACHER']
             },
             children: [
               {
@@ -211,7 +226,7 @@ const routes = [
                   title: '项目管理',
                   icon: 'FolderOpened',
                   requireAuth: true,
-                  allowedRoles: ['ADMIN', 'TEACHER']
+                  allowedRoles: ['TEACHER']
                 }
               },
               {
@@ -222,7 +237,7 @@ const routes = [
                   title: '任务管理',
                   icon: 'List',
                   requireAuth: true,
-                  allowedRoles: ['ADMIN', 'TEACHER']
+                  allowedRoles: ['TEACHER']
                 }
               },
               {
