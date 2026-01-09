@@ -206,3 +206,193 @@ export function updateTaskSort(id, sortOrder) {
     params: { sortOrder }
   })
 }
+
+/**
+ * ==================== 学生实训中心 API ====================
+ */
+
+/**
+ * 获取可报名的项目列表
+ */
+export function getAvailableProjects(params) {
+  return request({
+    url: '/v1/training/available',
+    method: 'get',
+    params
+  })
+}
+
+/**
+ * 获取我参与的项目列表
+ */
+export function getStudentProjects(params) {
+  return request({
+    url: '/v1/training/my-projects',
+    method: 'get',
+    params
+  })
+}
+
+/**
+ * 报名参加项目
+ */
+export function enrollProject(projectId) {
+  return request({
+    url: `/v1/training/enroll/${projectId}`,
+    method: 'post'
+  })
+}
+
+/**
+ * 获取学生项目详情
+ */
+export function getStudentProjectDetail(projectId) {
+  return request({
+    url: `/v1/training/project/${projectId}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 获取项目任务列表(学生视角)
+ */
+export function getStudentProjectTasks(projectId) {
+  return request({
+    url: `/v1/training/project/${projectId}/tasks`,
+    method: 'get'
+  })
+}
+
+/**
+ * 获取任务详情(学生视角)
+ */
+export function getStudentTaskDetail(taskId) {
+  return request({
+    url: `/v1/training/task/${taskId}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 提交任务
+ */
+export function submitTask(data) {
+  return request({
+    url: '/v1/training/task/submit',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 开始项目
+ */
+export function startStudentProject(projectId) {
+  return request({
+    url: `/v1/training/project/${projectId}/start`,
+    method: 'post'
+  })
+}
+
+/**
+ * 上传实训报告文件
+ */
+export function uploadTrainingReport(file) {
+  const formData = new FormData()
+  formData.append('file', file)
+  return request({
+    url: '/v1/training/upload/report',
+    method: 'post',
+    data: formData,
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  })
+}
+
+/**
+ * ==================== 教师批改评分 API ====================
+ */
+
+/**
+ * 获取教师负责的项目列表(批改用)
+ */
+export function getGradingProjects() {
+  return request({
+    url: '/v1/admin/training/grading/my-projects',
+    method: 'get'
+  })
+}
+
+/**
+ * 获取项目的学生列表
+ */
+export function getProjectStudents(projectId) {
+  return request({
+    url: `/v1/admin/training/grading/project/${projectId}/students`,
+    method: 'get'
+  })
+}
+
+/**
+ * 分页查询提交记录
+ */
+export function getSubmissions(params) {
+  return request({
+    url: '/v1/admin/training/grading/submissions',
+    method: 'get',
+    params
+  })
+}
+
+/**
+ * 获取提交详情
+ */
+export function getSubmissionDetail(submissionId) {
+  return request({
+    url: `/v1/admin/training/grading/submission/${submissionId}`,
+    method: 'get'
+  })
+}
+
+/**
+ * 批改评分
+ */
+export function gradeSubmission(data) {
+  return request({
+    url: '/v1/admin/training/grading/grade',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 批量评分
+ */
+export function batchGradeSubmissions(data) {
+  return request({
+    url: '/v1/admin/training/grading/grade/batch',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取学生在项目中的所有提交记录
+ */
+export function getStudentSubmissions(projectId, studentId) {
+  return request({
+    url: `/v1/admin/training/grading/project/${projectId}/student/${studentId}/submissions`,
+    method: 'get'
+  })
+}
+
+/**
+ * 完成学生评分
+ */
+export function completeStudentGrading(projectId, studentId) {
+  return request({
+    url: `/v1/admin/training/grading/project/${projectId}/student/${studentId}/complete`,
+    method: 'post'
+  })
+}

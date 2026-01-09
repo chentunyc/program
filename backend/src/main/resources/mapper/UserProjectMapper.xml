@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.module.training.mapper.UserProjectMapper">
+
+    <!-- 分页查询学生参与的项目 -->
+    <select id="selectUserProjectPage" resultType="com.training.module.training.vo.StudentProjectVO">
+        SELECT
+            up.id,
+            up.user_id AS studentId,
+            up.project_id AS projectId,
+            up.join_time AS enrollTime,
+            up.join_time AS startTime,
+            up.completed_tasks AS completedTasks,
+            up.total_score AS totalScore,
+            up.status,
+            up.progress AS progressPercent,
+            p.project_name AS projectName,
+            p.description AS projectDescription,
+            p.cover_image AS coverImage,
+            p.category,
+            p.difficulty,
+            p.start_time AS projectStartTime,
+            p.end_time AS projectEndTime,
+            p.total_tasks AS totalTasks,
+            p.status AS projectStatus
+        FROM t_user_project up
+        LEFT JOIN t_training_project p ON up.project_id = p.id AND p.is_deleted = 0
+        WHERE up.is_deleted = 0
+        AND up.user_id = #{userId}
+        <if test="projectName != null and projectName != ''">
+            AND p.project_name LIKE CONCAT('%', #{projectName}, '%')
+        </if>
+        <if test="category != null and category != ''">
+            AND p.category = #{category}
+        </if>
+        <if test="difficulty != null">
+            AND p.difficulty = #{difficulty}
+        </if>
+        <if test="projectStatus != null">
+            AND p.status = #{projectStatus}
+        </if>
+        <if test="status != null">
+            AND up.status = #{status}
+        </if>
+        ORDER BY up.join_time DESC
+    </select>
+
+    <!-- 获取学生参与项目的详情 -->
+    <select id="selectUserProjectDetail" resultType="com.training.module.training.vo.StudentProjectVO">
+        SELECT
+            up.id,
+            up.user_id AS studentId,
+            up.project_id AS projectId,
+            up.join_time AS enrollTime,
+            up.join_time AS startTime,
+            up.completed_tasks AS completedTasks,
+            up.total_score AS totalScore,
+            up.status,
+            up.progress AS progressPercent,
+            p.project_name AS projectName,
+            p.description AS projectDescription,
+            p.cover_image AS coverImage,
+            p.category,
+            p.difficulty,
+            p.start_time AS projectStartTime,
+            p.end_time AS projectEndTime,
+            p.total_tasks AS totalTasks,
+            p.status AS projectStatus
+        FROM t_user_project up
+        LEFT JOIN t_training_project p ON up.project_id = p.id AND p.is_deleted = 0
+        WHERE up.is_deleted = 0
+        AND up.user_id = #{userId}
+        AND up.project_id = #{projectId}
+    </select>
+
+    <!-- 获取项目的所有参与学生列表 -->
+    <select id="selectProjectUsers" resultType="com.training.module.training.vo.StudentProjectVO">
+        SELECT
+            up.id,
+            up.user_id AS studentId,
+            up.project_id AS projectId,
+            up.join_time AS enrollTime,
+            up.completed_tasks AS completedTasks,
+            up.total_score AS totalScore,
+            up.status,
+            up.progress AS progressPercent,
+            u.real_name AS studentName,
+            u.username AS studentUsername,
+            p.project_name AS projectName,
+            p.total_tasks AS totalTasks
+        FROM t_user_project up
+        LEFT JOIN t_user u ON up.user_id = u.id AND u.is_deleted = 0
+        LEFT JOIN t_training_project p ON up.project_id = p.id AND p.is_deleted = 0
+        WHERE up.is_deleted = 0
+        AND up.project_id = #{projectId}
+        ORDER BY up.join_time ASC
+    </select>
+
+    <!-- 检查用户是否已加入项目 -->
+    <select id="selectByUserAndProject" resultType="com.training.module.training.entity.UserProject">
+        SELECT *
+        FROM t_user_project
+        WHERE is_deleted = 0
+        AND user_id = #{userId}
+        AND project_id = #{projectId}
+        LIMIT 1
+    </select>
+
+</mapper>

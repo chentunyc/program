@@ -122,6 +122,17 @@ const routes = [
           excludeRoles: ['GUEST']
         }
       },
+      {
+        path: 'training/:id',
+        name: 'TrainingDetail',
+        component: () => import('@/views/training/detail.vue'),
+        meta: {
+          title: '实训详情',
+          requireAuth: true,
+          hidden: true,
+          excludeRoles: ['GUEST']
+        }
+      },
       // 平台管理 - 多角色可访问
       {
         path: 'admin',
@@ -212,6 +223,17 @@ const routes = [
                   icon: 'List',
                   requireAuth: true,
                   allowedRoles: ['ADMIN', 'TEACHER']
+                }
+              },
+              {
+                path: 'grading',
+                name: 'AdminTrainingGrading',
+                component: () => import('@/views/admin/training/grading/index.vue'),
+                meta: {
+                  title: '实训批改',
+                  icon: 'EditPen',
+                  requireAuth: true,
+                  allowedRoles: ['TEACHER']
                 }
               }
             ]

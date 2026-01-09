@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.module.training.mapper.TrainingRecordMapper">
+
+    <!-- 获取学生在项目中的任务列表(含提交状态) -->
+    <select id="selectUserTasksInProject" resultType="com.training.module.training.vo.TaskSubmissionVO">
+        SELECT
+            tr.id,
+            tr.user_id AS studentId,
+            t.id AS taskId,
+            t.project_id AS projectId,
+            tr.submit_attachment AS attachmentUrl,
+            tr.submit_time AS submitTime,
+            tr.duration AS timeSpent,
+            tr.score,
+            tr.teacher_comment AS feedback,
+            COALESCE(tr.status, 0) AS status,
+            t.task_name AS taskName,
+            t.description AS taskDescription,
+            t.score_weight AS scoreWeight,
+            t.time_limit AS timeLimit,
+            t.attachment_url AS taskAttachmentUrl,
+            t.sort_order AS sortOrder,
+            p.project_name AS projectName
+        FROM t_training_task t
+        LEFT JOIN t_training_record tr ON t.id = tr.task_id
+            AND tr.user_id = #{userId}
+            AND tr.is_deleted = 0
+        LEFT JOIN t_training_project p ON t.project_id = p.id AND p.is_deleted = 0
+        WHERE t.is_deleted = 0
+        AND t.project_id = #{projectId}
+        AND t.status = 1
+        ORDER BY t.sort_order ASC
+    </select>
+
+    <!-- 获取任务提交详情 -->
+    <select id="selectRecordDetail" resultType="com.training.module.training.vo.TaskSubmissionVO">
+        SELECT
+            tr.id,
+            tr.user_id AS studentId,
+            tr.task_id AS taskId,
+            t.project_id AS projectId,
+            tr.submit_attachment AS attachmentUrl,
+            tr.submit_time AS submitTime,
+            tr.duration AS timeSpent,
+            tr.score,
+            tr.teacher_comment AS feedback,
+            tr.status,
+            t.task_name AS taskName,
+            t.description AS taskDescription,
+            t.score_weight AS scoreWeight,
+            t.time_limit AS timeLimit,
+            t.attachment_url AS taskAttachmentUrl,
+            t.sort_order AS sortOrder,
+            p.project_name AS projectName,
+            u.real_name AS studentName,
+            u.username AS studentUsername
+        FROM t_training_record tr
+        LEFT JOIN t_training_task t ON tr.task_id = t.id AND t.is_deleted = 0
+        LEFT JOIN t_training_project p ON t.project_id = p.id AND p.is_deleted = 0
+        LEFT JOIN t_user u ON tr.user_id = u.id
+        WHERE tr.is_deleted = 0
+        AND tr.id = #{id}
+    </select>
+
+    <!-- 分页查询待批改/已批改的提交记录(教师用) -->
+    <select id="selectRecordsForGrading" resultType="com.training.module.training.vo.TaskSubmissionVO">
+        SELECT
+            tr.id,
+            tr.user_id AS studentId,
+            tr.task_id AS taskId,
+            t.project_id AS projectId,
+            tr.submit_attachment AS attachmentUrl,
+            tr.submit_time AS submitTime,
+            tr.duration AS timeSpent,
+            tr.score,
+            tr.teacher_comment AS feedback,
+            tr.status,
+            t.task_name AS taskName,
+            t.description AS taskDescription,
+            t.score_weight AS scoreWeight,
+            t.sort_order AS sortOrder,
+            p.project_name AS projectName,
+            u.real_name AS studentName,
+            u.username AS studentUsername
+        FROM t_training_record tr
+        LEFT JOIN t_training_task t ON tr.task_id = t.id AND t.is_deleted = 0
+        LEFT JOIN t_training_project p ON t.project_id = p.id AND p.is_deleted = 0
+        LEFT JOIN t_user u ON tr.user_id = u.id
+        WHERE tr.is_deleted = 0
+        AND tr.status >= 1
+        <if test="projectId != null">
+            AND t.project_id = #{projectId}
+        </if>
+        <if test="taskId != null">
+            AND tr.task_id = #{taskId}
+        </if>
+        <if test="userName != null and userName != ''">
+            AND (u.real_name LIKE CONCAT('%', #{userName}, '%')
+                 OR u.username LIKE CONCAT('%', #{userName}, '%'))
+        </if>
+        <if test="status != null">
+            AND tr.status = #{status}
+        </if>
+        <if test="managerId != null">
+            AND p.manager_id = #{managerId}
+        </if>
+        ORDER BY tr.submit_time DESC
+    </select>
+
+    <!-- 获取用户在某任务的记录 -->
+    <select id="selectByUserAndTask" resultType="com.training.module.training.entity.TrainingRecord">
+        SELECT *
+        FROM t_training_record
+        WHERE is_deleted = 0
+        AND user_id = #{userId}
+        AND task_id = #{taskId}
+        LIMIT 1
+    </select>
+
+    <!-- 统计用户在项目中已完成(已提交)的任务数 -->
+    <select id="countCompletedTasks" resultType="int">
+        SELECT COUNT(*)
+        FROM t_training_record tr
+        LEFT JOIN t_training_task t ON tr.task_id = t.id
+        WHERE tr.is_deleted = 0
+        AND tr.user_id = #{userId}
+        AND t.project_id = #{projectId}
+        AND tr.status >= 1
+    </select>
+
+    <!-- 统计用户在项目中已评分的任务数 -->
+    <select id="countGradedTasks" resultType="int">
+        SELECT COUNT(*)
+        FROM t_training_record tr
+        LEFT JOIN t_training_task t ON tr.task_id = t.id
+        WHERE tr.is_deleted = 0
+        AND tr.user_id = #{userId}
+        AND t.project_id = #{projectId}
+        AND tr.status = 2
+    </select>
+
+</mapper>

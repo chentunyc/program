@@ -210,19 +210,17 @@
               编辑
             </el-button>
             <el-button
-              v-if="row.status === 0"
+              v-if="row.status === 0 && projectStatus === 1"
               type="success"
               size="small"
-              :disabled="projectStatus === 2"
               @click="handlePublish(row)"
             >
               发布
             </el-button>
             <el-button
-              v-if="row.status === 1"
+              v-if="row.status === 1 && projectStatus === 1"
               type="warning"
               size="small"
-              :disabled="projectStatus === 2"
               @click="handleUnpublish(row)"
             >
               取消发布
@@ -296,9 +294,15 @@
             :min="1"
             :max="100"
             :precision="1"
+            :disabled="isEdit && projectStatus !== 0"
             placeholder="分数权重"
           />
-          <span class="form-tip">（所有任务权重之和需为100分）</span>
+          <span class="form-tip">
+            （所有任务权重之和需为100分）
+            <span v-if="isEdit && projectStatus !== 0" style="color: #f56c6c">
+              项目已发布，无法修改权重
+            </span>
+          </span>
         </el-form-item>
         <el-form-item label="时间限制">
           <el-input-number
