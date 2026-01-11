@@ -47,7 +47,6 @@
       </el-form>
 
       <div class="login-footer">
-        <p>默认账号: admin / admin123</p>
         <p class="register-link">
           还没有账号？
           <el-link type="primary" @click="goToRegister">立即注册</el-link>
@@ -82,8 +81,8 @@ const loading = ref(false)
 
 // 登录表单
 const loginForm = reactive({
-  username: 'admin',
-  password: 'admin123'
+  username: '',
+  password: ''
 })
 
 // 表单验证规则

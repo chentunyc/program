@@ -143,14 +143,16 @@
             label-width="150px"
             style="max-width: 600px"
           >
-            <el-form-item label="上传路径">
+            <!-- 上传路径：当前未被实际使用，使用 application.yml 中的配置 -->
+            <!-- <el-form-item label="上传路径">
               <el-input
                 v-model="uploadConfig.uploadPath"
                 placeholder="文件上传保存路径"
                 readonly
               />
-            </el-form-item>
-            <el-form-item label="允许的文件类型">
+            </el-form-item> -->
+            <!-- 允许的文件类型：当前未被实际使用，各模块硬编码了各自的文件类型限制 -->
+            <!-- <el-form-item label="允许的文件类型">
               <el-input
                 v-model="uploadConfig.allowedTypes"
                 type="textarea"
@@ -160,18 +162,22 @@
               <div class="form-tip">
                 例如：image/jpeg,image/png,image/gif,application/pdf
               </div>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="最大文件大小">
               <el-input-number
                 v-model="uploadConfig.maxFileSize"
                 :min="1"
-                :max="100"
+                :max="500"
               />
               <span style="margin-left: 10px">MB</span>
+              <div class="form-tip">
+                此配置应用于资源管理模块的文件上传
+              </div>
             </el-form-item>
-            <el-form-item label="图片压缩">
+            <!-- 图片压缩：当前未被实际使用 -->
+            <!-- <el-form-item label="图片压缩">
               <el-switch v-model="uploadConfig.imageCompression" />
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item>
               <el-button type="primary" :loading="saving" @click="handleSaveUpload">
                 保存配置
