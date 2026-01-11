@@ -210,6 +210,13 @@ public class ResourceServiceImpl implements ResourceService {
             throw new BusinessException("资源不存在");
         }
 
+        // 权限验证：非 DATA_ADMIN 用户只能编辑自己上传的资源
+        if (!SecurityUtils.isDataAdmin()) {
+            if (!userId.equals(resource.getUploaderId())) {
+                throw new BusinessException("您只能编辑自己上传的资源");
+            }
+        }
+
         // 更新主资源
         if (StrUtil.isNotBlank(updateDTO.getResourceName())) {
             resource.setResourceName(updateDTO.getResourceName());
@@ -690,5 +697,24 @@ public class ResourceServiceImpl implements ResourceService {
      */
     private Boolean isGuest() {
         return SecurityUtils.isGuest();
+    }
+
+    @Override
+    public PageResult<ResourceVO> getMyResourcePage(ResourceQueryDTO queryDTO, Long userId) {
+        Page<Resource> page = new Page<>(queryDTO.getPageNum(), queryDTO.getPageSize());
+
+        IPage<Resource> resourcePage = resourceMapper.selectMyResourcePage(
+                page,
+                userId,
+                queryDTO.getResourceType(),
+                queryDTO.getKeyword(),
+                queryDTO.getStatus()
+        );
+
+        List<ResourceVO> voList = resourcePage.getRecords().stream()
+                .map(this::convertToVO)
+                .collect(Collectors.toList());
+
+        return PageResult.from(resourcePage).convert(voList);
     }
 }

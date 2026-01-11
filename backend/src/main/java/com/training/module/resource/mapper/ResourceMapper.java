@@ -84,4 +84,22 @@ public interface ResourceMapper extends BaseMapper<Resource> {
      */
     @Update("UPDATE t_resource SET download_count = download_count + 1 WHERE id = #{id}")
     int incrementDownloadCount(@Param("id") Long id);
+
+    /**
+     * 分页查询当前用户上传的资源
+     *
+     * @param page 分页对象
+     * @param uploaderId 上传者ID
+     * @param resourceType 资源类型
+     * @param keyword 关键词
+     * @param status 状态
+     * @return 分页结果
+     */
+    IPage<Resource> selectMyResourcePage(
+            Page<Resource> page,
+            @Param("uploaderId") Long uploaderId,
+            @Param("resourceType") String resourceType,
+            @Param("keyword") String keyword,
+            @Param("status") Integer status
+    );
 }

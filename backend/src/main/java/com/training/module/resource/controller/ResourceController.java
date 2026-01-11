@@ -49,6 +49,19 @@ public class ResourceController {
     }
 
     /**
+     * 分页查询当前用户上传的资源
+     */
+    @Operation(summary = "分页查询当前用户上传的资源")
+    @PreAuthorize("hasAnyAuthority('resource:create', 'ADMIN', 'TEACHER', 'DATA_ADMIN')")
+    @GetMapping("/my/page")
+    public Result<PageResult<ResourceVO>> getMyResourcePage(ResourceQueryDTO queryDTO) {
+        log.info("分页查询当前用户上传的资源: {}", queryDTO);
+        Long userId = SecurityUtils.getUserId();
+        PageResult<ResourceVO> pageResult = resourceService.getMyResourcePage(queryDTO, userId);
+        return Result.success(pageResult);
+    }
+
+    /**
      * 获取资源详情
      */
     @Operation(summary = "获取资源详情")

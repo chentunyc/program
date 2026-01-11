@@ -12,6 +12,17 @@ export function getResourcePage(params) {
 }
 
 /**
+ * 分页查询当前用户上传的资源
+ */
+export function getMyResourcePage(params) {
+  return request({
+    url: '/v1/resource/my/page',
+    method: 'get',
+    params
+  })
+}
+
+/**
  * 获取资源详情
  */
 export function getResourceById(id) {

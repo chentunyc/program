@@ -98,4 +98,15 @@ public class SecurityUtils {
             return true;
         }
     }
+
+    /**
+     * 是否为资料管理员
+     */
+    public static boolean isDataAdmin() {
+        try {
+            return getLoginUser().isDataAdmin();
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

@@ -96,4 +96,27 @@
         LIMIT #{limit}
     </select>
 
+    <!-- 分页查询当前用户上传的资源 -->
+    <select id="selectMyResourcePage" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_resource
+        <where>
+            is_deleted = 0
+            AND uploader_id = #{uploaderId}
+            <if test="resourceType != null and resourceType != ''">
+                AND resource_type = #{resourceType}
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (resource_name LIKE CONCAT('%', #{keyword}, '%')
+                OR description LIKE CONCAT('%', #{keyword}, '%')
+                OR tags LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+            <if test="status != null">
+                AND status = #{status}
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+
 </mapper>

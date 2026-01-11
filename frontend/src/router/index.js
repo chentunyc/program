@@ -257,7 +257,7 @@ const routes = [
           {
             path: 'resource',
             name: 'AdminResource',
-            redirect: '/admin/resource/edit',
+            redirect: '/admin/resource/my-resource',
             meta: {
               title: '资源管理',
               icon: 'Folder',
@@ -265,6 +265,17 @@ const routes = [
               allowedRoles: ['ADMIN', 'TEACHER', 'DATA_ADMIN']
             },
             children: [
+              {
+                path: 'my-resource',
+                name: 'AdminMyResource',
+                component: () => import('@/views/admin/resource/my-resource.vue'),
+                meta: {
+                  title: '我的资源',
+                  icon: 'User',
+                  requireAuth: true,
+                  allowedRoles: ['ADMIN', 'TEACHER']
+                }
+              },
               {
                 path: 'edit',
                 name: 'AdminResourceEdit',

@@ -146,4 +146,13 @@ public interface ResourceService {
      * @return 图片访问路径
      */
     String uploadCoverImage(org.springframework.web.multipart.MultipartFile file);
+
+    /**
+     * 分页查询当前用户上传的资源
+     *
+     * @param queryDTO 查询条件
+     * @param userId 当前用户ID
+     * @return 资源分页列表
+     */
+    PageResult<ResourceVO> getMyResourcePage(ResourceQueryDTO queryDTO, Long userId);
 }
