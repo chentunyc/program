@@ -95,7 +95,7 @@ const quickEntries = computed(() => {
     { title: '新闻公告', icon: 'Bell', path: '/news', color: '#409eff', requireAuth: false },
     { title: '用户中心', icon: 'User', path: '/user-center', color: '#67c23a', requireAuth: true },
     { title: '资源中心', icon: 'Folder', path: '/resource', color: '#e6a23c', requireAuth: true },
-    { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c', requireAuth: true, excludeRoles: ['GUEST'] }
+    { title: '实训中心', icon: 'Notebook', path: '/training', color: '#f56c6c', requireAuth: true, excludeRoles: ['GUEST', 'ADMIN', 'TEACHER', 'DATA_ADMIN'] }
   ]
 
   const isLoggedIn = !!userStore.token
